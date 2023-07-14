@@ -19,4 +19,7 @@ export * from "./publicawesome/client";
 export * from "./stargaze/bundle";
 export * from "./tendermint/bundle";
 export * from "./contracts";
+
 export * from "./contracts-context";
+export * from "./contractContextBase";
+export * from "./contractContextProviders";
