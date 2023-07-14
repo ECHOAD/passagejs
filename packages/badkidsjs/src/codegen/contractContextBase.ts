@@ -34,7 +34,7 @@ export const NO_MESSAGE_COMPOSER_ERROR_MESSAGE =
 /**
  * a placeholder for non-generated classes
  */
-export interface IEmptyClient {}
+export interface IEmptyClient { }
 
 export interface ISigningClientProvider<T> {
   getSigningClient(contractAddr: string): T;
@@ -54,9 +54,9 @@ export class ContractBase<
   TMsgComposer = IEmptyClient
 > {
   constructor(
-    protected address: string | undefined,
-    protected cosmWasmClient: CosmWasmClient | undefined,
-    protected signingCosmWasmClient: SigningCosmWasmClient | undefined,
+    address: string | undefined,
+    cosmWasmClient: CosmWasmClient | undefined,
+    signingCosmWasmClient: SigningCosmWasmClient | undefined,
     private TSign?: new (
       client: SigningCosmWasmClient,
       sender: string,
@@ -70,7 +70,7 @@ export class ContractBase<
       sender: string,
       contractAddress: string
     ) => TMsgComposer
-  ) {}
+  ) { }
 
   public getSigningClient(contractAddr: string): TSign {
     if (!this.signingCosmWasmClient) throw new Error(NO_SINGING_ERROR_MESSAGE);
