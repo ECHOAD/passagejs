@@ -13,6 +13,9 @@ import {
 
 import { IContractsContext, getProviders } from './contractContextProviders';
 
+
+
+
 interface ContractsConfig {
   address: string | undefined;
   getCosmWasmClient: () => Promise<CosmWasmClient>;
@@ -70,7 +73,7 @@ export const ContractsProvider = ({
 };
 
 export const useContracts = () => {
-  const contracts = useContext(ContractsContext);
+  const contracts: IContractsContext = useContext(ContractsContext);
   if (contracts === null) {
     throw new Error('useContracts must be used within a ContractsProvider');
   }
