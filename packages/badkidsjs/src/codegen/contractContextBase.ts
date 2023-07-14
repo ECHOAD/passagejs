@@ -57,16 +57,16 @@ export class ContractBase<
     address: string | undefined,
     cosmWasmClient: CosmWasmClient | undefined,
     signingCosmWasmClient: SigningCosmWasmClient | undefined,
-    private TSign?: new (
+    TSign?: new (
       client: SigningCosmWasmClient,
       sender: string,
       contractAddress: string
     ) => TSign,
-    private TQuery?: new (
+    TQuery?: new (
       client: CosmWasmClient,
       contractAddress: string
     ) => TQuery,
-    private TMsgComposer?: new (
+    TMsgComposer?: new (
       sender: string,
       contractAddress: string
     ) => TMsgComposer
