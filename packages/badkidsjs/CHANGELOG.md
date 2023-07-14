@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.1.0 (2023-07-14)
+
+**Note:** Version bump only for package badkidsjs
+
+
+
+
+
 # [0.14.0](https://github.com/pyramation/badkidsjs/compare/stargazejs@0.13.0...stargazejs@0.14.0) (2023-06-07)
 
 **Note:** Version bump only for package stargazejs
