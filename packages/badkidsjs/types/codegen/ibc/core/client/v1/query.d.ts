@@ -25,11 +25,11 @@ export interface QueryClientStateRequestSDKType {
  */
 export interface QueryClientStateResponse {
     /** client state associated with the request identifier */
-    clientState?: Any;
+    clientState: Any;
     /** merkle proof of existence */
     proof: Uint8Array;
     /** height at which the proof was retrieved */
-    proofHeight?: Height;
+    proofHeight: Height;
 }
 /**
  * QueryClientStateResponse is the response type for the Query/ClientState RPC
@@ -37,9 +37,9 @@ export interface QueryClientStateResponse {
  * which the proof was retrieved.
  */
 export interface QueryClientStateResponseSDKType {
-    client_state?: AnySDKType;
+    client_state: AnySDKType;
     proof: Uint8Array;
-    proof_height?: HeightSDKType;
+    proof_height: HeightSDKType;
 }
 /**
  * QueryClientStatesRequest is the request type for the Query/ClientStates RPC
@@ -47,14 +47,14 @@ export interface QueryClientStateResponseSDKType {
  */
 export interface QueryClientStatesRequest {
     /** pagination request */
-    pagination?: PageRequest;
+    pagination: PageRequest;
 }
 /**
  * QueryClientStatesRequest is the request type for the Query/ClientStates RPC
  * method
  */
 export interface QueryClientStatesRequestSDKType {
-    pagination?: PageRequestSDKType;
+    pagination: PageRequestSDKType;
 }
 /**
  * QueryClientStatesResponse is the response type for the Query/ClientStates RPC
@@ -64,7 +64,7 @@ export interface QueryClientStatesResponse {
     /** list of stored ClientStates of the chain. */
     clientStates: IdentifiedClientState[];
     /** pagination response */
-    pagination?: PageResponse;
+    pagination: PageResponse;
 }
 /**
  * QueryClientStatesResponse is the response type for the Query/ClientStates RPC
@@ -72,7 +72,7 @@ export interface QueryClientStatesResponse {
  */
 export interface QueryClientStatesResponseSDKType {
     client_states: IdentifiedClientStateSDKType[];
-    pagination?: PageResponseSDKType;
+    pagination: PageResponseSDKType;
 }
 /**
  * QueryConsensusStateRequest is the request type for the Query/ConsensusState
@@ -109,20 +109,20 @@ export interface QueryConsensusStateRequestSDKType {
  */
 export interface QueryConsensusStateResponse {
     /** consensus state associated with the client identifier at the given height */
-    consensusState?: Any;
+    consensusState: Any;
     /** merkle proof of existence */
     proof: Uint8Array;
     /** height at which the proof was retrieved */
-    proofHeight?: Height;
+    proofHeight: Height;
 }
 /**
  * QueryConsensusStateResponse is the response type for the Query/ConsensusState
  * RPC method
  */
 export interface QueryConsensusStateResponseSDKType {
-    consensus_state?: AnySDKType;
+    consensus_state: AnySDKType;
     proof: Uint8Array;
-    proof_height?: HeightSDKType;
+    proof_height: HeightSDKType;
 }
 /**
  * QueryConsensusStatesRequest is the request type for the Query/ConsensusStates
@@ -132,7 +132,7 @@ export interface QueryConsensusStatesRequest {
     /** client identifier */
     clientId: string;
     /** pagination request */
-    pagination?: PageRequest;
+    pagination: PageRequest;
 }
 /**
  * QueryConsensusStatesRequest is the request type for the Query/ConsensusStates
@@ -140,7 +140,7 @@ export interface QueryConsensusStatesRequest {
  */
 export interface QueryConsensusStatesRequestSDKType {
     client_id: string;
-    pagination?: PageRequestSDKType;
+    pagination: PageRequestSDKType;
 }
 /**
  * QueryConsensusStatesResponse is the response type for the
@@ -150,7 +150,7 @@ export interface QueryConsensusStatesResponse {
     /** consensus states associated with the identifier */
     consensusStates: ConsensusStateWithHeight[];
     /** pagination response */
-    pagination?: PageResponse;
+    pagination: PageResponse;
 }
 /**
  * QueryConsensusStatesResponse is the response type for the
@@ -158,7 +158,7 @@ export interface QueryConsensusStatesResponse {
  */
 export interface QueryConsensusStatesResponseSDKType {
     consensus_states: ConsensusStateWithHeightSDKType[];
-    pagination?: PageResponseSDKType;
+    pagination: PageResponseSDKType;
 }
 /**
  * QueryClientStatusRequest is the request type for the Query/ClientStatus RPC
@@ -207,14 +207,14 @@ export interface QueryClientParamsRequestSDKType {
  */
 export interface QueryClientParamsResponse {
     /** params defines the parameters of the module. */
-    params?: Params;
+    params: Params;
 }
 /**
  * QueryClientParamsResponse is the response type for the Query/ClientParams RPC
  * method.
  */
 export interface QueryClientParamsResponseSDKType {
-    params?: ParamsSDKType;
+    params: ParamsSDKType;
 }
 /**
  * QueryUpgradedClientStateRequest is the request type for the
@@ -234,14 +234,14 @@ export interface QueryUpgradedClientStateRequestSDKType {
  */
 export interface QueryUpgradedClientStateResponse {
     /** client state associated with the request identifier */
-    upgradedClientState?: Any;
+    upgradedClientState: Any;
 }
 /**
  * QueryUpgradedClientStateResponse is the response type for the
  * Query/UpgradedClientState RPC method.
  */
 export interface QueryUpgradedClientStateResponseSDKType {
-    upgraded_client_state?: AnySDKType;
+    upgraded_client_state: AnySDKType;
 }
 /**
  * QueryUpgradedConsensusStateRequest is the request type for the
@@ -261,14 +261,14 @@ export interface QueryUpgradedConsensusStateRequestSDKType {
  */
 export interface QueryUpgradedConsensusStateResponse {
     /** Consensus state associated with the request identifier */
-    upgradedConsensusState?: Any;
+    upgradedConsensusState: Any;
 }
 /**
  * QueryUpgradedConsensusStateResponse is the response type for the
  * Query/UpgradedConsensusState RPC method.
  */
 export interface QueryUpgradedConsensusStateResponseSDKType {
-    upgraded_consensus_state?: AnySDKType;
+    upgraded_consensus_state: AnySDKType;
 }
 export declare const QueryClientStateRequest: {
     encode(message: QueryClientStateRequest, writer?: _m0.Writer): _m0.Writer;

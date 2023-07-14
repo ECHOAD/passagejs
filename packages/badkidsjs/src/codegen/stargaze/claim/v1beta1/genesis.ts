@@ -9,22 +9,22 @@ export interface GenesisState {
    * this line is used by starport scaffolding # genesis/proto/state
    * balance of the claim module's account
    */
-  moduleAccountBalance?: Coin;
+  moduleAccountBalance: Coin;
   /** params defines all the parameters of the module. */
-  params?: Params;
+  params: Params;
   /** list of claim records, one for every airdrop recipient */
   claimRecords: ClaimRecord[];
 }
 /** GenesisState defines the claim module's genesis state. */
 export interface GenesisStateSDKType {
-  module_account_balance?: CoinSDKType;
-  params?: ParamsSDKType;
+  module_account_balance: CoinSDKType;
+  params: ParamsSDKType;
   claim_records: ClaimRecordSDKType[];
 }
 function createBaseGenesisState(): GenesisState {
   return {
     moduleAccountBalance: undefined,
-    params: undefined,
+    params: Params.fromPartial({}),
     claimRecords: []
   };
 }

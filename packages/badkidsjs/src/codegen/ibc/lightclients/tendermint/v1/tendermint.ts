@@ -13,20 +13,20 @@ import * as _m0 from "protobufjs/minimal";
  */
 export interface ClientState {
   chainId: string;
-  trustLevel?: Fraction;
+  trustLevel: Fraction;
   /**
    * duration of the period since the LastestTimestamp during which the
    * submitted headers are valid for upgrade
    */
-  trustingPeriod?: Duration;
+  trustingPeriod: Duration;
   /** duration of the staking unbonding period */
-  unbondingPeriod?: Duration;
+  unbondingPeriod: Duration;
   /** defines how much new (untrusted) header's Time can drift into the future. */
-  maxClockDrift?: Duration;
+  maxClockDrift: Duration;
   /** Block height when the client was frozen due to a misbehaviour */
-  frozenHeight?: Height;
+  frozenHeight: Height;
   /** Latest height the client was updated to */
-  latestHeight?: Height;
+  latestHeight: Height;
   /** Proof specifications used in verifying counterparty state */
   proofSpecs: ProofSpec[];
   /**
@@ -56,12 +56,12 @@ export interface ClientState {
  */
 export interface ClientStateSDKType {
   chain_id: string;
-  trust_level?: FractionSDKType;
-  trusting_period?: DurationSDKType;
-  unbonding_period?: DurationSDKType;
-  max_clock_drift?: DurationSDKType;
-  frozen_height?: HeightSDKType;
-  latest_height?: HeightSDKType;
+  trust_level: FractionSDKType;
+  trusting_period: DurationSDKType;
+  unbonding_period: DurationSDKType;
+  max_clock_drift: DurationSDKType;
+  frozen_height: HeightSDKType;
+  latest_height: HeightSDKType;
   proof_specs: ProofSpecSDKType[];
   upgrade_path: string[];
   allow_update_after_expiry: boolean;
@@ -73,15 +73,15 @@ export interface ConsensusState {
    * timestamp that corresponds to the block height in which the ConsensusState
    * was stored.
    */
-  timestamp?: Date;
+  timestamp: Date;
   /** commitment root (i.e app hash) */
-  root?: MerkleRoot;
+  root: MerkleRoot;
   nextValidatorsHash: Uint8Array;
 }
 /** ConsensusState defines the consensus state from Tendermint. */
 export interface ConsensusStateSDKType {
-  timestamp?: Date;
-  root?: MerkleRootSDKType;
+  timestamp: Date;
+  root: MerkleRootSDKType;
   next_validators_hash: Uint8Array;
 }
 /**
@@ -90,8 +90,8 @@ export interface ConsensusStateSDKType {
  */
 export interface Misbehaviour {
   clientId: string;
-  header1?: Header;
-  header2?: Header;
+  header1: Header;
+  header2: Header;
 }
 /**
  * Misbehaviour is a wrapper over two conflicting Headers
@@ -99,8 +99,8 @@ export interface Misbehaviour {
  */
 export interface MisbehaviourSDKType {
   client_id: string;
-  header_1?: HeaderSDKType;
-  header_2?: HeaderSDKType;
+  header_1: HeaderSDKType;
+  header_2: HeaderSDKType;
 }
 /**
  * Header defines the Tendermint client consensus Header.
@@ -117,10 +117,10 @@ export interface MisbehaviourSDKType {
  * trusted validator set at the TrustedHeight.
  */
 export interface Header {
-  signedHeader?: SignedHeader;
-  validatorSet?: ValidatorSet;
-  trustedHeight?: Height;
-  trustedValidators?: ValidatorSet;
+  signedHeader: SignedHeader;
+  validatorSet: ValidatorSet;
+  trustedHeight: Height;
+  trustedValidators: ValidatorSet;
 }
 /**
  * Header defines the Tendermint client consensus Header.
@@ -137,10 +137,10 @@ export interface Header {
  * trusted validator set at the TrustedHeight.
  */
 export interface HeaderSDKType {
-  signed_header?: SignedHeaderSDKType;
-  validator_set?: ValidatorSetSDKType;
-  trusted_height?: HeightSDKType;
-  trusted_validators?: ValidatorSetSDKType;
+  signed_header: SignedHeaderSDKType;
+  validator_set: ValidatorSetSDKType;
+  trusted_height: HeightSDKType;
+  trusted_validators: ValidatorSetSDKType;
 }
 /**
  * Fraction defines the protobuf message type for tmmath.Fraction that only
@@ -161,12 +161,12 @@ export interface FractionSDKType {
 function createBaseClientState(): ClientState {
   return {
     chainId: "",
-    trustLevel: undefined,
+    trustLevel: Fraction.fromPartial({}),
     trustingPeriod: undefined,
     unbondingPeriod: undefined,
     maxClockDrift: undefined,
-    frozenHeight: undefined,
-    latestHeight: undefined,
+    frozenHeight: Height.fromPartial({}),
+    latestHeight: Height.fromPartial({}),
     proofSpecs: [],
     upgradePath: [],
     allowUpdateAfterExpiry: false,
@@ -276,7 +276,7 @@ export const ClientState = {
 function createBaseConsensusState(): ConsensusState {
   return {
     timestamp: undefined,
-    root: undefined,
+    root: MerkleRoot.fromPartial({}),
     nextValidatorsHash: new Uint8Array()
   };
 }
@@ -327,8 +327,8 @@ export const ConsensusState = {
 function createBaseMisbehaviour(): Misbehaviour {
   return {
     clientId: "",
-    header1: undefined,
-    header2: undefined
+    header1: Header.fromPartial({}),
+    header2: Header.fromPartial({})
   };
 }
 export const Misbehaviour = {
@@ -377,10 +377,10 @@ export const Misbehaviour = {
 };
 function createBaseHeader(): Header {
   return {
-    signedHeader: undefined,
-    validatorSet: undefined,
-    trustedHeight: undefined,
-    trustedValidators: undefined
+    signedHeader: SignedHeader.fromPartial({}),
+    validatorSet: ValidatorSet.fromPartial({}),
+    trustedHeight: Height.fromPartial({}),
+    trustedValidators: ValidatorSet.fromPartial({})
   };
 }
 export const Header = {

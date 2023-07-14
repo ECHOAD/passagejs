@@ -54,7 +54,7 @@ export interface Channel {
     /** whether the channel is ordered or unordered */
     ordering: Order;
     /** counterparty channel end */
-    counterparty?: Counterparty;
+    counterparty: Counterparty;
     /**
      * list of connection identifiers, in order, along which packets sent on
      * this channel will travel
@@ -71,7 +71,7 @@ export interface Channel {
 export interface ChannelSDKType {
     state: State;
     ordering: Order;
-    counterparty?: CounterpartySDKType;
+    counterparty: CounterpartySDKType;
     connection_hops: string[];
     version: string;
 }
@@ -85,7 +85,7 @@ export interface IdentifiedChannel {
     /** whether the channel is ordered or unordered */
     ordering: Order;
     /** counterparty channel end */
-    counterparty?: Counterparty;
+    counterparty: Counterparty;
     /**
      * list of connection identifiers, in order, along which packets sent on
      * this channel will travel
@@ -105,7 +105,7 @@ export interface IdentifiedChannel {
 export interface IdentifiedChannelSDKType {
     state: State;
     ordering: Order;
-    counterparty?: CounterpartySDKType;
+    counterparty: CounterpartySDKType;
     connection_hops: string[];
     version: string;
     port_id: string;
@@ -142,7 +142,7 @@ export interface Packet {
     /** actual opaque bytes transferred directly to the application module */
     data: Uint8Array;
     /** block height after which the packet times out */
-    timeoutHeight?: Height;
+    timeoutHeight: Height;
     /** block timestamp (in nanoseconds) after which the packet times out */
     timeoutTimestamp: Long;
 }
@@ -154,7 +154,7 @@ export interface PacketSDKType {
     destination_port: string;
     destination_channel: string;
     data: Uint8Array;
-    timeout_height?: HeightSDKType;
+    timeout_height: HeightSDKType;
     timeout_timestamp: Long;
 }
 /**

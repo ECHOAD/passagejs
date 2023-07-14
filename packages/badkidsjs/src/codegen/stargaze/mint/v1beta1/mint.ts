@@ -15,7 +15,7 @@ export interface Params {
   /** type of coin to mint */
   mintDenom: string;
   /** the time the chain starts */
-  startTime?: Date;
+  startTime: Date;
   /** initial annual provisions */
   initialAnnualProvisions: string;
   /** factor to reduce inflation by each year */
@@ -26,7 +26,7 @@ export interface Params {
 /** Params holds parameters for the mint module. */
 export interface ParamsSDKType {
   mint_denom: string;
-  start_time?: Date;
+  start_time: Date;
   initial_annual_provisions: string;
   reduction_factor: string;
   blocks_per_year: Long;

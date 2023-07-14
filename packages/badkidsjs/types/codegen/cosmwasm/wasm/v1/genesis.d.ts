@@ -4,7 +4,7 @@ import { Long, DeepPartial } from "../../../helpers";
 import * as _m0 from "protobufjs/minimal";
 /** GenesisState - genesis state of x/wasm */
 export interface GenesisState {
-    params?: Params;
+    params: Params;
     codes: Code[];
     contracts: Contract[];
     sequences: Sequence[];
@@ -12,7 +12,7 @@ export interface GenesisState {
 }
 /** GenesisState - genesis state of x/wasm */
 export interface GenesisStateSDKType {
-    params?: ParamsSDKType;
+    params: ParamsSDKType;
     codes: CodeSDKType[];
     contracts: ContractSDKType[];
     sequences: SequenceSDKType[];
@@ -39,7 +39,7 @@ export interface GenesisState_GenMsgsSDKType {
 /** Code struct encompasses CodeInfo and CodeBytes */
 export interface Code {
     codeId: Long;
-    codeInfo?: CodeInfo;
+    codeInfo: CodeInfo;
     codeBytes: Uint8Array;
     /** Pinned to wasmvm cache */
     pinned: boolean;
@@ -47,20 +47,20 @@ export interface Code {
 /** Code struct encompasses CodeInfo and CodeBytes */
 export interface CodeSDKType {
     code_id: Long;
-    code_info?: CodeInfoSDKType;
+    code_info: CodeInfoSDKType;
     code_bytes: Uint8Array;
     pinned: boolean;
 }
 /** Contract struct encompasses ContractAddress, ContractInfo, and ContractState */
 export interface Contract {
     contractAddress: string;
-    contractInfo?: ContractInfo;
+    contractInfo: ContractInfo;
     contractState: Model[];
 }
 /** Contract struct encompasses ContractAddress, ContractInfo, and ContractState */
 export interface ContractSDKType {
     contract_address: string;
-    contract_info?: ContractInfoSDKType;
+    contract_info: ContractInfoSDKType;
     contract_state: ModelSDKType[];
 }
 /** Sequence key and value of an id generation counter */

@@ -10,7 +10,7 @@ export interface MsgSoftwareUpgrade {
     /** authority is the address of the governance account. */
     authority: string;
     /** plan is the upgrade plan. */
-    plan?: Plan;
+    plan: Plan;
 }
 /**
  * MsgSoftwareUpgrade is the Msg/SoftwareUpgrade request type.
@@ -19,7 +19,7 @@ export interface MsgSoftwareUpgrade {
  */
 export interface MsgSoftwareUpgradeSDKType {
     authority: string;
-    plan?: PlanSDKType;
+    plan: PlanSDKType;
 }
 /**
  * MsgSoftwareUpgradeResponse is the Msg/SoftwareUpgrade response type.

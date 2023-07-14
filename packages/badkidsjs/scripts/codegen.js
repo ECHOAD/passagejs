@@ -11,8 +11,10 @@ const badKidsDir = resolve(
 );
 
 
+const contracts = [
+  
+  // launchpad contracts
 
-const launchpadContracts = [
   {
     name: "SG721Base",
     dir: join(launchpadDir, "collections", "sg721-base"),
@@ -21,22 +23,26 @@ const launchpadContracts = [
     name: "SG721MetadataOnchain",
     dir: join(launchpadDir, "collections", "sg721-metadata-onchain"),
   },
-  {
-    name: "Sg721Nt",
-    dir: join(launchpadDir, "collections", "sg721-nt"),
-  },
+  // {
+  //   name: "Sg721Nt",
+  //   dir: join(launchpadDir, "collections", "sg721-nt"),
+  // },
   {
     name: "Sg721Updatable",
     dir: join(launchpadDir, "collections", "sg721-updatable"),
   },
+
+  //
   {
     name: "BaseFactory",
     dir: join(launchpadDir, "factories", "base-factory"),
   },
-  {
-    name: "VendingFactory",
-    dir: join(launchpadDir, "factories", "vending-factory"),
-  },
+  // {
+  //   name: "VendingFactory",
+  //   dir: join(launchpadDir, "factories", "vending-factory"),
+  // },
+  //
+
   {
     name: "BaseMinter",
     dir: join(launchpadDir, "minters", "base-minter"),
@@ -45,52 +51,41 @@ const launchpadContracts = [
     name: "VendingMinter",
     dir: join(launchpadDir, "minters", "vending-minter"),
   },
-  {
-    name: "VendingMinterWlFlex",
-    dir: join(launchpadDir, "minters", "vending-minter-wl-flex"),
-  },
-  {
-    name: "SgEthAirdrop",
-    dir: join(launchpadDir, "sg-eth-airdrop"),
-  },
-  {
-    name: "Splits",
-    dir: join(launchpadDir, "splits"),
-  },
-  {
-    name: "Whitelist",
-    dir: join(launchpadDir, "whitelists", "whitelist"),
-  },
-  {
-    name: "WhitelistFlex",
-    dir: join(launchpadDir, "whitelists", "whitelist-flex"),
-  },
-  {
-    name: "WhitelistImmutable",
-    dir: join(launchpadDir, "whitelists", "whitelist-immutable"),
-  },
-];
 
+  // {
+  //   name: "Splits",
+  //   dir: join(launchpadDir, "splits"),
+  // },
+  // {
+  //   name: "Whitelist",
+  //   dir: join(launchpadDir, "whitelists", "whitelist"),
+  // },
+  // {
+  //   name: "WhitelistFlex",
+  //   dir: join(launchpadDir, "whitelists", "whitelist-flex"),
+  // },
+  // {
+  //   name: "WhitelistImmutable",
+  //   dir: join(launchpadDir, "whitelists", "whitelist-immutable"),
+  // },
+  
+  // badKidsContracts
+    {
+      name: "BadKids",
+      dir: badKidsDir,
+    },
 
-const badKidsContracts = [
-  {
-    name: "BadKids",
-    dir: badKidsDir,
-  }
-];
-
-const marketplaceContracts = [
-  {
-    name: "Marketplace",
-    dir: join(marketplaceDir, "marketplace"),
-  },
-  {
-    name: "ReserveAuction",
-    dir: join(marketplaceDir, "reserve-auction"),
-  },
-];
-
-const contracts = [...launchpadContracts, ...marketplaceContracts, ...badKidsContracts];
+  // marketplaceContracts
+    {
+      name: "Marketplace",
+      dir: join(marketplaceDir, "marketplace"),
+    },
+    // {
+    //   name: "ReserveAuction",
+    //   dir: join(marketplaceDir, "reserve-auction"),
+    // },
+  
+]
 
 telescope({
   protoDirs,
@@ -150,6 +145,9 @@ telescope({
           enabled: true
         },
         messageComposer: {
+          enabled: true
+        },
+        useContractsHooks: {
           enabled: true
         }
       }

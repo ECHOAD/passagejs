@@ -18,12 +18,12 @@ export interface DistributionProportionsSDKType {
 }
 export interface Params {
   /** distribution_proportions defines the proportion of the minted denom */
-  distributionProportions?: DistributionProportions;
+  distributionProportions: DistributionProportions;
   /** address to receive developer rewards */
   weightedDeveloperRewardsReceivers: WeightedAddress[];
 }
 export interface ParamsSDKType {
-  distribution_proportions?: DistributionProportionsSDKType;
+  distribution_proportions: DistributionProportionsSDKType;
   weighted_developer_rewards_receivers: WeightedAddressSDKType[];
 }
 function createBaseWeightedAddress(): WeightedAddress {
@@ -114,7 +114,7 @@ export const DistributionProportions = {
 };
 function createBaseParams(): Params {
   return {
-    distributionProportions: undefined,
+    distributionProportions: DistributionProportions.fromPartial({}),
     weightedDeveloperRewardsReceivers: []
   };
 }
