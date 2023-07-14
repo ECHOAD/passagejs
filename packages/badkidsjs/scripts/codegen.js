@@ -149,6 +149,11 @@ telescope({
         },
         useContractsHooks: {
           enabled: true
+        },
+        reactQuery: {
+          enabled: true,
+          version: 'v4',
+          mutations: true
         }
       }
     },

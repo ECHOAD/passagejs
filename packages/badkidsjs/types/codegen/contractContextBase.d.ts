@@ -30,9 +30,6 @@ export interface IMessageComposerProvider<T> {
     getMessageComposer(contractAddr: string): T;
 }
 export declare class ContractBase<TSign = IEmptyClient, TQuery = IEmptyClient, TMsgComposer = IEmptyClient> {
-    address: string | undefined;
-    cosmWasmClient: CosmWasmClient | undefined;
-    signingCosmWasmClient: SigningCosmWasmClient | undefined;
     private TSign?;
     private TQuery?;
     private TMsgComposer?;

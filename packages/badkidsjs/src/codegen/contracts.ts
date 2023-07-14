@@ -7,74 +7,90 @@
 import * as _0 from "./SG721Base.types";
 import * as _1 from "./SG721Base.client";
 import * as _2 from "./SG721Base.message-composer";
-import * as _3 from "./SG721Base.provider";
-import * as _4 from "./SG721MetadataOnchain.types";
-import * as _5 from "./SG721MetadataOnchain.client";
-import * as _6 from "./SG721MetadataOnchain.message-composer";
-import * as _7 from "./SG721MetadataOnchain.provider";
-import * as _8 from "./Sg721Updatable.types";
-import * as _9 from "./Sg721Updatable.client";
-import * as _10 from "./Sg721Updatable.message-composer";
-import * as _11 from "./Sg721Updatable.provider";
-import * as _12 from "./BaseFactory.types";
-import * as _13 from "./BaseFactory.client";
-import * as _14 from "./BaseFactory.message-composer";
-import * as _15 from "./BaseFactory.provider";
-import * as _16 from "./BaseMinter.types";
-import * as _17 from "./BaseMinter.client";
-import * as _18 from "./BaseMinter.message-composer";
-import * as _19 from "./BaseMinter.provider";
-import * as _20 from "./VendingMinter.types";
-import * as _21 from "./VendingMinter.client";
-import * as _22 from "./VendingMinter.message-composer";
-import * as _23 from "./VendingMinter.provider";
-import * as _24 from "./BadKids.types";
-import * as _25 from "./BadKids.client";
-import * as _26 from "./BadKids.message-composer";
-import * as _27 from "./BadKids.provider";
-import * as _28 from "./Marketplace.types";
-import * as _29 from "./Marketplace.client";
-import * as _30 from "./Marketplace.message-composer";
-import * as _31 from "./Marketplace.provider";
+import * as _3 from "./SG721Base.react-query";
+import * as _4 from "./SG721Base.provider";
+import * as _5 from "./SG721MetadataOnchain.types";
+import * as _6 from "./SG721MetadataOnchain.client";
+import * as _7 from "./SG721MetadataOnchain.message-composer";
+import * as _8 from "./SG721MetadataOnchain.react-query";
+import * as _9 from "./SG721MetadataOnchain.provider";
+import * as _10 from "./Sg721Updatable.types";
+import * as _11 from "./Sg721Updatable.client";
+import * as _12 from "./Sg721Updatable.message-composer";
+import * as _13 from "./Sg721Updatable.react-query";
+import * as _14 from "./Sg721Updatable.provider";
+import * as _15 from "./BaseFactory.types";
+import * as _16 from "./BaseFactory.client";
+import * as _17 from "./BaseFactory.message-composer";
+import * as _18 from "./BaseFactory.react-query";
+import * as _19 from "./BaseFactory.provider";
+import * as _20 from "./BaseMinter.types";
+import * as _21 from "./BaseMinter.client";
+import * as _22 from "./BaseMinter.message-composer";
+import * as _23 from "./BaseMinter.react-query";
+import * as _24 from "./BaseMinter.provider";
+import * as _25 from "./VendingMinter.types";
+import * as _26 from "./VendingMinter.client";
+import * as _27 from "./VendingMinter.message-composer";
+import * as _28 from "./VendingMinter.react-query";
+import * as _29 from "./VendingMinter.provider";
+import * as _30 from "./BadKids.types";
+import * as _31 from "./BadKids.client";
+import * as _32 from "./BadKids.message-composer";
+import * as _33 from "./BadKids.react-query";
+import * as _34 from "./BadKids.provider";
+import * as _35 from "./Marketplace.types";
+import * as _36 from "./Marketplace.client";
+import * as _37 from "./Marketplace.message-composer";
+import * as _38 from "./Marketplace.react-query";
+import * as _39 from "./Marketplace.provider";
 export namespace contracts {
   export const SG721Base = { ..._0,
     ..._1,
     ..._2,
-    ..._3
+    ..._3,
+    ..._4
   };
-  export const SG721MetadataOnchain = { ..._4,
-    ..._5,
+  export const SG721MetadataOnchain = { ..._5,
     ..._6,
-    ..._7
+    ..._7,
+    ..._8,
+    ..._9
   };
-  export const Sg721Updatable = { ..._8,
-    ..._9,
-    ..._10,
-    ..._11
-  };
-  export const BaseFactory = { ..._12,
+  export const Sg721Updatable = { ..._10,
+    ..._11,
+    ..._12,
     ..._13,
-    ..._14,
-    ..._15
+    ..._14
   };
-  export const BaseMinter = { ..._16,
+  export const BaseFactory = { ..._15,
+    ..._16,
     ..._17,
     ..._18,
     ..._19
   };
-  export const VendingMinter = { ..._20,
+  export const BaseMinter = { ..._20,
     ..._21,
     ..._22,
-    ..._23
+    ..._23,
+    ..._24
   };
-  export const BadKids = { ..._24,
-    ..._25,
+  export const VendingMinter = { ..._25,
     ..._26,
-    ..._27
+    ..._27,
+    ..._28,
+    ..._29
   };
-  export const Marketplace = { ..._28,
-    ..._29,
-    ..._30,
-    ..._31
+  export const BadKids = { ..._30,
+    ..._31,
+    ..._32,
+    ..._33,
+    ..._34
+  };
+  export const Marketplace = { ..._35,
+    ..._36,
+    ..._37,
+    ..._38,
+    ..._39
   };
 }
