@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/pyramation/badkidsjs/compare/badkidsjs@1.1.4...badkidsjs@1.2.0) (2023-07-14)
+
+**Note:** Version bump only for package badkidsjs
+
+
+
+
+
 ## [1.1.4](https://github.com/pyramation/badkidsjs/compare/badkidsjs@1.1.3...badkidsjs@1.1.4) (2023-07-14)
 
 **Note:** Version bump only for package badkidsjs
