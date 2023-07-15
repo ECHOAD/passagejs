@@ -15,6 +15,82 @@ TS library with Cosmos SDK and BadKids smart contracts.
 npm install badkidsjs
 ```
 
+### Providers
+
+First, make sure to create a provider for the chain you want to use. You can use the `useChain` hook from `cosmos-kit` or pass in `address` and promises to return the query/signing clients:
+
+```tsx
+import { ContractsProvider } from 'badkidsjs';
+import { useChain } from '@cosmos-kit/react';
+
+const ChainContractProvider = ({ chainName, children }: { chainName: string, children: any }) => {
+  const { address, getCosmWasmClient, getSigningCosmWasmClient } = useChain(chainName);
+  return (
+    <ContractsProvider contractsConfig={{
+      address,
+      getCosmWasmClient,
+      getSigningCosmWasmClient
+    }}>
+      {children}
+    </ContractsProvider>
+  );
+};
+```
+
+### Connected Components
+
+After you've created your provider, you can leverage the `useContracts` hook:
+
+```tsx
+import { useContracts } from 'badkidsjs';
+import { useChain } from '@cosmos-kit/react';
+
+const ExampleComponent = ({chainName}:{chainName: string}) => {
+  const { 
+    badKids, 
+    sg721Updatable,
+    marketplace
+  } = useContracts();
+
+  const { address, status } = useChain(chainName);
+
+  if (address && badKids.cosmWasmClient) {
+      const composer = badKids.getMessageComposer(badKidsAddr)
+      // do something with composer
+      console.log(composer);
+
+      // do something with a query client 
+      const sg = sg721Updatable.getQueryClient(sg721UpdatableAddr);
+      sg.allNftInfo({
+        includeExpired: false,
+        tokenId: 2
+      }).then(nftInfo=>{
+        console.log(nftInfo.info.token_uri);
+      })
+      
+      // do something with a signing client 
+      const mrkt = marketplace.getQueryClient(marketplaceAddr);
+      mrkt.bid({
+        bidder: 'stars1wvmhlyajmut758w6uvnnrlgc4gx5g8tndffp05',
+        collection: 'stars19jq6mj84cnt9p7sagjxqf8hxtczwc8wlpuwe4sh62w45aheseues57n420',
+        tokenId: 2
+      })
+      
+
+  } else if (marketplace.cosmWasmClient) {
+    const query = marketplace.getQueryClient(marketplaceAddr);
+    // do something with query client from marketplace
+    console.log(query);
+  }
+
+  return (
+    <div>
+      {address}
+    </div>
+  );
+}
+```
+
 ### Cosmos SDK clients
 
 ```js
