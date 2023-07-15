@@ -16,25 +16,25 @@ export interface VendingMinterReactQuery<TResponse, TData = TResponse> {
 }
 export interface VendingMinterStatusQuery<TData> extends VendingMinterReactQuery<StatusResponse, TData> {
 }
-export declare function useVendingMinterStatusQuery<TData = StatusResponse>({ client, options }: VendingMinterStatusQuery<TData>): any;
+export declare function useVendingMinterStatusQuery<TData = StatusResponse>({ client, options }: VendingMinterStatusQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface VendingMinterMintCountQuery<TData> extends VendingMinterReactQuery<MintCountResponse, TData> {
     args: {
         address: string;
     };
 }
-export declare function useVendingMinterMintCountQuery<TData = MintCountResponse>({ client, args, options }: VendingMinterMintCountQuery<TData>): any;
+export declare function useVendingMinterMintCountQuery<TData = MintCountResponse>({ client, args, options }: VendingMinterMintCountQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface VendingMinterMintPriceQuery<TData> extends VendingMinterReactQuery<MintPriceResponse, TData> {
 }
-export declare function useVendingMinterMintPriceQuery<TData = MintPriceResponse>({ client, options }: VendingMinterMintPriceQuery<TData>): any;
+export declare function useVendingMinterMintPriceQuery<TData = MintPriceResponse>({ client, options }: VendingMinterMintPriceQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface VendingMinterStartTimeQuery<TData> extends VendingMinterReactQuery<StartTimeResponse, TData> {
 }
-export declare function useVendingMinterStartTimeQuery<TData = StartTimeResponse>({ client, options }: VendingMinterStartTimeQuery<TData>): any;
+export declare function useVendingMinterStartTimeQuery<TData = StartTimeResponse>({ client, options }: VendingMinterStartTimeQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface VendingMinterMintableNumTokensQuery<TData> extends VendingMinterReactQuery<MintableNumTokensResponse, TData> {
 }
-export declare function useVendingMinterMintableNumTokensQuery<TData = MintableNumTokensResponse>({ client, options }: VendingMinterMintableNumTokensQuery<TData>): any;
+export declare function useVendingMinterMintableNumTokensQuery<TData = MintableNumTokensResponse>({ client, options }: VendingMinterMintableNumTokensQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface VendingMinterConfigQuery<TData> extends VendingMinterReactQuery<ConfigResponse, TData> {
 }
-export declare function useVendingMinterConfigQuery<TData = ConfigResponse>({ client, options }: VendingMinterConfigQuery<TData>): any;
+export declare function useVendingMinterConfigQuery<TData = ConfigResponse>({ client, options }: VendingMinterConfigQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface VendingMinterRemoveDiscountPriceMutation {
     client: VendingMinterClient;
     args?: {
@@ -43,7 +43,7 @@ export interface VendingMinterRemoveDiscountPriceMutation {
         funds?: Coin[];
     };
 }
-export declare function useVendingMinterRemoveDiscountPriceMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, VendingMinterRemoveDiscountPriceMutation>, "mutationFn">): any;
+export declare function useVendingMinterRemoveDiscountPriceMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, VendingMinterRemoveDiscountPriceMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, VendingMinterRemoveDiscountPriceMutation, unknown>;
 export interface VendingMinterUpdateDiscountPriceMutation {
     client: VendingMinterClient;
     msg: {
@@ -55,7 +55,7 @@ export interface VendingMinterUpdateDiscountPriceMutation {
         funds?: Coin[];
     };
 }
-export declare function useVendingMinterUpdateDiscountPriceMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, VendingMinterUpdateDiscountPriceMutation>, "mutationFn">): any;
+export declare function useVendingMinterUpdateDiscountPriceMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, VendingMinterUpdateDiscountPriceMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, VendingMinterUpdateDiscountPriceMutation, unknown>;
 export interface VendingMinterBurnRemainingMutation {
     client: VendingMinterClient;
     args?: {
@@ -64,7 +64,7 @@ export interface VendingMinterBurnRemainingMutation {
         funds?: Coin[];
     };
 }
-export declare function useVendingMinterBurnRemainingMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, VendingMinterBurnRemainingMutation>, "mutationFn">): any;
+export declare function useVendingMinterBurnRemainingMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, VendingMinterBurnRemainingMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, VendingMinterBurnRemainingMutation, unknown>;
 export interface VendingMinterShuffleMutation {
     client: VendingMinterClient;
     args?: {
@@ -73,7 +73,7 @@ export interface VendingMinterShuffleMutation {
         funds?: Coin[];
     };
 }
-export declare function useVendingMinterShuffleMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, VendingMinterShuffleMutation>, "mutationFn">): any;
+export declare function useVendingMinterShuffleMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, VendingMinterShuffleMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, VendingMinterShuffleMutation, unknown>;
 export interface VendingMinterMintForMutation {
     client: VendingMinterClient;
     msg: {
@@ -86,7 +86,7 @@ export interface VendingMinterMintForMutation {
         funds?: Coin[];
     };
 }
-export declare function useVendingMinterMintForMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, VendingMinterMintForMutation>, "mutationFn">): any;
+export declare function useVendingMinterMintForMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, VendingMinterMintForMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, VendingMinterMintForMutation, unknown>;
 export interface VendingMinterMintToMutation {
     client: VendingMinterClient;
     msg: {
@@ -98,7 +98,7 @@ export interface VendingMinterMintToMutation {
         funds?: Coin[];
     };
 }
-export declare function useVendingMinterMintToMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, VendingMinterMintToMutation>, "mutationFn">): any;
+export declare function useVendingMinterMintToMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, VendingMinterMintToMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, VendingMinterMintToMutation, unknown>;
 export interface VendingMinterUpdatePerAddressLimitMutation {
     client: VendingMinterClient;
     msg: {
@@ -110,7 +110,7 @@ export interface VendingMinterUpdatePerAddressLimitMutation {
         funds?: Coin[];
     };
 }
-export declare function useVendingMinterUpdatePerAddressLimitMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, VendingMinterUpdatePerAddressLimitMutation>, "mutationFn">): any;
+export declare function useVendingMinterUpdatePerAddressLimitMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, VendingMinterUpdatePerAddressLimitMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, VendingMinterUpdatePerAddressLimitMutation, unknown>;
 export interface VendingMinterUpdateStartTradingTimeMutation {
     client: VendingMinterClient;
     args?: {
@@ -119,7 +119,7 @@ export interface VendingMinterUpdateStartTradingTimeMutation {
         funds?: Coin[];
     };
 }
-export declare function useVendingMinterUpdateStartTradingTimeMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, VendingMinterUpdateStartTradingTimeMutation>, "mutationFn">): any;
+export declare function useVendingMinterUpdateStartTradingTimeMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, VendingMinterUpdateStartTradingTimeMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, VendingMinterUpdateStartTradingTimeMutation, unknown>;
 export interface VendingMinterUpdateStartTimeMutation {
     client: VendingMinterClient;
     args?: {
@@ -128,7 +128,7 @@ export interface VendingMinterUpdateStartTimeMutation {
         funds?: Coin[];
     };
 }
-export declare function useVendingMinterUpdateStartTimeMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, VendingMinterUpdateStartTimeMutation>, "mutationFn">): any;
+export declare function useVendingMinterUpdateStartTimeMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, VendingMinterUpdateStartTimeMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, VendingMinterUpdateStartTimeMutation, unknown>;
 export interface VendingMinterUpdateMintPriceMutation {
     client: VendingMinterClient;
     msg: {
@@ -140,7 +140,7 @@ export interface VendingMinterUpdateMintPriceMutation {
         funds?: Coin[];
     };
 }
-export declare function useVendingMinterUpdateMintPriceMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, VendingMinterUpdateMintPriceMutation>, "mutationFn">): any;
+export declare function useVendingMinterUpdateMintPriceMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, VendingMinterUpdateMintPriceMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, VendingMinterUpdateMintPriceMutation, unknown>;
 export interface VendingMinterPurgeMutation {
     client: VendingMinterClient;
     args?: {
@@ -149,7 +149,7 @@ export interface VendingMinterPurgeMutation {
         funds?: Coin[];
     };
 }
-export declare function useVendingMinterPurgeMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, VendingMinterPurgeMutation>, "mutationFn">): any;
+export declare function useVendingMinterPurgeMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, VendingMinterPurgeMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, VendingMinterPurgeMutation, unknown>;
 export interface VendingMinterSetWhitelistMutation {
     client: VendingMinterClient;
     msg: {
@@ -161,7 +161,7 @@ export interface VendingMinterSetWhitelistMutation {
         funds?: Coin[];
     };
 }
-export declare function useVendingMinterSetWhitelistMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, VendingMinterSetWhitelistMutation>, "mutationFn">): any;
+export declare function useVendingMinterSetWhitelistMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, VendingMinterSetWhitelistMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, VendingMinterSetWhitelistMutation, unknown>;
 export interface VendingMinterMintMutation {
     client: VendingMinterClient;
     args?: {
@@ -170,4 +170,4 @@ export interface VendingMinterMintMutation {
         funds?: Coin[];
     };
 }
-export declare function useVendingMinterMintMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, VendingMinterMintMutation>, "mutationFn">): any;
+export declare function useVendingMinterMintMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, VendingMinterMintMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, VendingMinterMintMutation, unknown>;

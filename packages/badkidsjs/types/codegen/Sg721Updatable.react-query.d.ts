@@ -16,17 +16,17 @@ export interface Sg721UpdatableReactQuery<TResponse, TData = TResponse> {
 }
 export interface Sg721UpdatableCollectionInfoQuery<TData> extends Sg721UpdatableReactQuery<CollectionInfoResponse, TData> {
 }
-export declare function useSg721UpdatableCollectionInfoQuery<TData = CollectionInfoResponse>({ client, options }: Sg721UpdatableCollectionInfoQuery<TData>): any;
+export declare function useSg721UpdatableCollectionInfoQuery<TData = CollectionInfoResponse>({ client, options }: Sg721UpdatableCollectionInfoQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface Sg721UpdatableMinterQuery<TData> extends Sg721UpdatableReactQuery<MinterResponse, TData> {
 }
-export declare function useSg721UpdatableMinterQuery<TData = MinterResponse>({ client, options }: Sg721UpdatableMinterQuery<TData>): any;
+export declare function useSg721UpdatableMinterQuery<TData = MinterResponse>({ client, options }: Sg721UpdatableMinterQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface Sg721UpdatableAllTokensQuery<TData> extends Sg721UpdatableReactQuery<AllTokensResponse, TData> {
     args: {
         limit?: number;
         startAfter?: string;
     };
 }
-export declare function useSg721UpdatableAllTokensQuery<TData = AllTokensResponse>({ client, args, options }: Sg721UpdatableAllTokensQuery<TData>): any;
+export declare function useSg721UpdatableAllTokensQuery<TData = AllTokensResponse>({ client, args, options }: Sg721UpdatableAllTokensQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface Sg721UpdatableTokensQuery<TData> extends Sg721UpdatableReactQuery<TokensResponse, TData> {
     args: {
         limit?: number;
@@ -34,26 +34,26 @@ export interface Sg721UpdatableTokensQuery<TData> extends Sg721UpdatableReactQue
         startAfter?: string;
     };
 }
-export declare function useSg721UpdatableTokensQuery<TData = TokensResponse>({ client, args, options }: Sg721UpdatableTokensQuery<TData>): any;
+export declare function useSg721UpdatableTokensQuery<TData = TokensResponse>({ client, args, options }: Sg721UpdatableTokensQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface Sg721UpdatableAllNftInfoQuery<TData> extends Sg721UpdatableReactQuery<AllNftInfoResponse, TData> {
     args: {
         includeExpired?: boolean;
         tokenId: string;
     };
 }
-export declare function useSg721UpdatableAllNftInfoQuery<TData = AllNftInfoResponse>({ client, args, options }: Sg721UpdatableAllNftInfoQuery<TData>): any;
+export declare function useSg721UpdatableAllNftInfoQuery<TData = AllNftInfoResponse>({ client, args, options }: Sg721UpdatableAllNftInfoQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface Sg721UpdatableNftInfoQuery<TData> extends Sg721UpdatableReactQuery<NftInfoResponse, TData> {
     args: {
         tokenId: string;
     };
 }
-export declare function useSg721UpdatableNftInfoQuery<TData = NftInfoResponse>({ client, args, options }: Sg721UpdatableNftInfoQuery<TData>): any;
+export declare function useSg721UpdatableNftInfoQuery<TData = NftInfoResponse>({ client, args, options }: Sg721UpdatableNftInfoQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface Sg721UpdatableContractInfoQuery<TData> extends Sg721UpdatableReactQuery<ContractInfoResponse, TData> {
 }
-export declare function useSg721UpdatableContractInfoQuery<TData = ContractInfoResponse>({ client, options }: Sg721UpdatableContractInfoQuery<TData>): any;
+export declare function useSg721UpdatableContractInfoQuery<TData = ContractInfoResponse>({ client, options }: Sg721UpdatableContractInfoQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface Sg721UpdatableNumTokensQuery<TData> extends Sg721UpdatableReactQuery<NumTokensResponse, TData> {
 }
-export declare function useSg721UpdatableNumTokensQuery<TData = NumTokensResponse>({ client, options }: Sg721UpdatableNumTokensQuery<TData>): any;
+export declare function useSg721UpdatableNumTokensQuery<TData = NumTokensResponse>({ client, options }: Sg721UpdatableNumTokensQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface Sg721UpdatableAllOperatorsQuery<TData> extends Sg721UpdatableReactQuery<AllOperatorsResponse, TData> {
     args: {
         includeExpired?: boolean;
@@ -62,14 +62,14 @@ export interface Sg721UpdatableAllOperatorsQuery<TData> extends Sg721UpdatableRe
         startAfter?: string;
     };
 }
-export declare function useSg721UpdatableAllOperatorsQuery<TData = AllOperatorsResponse>({ client, args, options }: Sg721UpdatableAllOperatorsQuery<TData>): any;
+export declare function useSg721UpdatableAllOperatorsQuery<TData = AllOperatorsResponse>({ client, args, options }: Sg721UpdatableAllOperatorsQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface Sg721UpdatableApprovalsQuery<TData> extends Sg721UpdatableReactQuery<ApprovalsResponse, TData> {
     args: {
         includeExpired?: boolean;
         tokenId: string;
     };
 }
-export declare function useSg721UpdatableApprovalsQuery<TData = ApprovalsResponse>({ client, args, options }: Sg721UpdatableApprovalsQuery<TData>): any;
+export declare function useSg721UpdatableApprovalsQuery<TData = ApprovalsResponse>({ client, args, options }: Sg721UpdatableApprovalsQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface Sg721UpdatableApprovalQuery<TData> extends Sg721UpdatableReactQuery<ApprovalResponse, TData> {
     args: {
         includeExpired?: boolean;
@@ -77,14 +77,14 @@ export interface Sg721UpdatableApprovalQuery<TData> extends Sg721UpdatableReactQ
         tokenId: string;
     };
 }
-export declare function useSg721UpdatableApprovalQuery<TData = ApprovalResponse>({ client, args, options }: Sg721UpdatableApprovalQuery<TData>): any;
+export declare function useSg721UpdatableApprovalQuery<TData = ApprovalResponse>({ client, args, options }: Sg721UpdatableApprovalQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface Sg721UpdatableOwnerOfQuery<TData> extends Sg721UpdatableReactQuery<OwnerOfResponse, TData> {
     args: {
         includeExpired?: boolean;
         tokenId: string;
     };
 }
-export declare function useSg721UpdatableOwnerOfQuery<TData = OwnerOfResponse>({ client, args, options }: Sg721UpdatableOwnerOfQuery<TData>): any;
+export declare function useSg721UpdatableOwnerOfQuery<TData = OwnerOfResponse>({ client, args, options }: Sg721UpdatableOwnerOfQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface Sg721UpdatableExtensionMutation {
     client: Sg721UpdatableClient;
     msg: {
@@ -96,7 +96,7 @@ export interface Sg721UpdatableExtensionMutation {
         funds?: Coin[];
     };
 }
-export declare function useSg721UpdatableExtensionMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, Sg721UpdatableExtensionMutation>, "mutationFn">): any;
+export declare function useSg721UpdatableExtensionMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, Sg721UpdatableExtensionMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, Sg721UpdatableExtensionMutation, unknown>;
 export interface Sg721UpdatableMintMutation {
     client: Sg721UpdatableClient;
     msg: {
@@ -111,7 +111,7 @@ export interface Sg721UpdatableMintMutation {
         funds?: Coin[];
     };
 }
-export declare function useSg721UpdatableMintMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, Sg721UpdatableMintMutation>, "mutationFn">): any;
+export declare function useSg721UpdatableMintMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, Sg721UpdatableMintMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, Sg721UpdatableMintMutation, unknown>;
 export interface Sg721UpdatableFreezeCollectionInfoMutation {
     client: Sg721UpdatableClient;
     args?: {
@@ -120,7 +120,7 @@ export interface Sg721UpdatableFreezeCollectionInfoMutation {
         funds?: Coin[];
     };
 }
-export declare function useSg721UpdatableFreezeCollectionInfoMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, Sg721UpdatableFreezeCollectionInfoMutation>, "mutationFn">): any;
+export declare function useSg721UpdatableFreezeCollectionInfoMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, Sg721UpdatableFreezeCollectionInfoMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, Sg721UpdatableFreezeCollectionInfoMutation, unknown>;
 export interface Sg721UpdatableUpdateTradingStartTimeMutation {
     client: Sg721UpdatableClient;
     args?: {
@@ -129,7 +129,7 @@ export interface Sg721UpdatableUpdateTradingStartTimeMutation {
         funds?: Coin[];
     };
 }
-export declare function useSg721UpdatableUpdateTradingStartTimeMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, Sg721UpdatableUpdateTradingStartTimeMutation>, "mutationFn">): any;
+export declare function useSg721UpdatableUpdateTradingStartTimeMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, Sg721UpdatableUpdateTradingStartTimeMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, Sg721UpdatableUpdateTradingStartTimeMutation, unknown>;
 export interface Sg721UpdatableUpdateCollectionInfoMutation {
     client: Sg721UpdatableClient;
     msg: {
@@ -141,7 +141,7 @@ export interface Sg721UpdatableUpdateCollectionInfoMutation {
         funds?: Coin[];
     };
 }
-export declare function useSg721UpdatableUpdateCollectionInfoMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, Sg721UpdatableUpdateCollectionInfoMutation>, "mutationFn">): any;
+export declare function useSg721UpdatableUpdateCollectionInfoMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, Sg721UpdatableUpdateCollectionInfoMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, Sg721UpdatableUpdateCollectionInfoMutation, unknown>;
 export interface Sg721UpdatableBurnMutation {
     client: Sg721UpdatableClient;
     msg: {
@@ -153,7 +153,7 @@ export interface Sg721UpdatableBurnMutation {
         funds?: Coin[];
     };
 }
-export declare function useSg721UpdatableBurnMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, Sg721UpdatableBurnMutation>, "mutationFn">): any;
+export declare function useSg721UpdatableBurnMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, Sg721UpdatableBurnMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, Sg721UpdatableBurnMutation, unknown>;
 export interface Sg721UpdatableRevokeAllMutation {
     client: Sg721UpdatableClient;
     msg: {
@@ -165,7 +165,7 @@ export interface Sg721UpdatableRevokeAllMutation {
         funds?: Coin[];
     };
 }
-export declare function useSg721UpdatableRevokeAllMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, Sg721UpdatableRevokeAllMutation>, "mutationFn">): any;
+export declare function useSg721UpdatableRevokeAllMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, Sg721UpdatableRevokeAllMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, Sg721UpdatableRevokeAllMutation, unknown>;
 export interface Sg721UpdatableApproveAllMutation {
     client: Sg721UpdatableClient;
     msg: {
@@ -178,7 +178,7 @@ export interface Sg721UpdatableApproveAllMutation {
         funds?: Coin[];
     };
 }
-export declare function useSg721UpdatableApproveAllMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, Sg721UpdatableApproveAllMutation>, "mutationFn">): any;
+export declare function useSg721UpdatableApproveAllMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, Sg721UpdatableApproveAllMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, Sg721UpdatableApproveAllMutation, unknown>;
 export interface Sg721UpdatableRevokeMutation {
     client: Sg721UpdatableClient;
     msg: {
@@ -191,7 +191,7 @@ export interface Sg721UpdatableRevokeMutation {
         funds?: Coin[];
     };
 }
-export declare function useSg721UpdatableRevokeMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, Sg721UpdatableRevokeMutation>, "mutationFn">): any;
+export declare function useSg721UpdatableRevokeMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, Sg721UpdatableRevokeMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, Sg721UpdatableRevokeMutation, unknown>;
 export interface Sg721UpdatableApproveMutation {
     client: Sg721UpdatableClient;
     msg: {
@@ -205,7 +205,7 @@ export interface Sg721UpdatableApproveMutation {
         funds?: Coin[];
     };
 }
-export declare function useSg721UpdatableApproveMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, Sg721UpdatableApproveMutation>, "mutationFn">): any;
+export declare function useSg721UpdatableApproveMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, Sg721UpdatableApproveMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, Sg721UpdatableApproveMutation, unknown>;
 export interface Sg721UpdatableSendNftMutation {
     client: Sg721UpdatableClient;
     msg: {
@@ -219,7 +219,7 @@ export interface Sg721UpdatableSendNftMutation {
         funds?: Coin[];
     };
 }
-export declare function useSg721UpdatableSendNftMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, Sg721UpdatableSendNftMutation>, "mutationFn">): any;
+export declare function useSg721UpdatableSendNftMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, Sg721UpdatableSendNftMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, Sg721UpdatableSendNftMutation, unknown>;
 export interface Sg721UpdatableTransferNftMutation {
     client: Sg721UpdatableClient;
     msg: {
@@ -232,7 +232,7 @@ export interface Sg721UpdatableTransferNftMutation {
         funds?: Coin[];
     };
 }
-export declare function useSg721UpdatableTransferNftMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, Sg721UpdatableTransferNftMutation>, "mutationFn">): any;
+export declare function useSg721UpdatableTransferNftMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, Sg721UpdatableTransferNftMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, Sg721UpdatableTransferNftMutation, unknown>;
 export interface Sg721UpdatableEnableUpdatableMutation {
     client: Sg721UpdatableClient;
     args?: {
@@ -241,7 +241,7 @@ export interface Sg721UpdatableEnableUpdatableMutation {
         funds?: Coin[];
     };
 }
-export declare function useSg721UpdatableEnableUpdatableMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, Sg721UpdatableEnableUpdatableMutation>, "mutationFn">): any;
+export declare function useSg721UpdatableEnableUpdatableMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, Sg721UpdatableEnableUpdatableMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, Sg721UpdatableEnableUpdatableMutation, unknown>;
 export interface Sg721UpdatableUpdateTokenMetadataMutation {
     client: Sg721UpdatableClient;
     msg: {
@@ -254,7 +254,7 @@ export interface Sg721UpdatableUpdateTokenMetadataMutation {
         funds?: Coin[];
     };
 }
-export declare function useSg721UpdatableUpdateTokenMetadataMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, Sg721UpdatableUpdateTokenMetadataMutation>, "mutationFn">): any;
+export declare function useSg721UpdatableUpdateTokenMetadataMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, Sg721UpdatableUpdateTokenMetadataMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, Sg721UpdatableUpdateTokenMetadataMutation, unknown>;
 export interface Sg721UpdatableFreezeTokenMetadataMutation {
     client: Sg721UpdatableClient;
     args?: {
@@ -263,4 +263,4 @@ export interface Sg721UpdatableFreezeTokenMetadataMutation {
         funds?: Coin[];
     };
 }
-export declare function useSg721UpdatableFreezeTokenMetadataMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, Sg721UpdatableFreezeTokenMetadataMutation>, "mutationFn">): any;
+export declare function useSg721UpdatableFreezeTokenMetadataMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, Sg721UpdatableFreezeTokenMetadataMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, Sg721UpdatableFreezeTokenMetadataMutation, unknown>;

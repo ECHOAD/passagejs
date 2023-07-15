@@ -19,13 +19,13 @@ export interface BadKidsGetRegisteredQueryQuery<TData> extends BadKidsReactQuery
         queryId: number;
     };
 }
-export declare function useBadKidsGetRegisteredQueryQuery<TData = QueryRegisteredQueryResponse>({ client, args, options }: BadKidsGetRegisteredQueryQuery<TData>): any;
+export declare function useBadKidsGetRegisteredQueryQuery<TData = QueryRegisteredQueryResponse>({ client, args, options }: BadKidsGetRegisteredQueryQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface BadKidsTransferNftQuery<TData> extends BadKidsReactQuery<TransferNftResponse, TData> {
     args: {
         queryId: number;
     };
 }
-export declare function useBadKidsTransferNftQuery<TData = TransferNftResponse>({ client, args, options }: BadKidsTransferNftQuery<TData>): any;
+export declare function useBadKidsTransferNftQuery<TData = TransferNftResponse>({ client, args, options }: BadKidsTransferNftQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface BadKidsUnlockNftMutation {
     client: BadKidsClient;
     msg: {
@@ -38,7 +38,7 @@ export interface BadKidsUnlockNftMutation {
         funds?: Coin[];
     };
 }
-export declare function useBadKidsUnlockNftMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, BadKidsUnlockNftMutation>, "mutationFn">): any;
+export declare function useBadKidsUnlockNftMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, BadKidsUnlockNftMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, BadKidsUnlockNftMutation, unknown>;
 export interface BadKidsRemoveInterchainQueryMutation {
     client: BadKidsClient;
     msg: {
@@ -50,7 +50,7 @@ export interface BadKidsRemoveInterchainQueryMutation {
         funds?: Coin[];
     };
 }
-export declare function useBadKidsRemoveInterchainQueryMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, BadKidsRemoveInterchainQueryMutation>, "mutationFn">): any;
+export declare function useBadKidsRemoveInterchainQueryMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, BadKidsRemoveInterchainQueryMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, BadKidsRemoveInterchainQueryMutation, unknown>;
 export interface BadKidsRegisterTransferNftQueryMutation {
     client: BadKidsClient;
     msg: {
@@ -68,7 +68,7 @@ export interface BadKidsRegisterTransferNftQueryMutation {
         funds?: Coin[];
     };
 }
-export declare function useBadKidsRegisterTransferNftQueryMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, BadKidsRegisterTransferNftQueryMutation>, "mutationFn">): any;
+export declare function useBadKidsRegisterTransferNftQueryMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, BadKidsRegisterTransferNftQueryMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, BadKidsRegisterTransferNftQueryMutation, unknown>;
 export interface BadKidsMintNftMutation {
     client: BadKidsClient;
     msg: {
@@ -80,4 +80,4 @@ export interface BadKidsMintNftMutation {
         funds?: Coin[];
     };
 }
-export declare function useBadKidsMintNftMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, BadKidsMintNftMutation>, "mutationFn">): any;
+export declare function useBadKidsMintNftMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, BadKidsMintNftMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, BadKidsMintNftMutation, unknown>;

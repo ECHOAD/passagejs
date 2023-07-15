@@ -14,17 +14,17 @@ export interface SG721BaseReactQuery<TResponse, TData = TResponse> {
 }
 export interface SG721BaseCollectionInfoQuery<TData> extends SG721BaseReactQuery<CollectionInfoResponse, TData> {
 }
-export declare function useSG721BaseCollectionInfoQuery<TData = CollectionInfoResponse>({ client, options }: SG721BaseCollectionInfoQuery<TData>): any;
+export declare function useSG721BaseCollectionInfoQuery<TData = CollectionInfoResponse>({ client, options }: SG721BaseCollectionInfoQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface SG721BaseMinterQuery<TData> extends SG721BaseReactQuery<MinterResponse, TData> {
 }
-export declare function useSG721BaseMinterQuery<TData = MinterResponse>({ client, options }: SG721BaseMinterQuery<TData>): any;
+export declare function useSG721BaseMinterQuery<TData = MinterResponse>({ client, options }: SG721BaseMinterQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface SG721BaseAllTokensQuery<TData> extends SG721BaseReactQuery<AllTokensResponse, TData> {
     args: {
         limit?: number;
         startAfter?: string;
     };
 }
-export declare function useSG721BaseAllTokensQuery<TData = AllTokensResponse>({ client, args, options }: SG721BaseAllTokensQuery<TData>): any;
+export declare function useSG721BaseAllTokensQuery<TData = AllTokensResponse>({ client, args, options }: SG721BaseAllTokensQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface SG721BaseTokensQuery<TData> extends SG721BaseReactQuery<TokensResponse, TData> {
     args: {
         limit?: number;
@@ -32,26 +32,26 @@ export interface SG721BaseTokensQuery<TData> extends SG721BaseReactQuery<TokensR
         startAfter?: string;
     };
 }
-export declare function useSG721BaseTokensQuery<TData = TokensResponse>({ client, args, options }: SG721BaseTokensQuery<TData>): any;
+export declare function useSG721BaseTokensQuery<TData = TokensResponse>({ client, args, options }: SG721BaseTokensQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface SG721BaseAllNftInfoQuery<TData> extends SG721BaseReactQuery<AllNftInfoResponse, TData> {
     args: {
         includeExpired?: boolean;
         tokenId: string;
     };
 }
-export declare function useSG721BaseAllNftInfoQuery<TData = AllNftInfoResponse>({ client, args, options }: SG721BaseAllNftInfoQuery<TData>): any;
+export declare function useSG721BaseAllNftInfoQuery<TData = AllNftInfoResponse>({ client, args, options }: SG721BaseAllNftInfoQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface SG721BaseNftInfoQuery<TData> extends SG721BaseReactQuery<NftInfoResponse, TData> {
     args: {
         tokenId: string;
     };
 }
-export declare function useSG721BaseNftInfoQuery<TData = NftInfoResponse>({ client, args, options }: SG721BaseNftInfoQuery<TData>): any;
+export declare function useSG721BaseNftInfoQuery<TData = NftInfoResponse>({ client, args, options }: SG721BaseNftInfoQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface SG721BaseContractInfoQuery<TData> extends SG721BaseReactQuery<ContractInfoResponse, TData> {
 }
-export declare function useSG721BaseContractInfoQuery<TData = ContractInfoResponse>({ client, options }: SG721BaseContractInfoQuery<TData>): any;
+export declare function useSG721BaseContractInfoQuery<TData = ContractInfoResponse>({ client, options }: SG721BaseContractInfoQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface SG721BaseNumTokensQuery<TData> extends SG721BaseReactQuery<NumTokensResponse, TData> {
 }
-export declare function useSG721BaseNumTokensQuery<TData = NumTokensResponse>({ client, options }: SG721BaseNumTokensQuery<TData>): any;
+export declare function useSG721BaseNumTokensQuery<TData = NumTokensResponse>({ client, options }: SG721BaseNumTokensQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface SG721BaseAllOperatorsQuery<TData> extends SG721BaseReactQuery<AllOperatorsResponse, TData> {
     args: {
         includeExpired?: boolean;
@@ -60,14 +60,14 @@ export interface SG721BaseAllOperatorsQuery<TData> extends SG721BaseReactQuery<A
         startAfter?: string;
     };
 }
-export declare function useSG721BaseAllOperatorsQuery<TData = AllOperatorsResponse>({ client, args, options }: SG721BaseAllOperatorsQuery<TData>): any;
+export declare function useSG721BaseAllOperatorsQuery<TData = AllOperatorsResponse>({ client, args, options }: SG721BaseAllOperatorsQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface SG721BaseApprovalsQuery<TData> extends SG721BaseReactQuery<ApprovalsResponse, TData> {
     args: {
         includeExpired?: boolean;
         tokenId: string;
     };
 }
-export declare function useSG721BaseApprovalsQuery<TData = ApprovalsResponse>({ client, args, options }: SG721BaseApprovalsQuery<TData>): any;
+export declare function useSG721BaseApprovalsQuery<TData = ApprovalsResponse>({ client, args, options }: SG721BaseApprovalsQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface SG721BaseApprovalQuery<TData> extends SG721BaseReactQuery<ApprovalResponse, TData> {
     args: {
         includeExpired?: boolean;
@@ -75,11 +75,11 @@ export interface SG721BaseApprovalQuery<TData> extends SG721BaseReactQuery<Appro
         tokenId: string;
     };
 }
-export declare function useSG721BaseApprovalQuery<TData = ApprovalResponse>({ client, args, options }: SG721BaseApprovalQuery<TData>): any;
+export declare function useSG721BaseApprovalQuery<TData = ApprovalResponse>({ client, args, options }: SG721BaseApprovalQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface SG721BaseOwnerOfQuery<TData> extends SG721BaseReactQuery<OwnerOfResponse, TData> {
     args: {
         includeExpired?: boolean;
         tokenId: string;
     };
 }
-export declare function useSG721BaseOwnerOfQuery<TData = OwnerOfResponse>({ client, args, options }: SG721BaseOwnerOfQuery<TData>): any;
+export declare function useSG721BaseOwnerOfQuery<TData = OwnerOfResponse>({ client, args, options }: SG721BaseOwnerOfQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;

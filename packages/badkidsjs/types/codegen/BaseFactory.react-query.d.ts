@@ -20,4 +20,4 @@ export interface BaseFactoryCreateMinterMutation {
         funds?: Coin[];
     };
 }
-export declare function useBaseFactoryCreateMinterMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, BaseFactoryCreateMinterMutation>, "mutationFn">): any;
+export declare function useBaseFactoryCreateMinterMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, BaseFactoryCreateMinterMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, BaseFactoryCreateMinterMutation, unknown>;

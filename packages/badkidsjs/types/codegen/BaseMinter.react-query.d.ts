@@ -16,7 +16,7 @@ export interface BaseMinterUpdateStartTradingTimeMutation {
         funds?: Coin[];
     };
 }
-export declare function useBaseMinterUpdateStartTradingTimeMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, BaseMinterUpdateStartTradingTimeMutation>, "mutationFn">): any;
+export declare function useBaseMinterUpdateStartTradingTimeMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, BaseMinterUpdateStartTradingTimeMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, BaseMinterUpdateStartTradingTimeMutation, unknown>;
 export interface BaseMinterMintMutation {
     client: BaseMinterClient;
     msg: {
@@ -28,4 +28,4 @@ export interface BaseMinterMintMutation {
         funds?: Coin[];
     };
 }
-export declare function useBaseMinterMintMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, BaseMinterMintMutation>, "mutationFn">): any;
+export declare function useBaseMinterMintMutation(options?: Omit<UseMutationOptions<ExecuteResult, Error, BaseMinterMintMutation>, "mutationFn">): import("@tanstack/react-query").UseMutationResult<ExecuteResult, Error, BaseMinterMintMutation, unknown>;
