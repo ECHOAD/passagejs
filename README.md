@@ -1,7 +1,7 @@
 # BadKids 
 
 <p align="center" width="100%">
-    <img height="90" src="https://res.cloudinary.com/stargaze/image/upload/w_700/tlmhniznlstlddende1v.jpg" />
+    <img height="140" src="https://res.cloudinary.com/stargaze/image/upload/w_700/tlmhniznlstlddende1v.jpg" />
 </p>
 
 <p align="center" width="100%">
