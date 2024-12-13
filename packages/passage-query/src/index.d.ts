@@ -1,1 +1,1 @@
-export './codegen'
+export * from "./codegen";
