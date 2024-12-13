@@ -8,7 +8,7 @@
    <a href="https://github.com/pyramation/badkidsjs/blob/main/LICENSE"><img height="20" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
 </p>
 
-Typescript libraries for the BadKids ecosystem.
+Typescript libraries for the Passage ecosystem.
 
 ## Packages
 
