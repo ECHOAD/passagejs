@@ -1,0 +1,3 @@
+[submodule "passage-contracts"]
+	path = passage-contracts
+	url = https://github.com/envadiv/passage-contracts
