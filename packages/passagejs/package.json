@@ -1,9 +1,9 @@
 {
-  "name": "badkidsjs",
-  "version": "1.7.1",
-  "description": "badkids",
-  "author": "Dan Lynch <pyramation@gmail.com>",
-  "homepage": "https://github.com/pyramation/badkidsjs#readme",
+  "name": "passagejs",
+  "version": "0.0.1",
+  "description": "passagejs",
+  "author": "Adrian Estevez <adrianeea.ae@gmail.com>",
+  "homepage": "https://github.com/ECHOAD/passagejs#readme",
   "license": "SEE LICENSE IN LICENSE",
   "main": "main/index.js",
   "typings": "types/index.d.ts",
@@ -33,11 +33,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pyramation/badkidsjs"
+    "url": "https://github.com/ECHOAD/passagejs"
   },
   "keywords": [],
   "bugs": {
-    "url": "https://github.com/pyramation/badkidsjs/issues"
+    "url": "https://github.com/ECHOAD/passagejs/issues"
   },
   "devDependencies": {
     "@babel/cli": "7.19.3",

@@ -2,90 +2,55 @@ import { join, resolve } from 'path';
 import telescope from '@osmonauts/telescope';
 
 const protoDirs = [join(__dirname, '/../proto')];
-const launchpadDir = resolve(join(__dirname, "/../../../launchpad/contracts"));
-const marketplaceDir = resolve(
-  join(__dirname, "/../../../marketplace/contracts")
-);
-const badKidsDir = resolve(
-  join(__dirname, "/../../../badkids")
-);
+const contractsDir = resolve(join(__dirname, "/../../../passage-contracts/contracts"));
 
 
 const contracts = [
-  
-  // launchpad contracts
-
   {
-    name: "SG721Base",
-    dir: join(launchpadDir, "collections", "sg721-base"),
+    name: 'AuctionEnglish',
+    dir: join(contractsDir, 'nft', 'auction-english')
   },
   {
-    name: "SG721MetadataOnchain",
-    dir: join(launchpadDir, "collections", "sg721-metadata-onchain"),
-  },
-  // {
-  //   name: "Sg721Nt",
-  //   dir: join(launchpadDir, "collections", "sg721-nt"),
-  // },
-  {
-    name: "Sg721Updatable",
-    dir: join(launchpadDir, "collections", "sg721-updatable"),
-  },
-
-  //
-  {
-    name: "BaseFactory",
-    dir: join(launchpadDir, "factories", "base-factory"),
-  },
-  // {
-  //   name: "VendingFactory",
-  //   dir: join(launchpadDir, "factories", "vending-factory"),
-  // },
-  //
-
-  {
-    name: "BaseMinter",
-    dir: join(launchpadDir, "minters", "base-minter"),
+    name: 'MarketplaceLegacy',
+    dir: join(contractsDir, 'nft','marketplace-legacy')
   },
   {
-    name: "VendingMinter",
-    dir: join(launchpadDir, "minters", "vending-minter"),
+    name: 'MarketplaceV2',
+    dir: join(contractsDir,'nft', 'marketplace-v2')
   },
-
-  // {
-  //   name: "Splits",
-  //   dir: join(launchpadDir, "splits"),
-  // },
-  // {
-  //   name: "Whitelist",
-  //   dir: join(launchpadDir, "whitelists", "whitelist"),
-  // },
-  // {
-  //   name: "WhitelistFlex",
-  //   dir: join(launchpadDir, "whitelists", "whitelist-flex"),
-  // },
-  // {
-  //   name: "WhitelistImmutable",
-  //   dir: join(launchpadDir, "whitelists", "whitelist-immutable"),
-  // },
-  
-  // badKidsContracts
-    {
-      name: "BadKids",
-      dir: badKidsDir,
-    },
-
-  // marketplaceContracts
-    {
-      name: "Marketplace",
-      dir: join(marketplaceDir, "marketplace"),
-    },
-    // {
-    //   name: "ReserveAuction",
-    //   dir: join(marketplaceDir, "reserve-auction"),
-    // },
-  
-]
+  {
+    name: 'MinterMetadataOnChain',
+    dir: join(contractsDir,'nft', 'minter-metadata-onchain')
+  },
+  {
+    name: 'Minter',
+    dir: join(contractsDir,'nft', 'nft-vault')
+  },
+  {
+    name: 'PG721Legacy',
+    dir: join(contractsDir,'nft', 'pg721-legacy')
+  },
+  {
+    name: 'PG721Legacy',
+    dir: join(contractsDir,'nft', 'pg721-legacy')
+  },
+  {
+    name: 'PG721MetadataOnChain',
+    dir: join(contractsDir, 'nft','pg721-metadata-onchain')
+  },
+  {
+    name: 'PG721',
+    dir: join(contractsDir,'nft', 'pg721')
+  },
+  {
+    name: 'RoyaltyGroup',
+    dir: join(contractsDir,'nft', 'royalty-group')
+  },
+  {
+    name: 'Whitelist',
+    dir: join(contractsDir,'nft', 'whitelist')
+  }
+];
 
 telescope({
   protoDirs,
