@@ -27,8 +27,8 @@ const contracts = [
     dir: join(contractsDir, "nft", "nft-vault"),
   },
   {
-    name: "PG721Legacy",
-    dir: join(contractsDir, "nft", "pg721-legacy"),
+    name: "PG721",
+    dir: join(contractsDir, "nft", "pg721"),
   },
   {
     name: "PG721Legacy",
@@ -37,10 +37,6 @@ const contracts = [
   {
     name: "PG721MetadataOnChain",
     dir: join(contractsDir, "nft", "pg721-metadata-onchain"),
-  },
-  {
-    name: "PG721",
-    dir: join(contractsDir, "nft", "pg721"),
   },
   {
     name: "RoyaltyGroup",
