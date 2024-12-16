@@ -1,14 +1,8 @@
 {
-  "lerna": "3.4.2",
-  "useWorkspaces": true,
   "conventionalCommits": true,
   "npmClient": "yarn",
-  "npmClientArgs": [
-    "--no-lockfile"
-  ],
-  "packages": [
-    "packages/*"
-  ],
+  "npmClientArgs": ["--no-lockfile"],
+  "packages": ["packages/*"],
   "version": "independent",
   "registry": "https://registry.npmjs.org",
   "command": {
@@ -21,5 +15,6 @@
       "allowBranch": "main",
       "message": "chore(release): publish"
     }
-  }
+  },
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json"
 }
