@@ -3,125 +3,69 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.2 (2024-12-17)
+
+**Note:** Version bump only for package passagejs
+
 ## [1.7.1](https://github.com/pyramation/badkidsjs/compare/badkidsjs@1.7.0...badkidsjs@1.7.1) (2023-07-15)
 
 **Note:** Version bump only for package badkidsjs
-
-
-
-
 
 # [1.7.0](https://github.com/pyramation/badkidsjs/compare/badkidsjs@1.6.0...badkidsjs@1.7.0) (2023-07-15)
 
 **Note:** Version bump only for package badkidsjs
 
-
-
-
-
 # [1.6.0](https://github.com/pyramation/badkidsjs/compare/badkidsjs@1.5.0...badkidsjs@1.6.0) (2023-07-15)
 
 **Note:** Version bump only for package badkidsjs
-
-
-
-
 
 # [1.5.0](https://github.com/pyramation/badkidsjs/compare/badkidsjs@1.4.3...badkidsjs@1.5.0) (2023-07-15)
 
 **Note:** Version bump only for package badkidsjs
 
-
-
-
-
 ## [1.4.3](https://github.com/pyramation/badkidsjs/compare/badkidsjs@1.4.2...badkidsjs@1.4.3) (2023-07-15)
 
 **Note:** Version bump only for package badkidsjs
-
-
-
-
 
 ## [1.4.2](https://github.com/pyramation/badkidsjs/compare/badkidsjs@1.4.1...badkidsjs@1.4.2) (2023-07-14)
 
 **Note:** Version bump only for package badkidsjs
 
-
-
-
-
 ## [1.4.1](https://github.com/pyramation/badkidsjs/compare/badkidsjs@1.4.0...badkidsjs@1.4.1) (2023-07-14)
 
 **Note:** Version bump only for package badkidsjs
-
-
-
-
 
 # [1.4.0](https://github.com/pyramation/badkidsjs/compare/badkidsjs@1.3.0...badkidsjs@1.4.0) (2023-07-14)
 
 **Note:** Version bump only for package badkidsjs
 
-
-
-
-
 # [1.3.0](https://github.com/pyramation/badkidsjs/compare/badkidsjs@1.2.0...badkidsjs@1.3.0) (2023-07-14)
 
 **Note:** Version bump only for package badkidsjs
-
-
-
-
 
 # [1.2.0](https://github.com/pyramation/badkidsjs/compare/badkidsjs@1.1.4...badkidsjs@1.2.0) (2023-07-14)
 
 **Note:** Version bump only for package badkidsjs
 
-
-
-
-
 ## [1.1.4](https://github.com/pyramation/badkidsjs/compare/badkidsjs@1.1.3...badkidsjs@1.1.4) (2023-07-14)
 
 **Note:** Version bump only for package badkidsjs
-
-
-
-
 
 ## [1.1.3](https://github.com/pyramation/badkidsjs/compare/badkidsjs@1.1.2...badkidsjs@1.1.3) (2023-07-14)
 
 **Note:** Version bump only for package badkidsjs
 
-
-
-
-
 ## [1.1.2](https://github.com/pyramation/badkidsjs/compare/badkidsjs@1.1.1...badkidsjs@1.1.2) (2023-07-14)
 
 **Note:** Version bump only for package badkidsjs
-
-
-
-
 
 ## [1.1.1](https://github.com/pyramation/badkidsjs/compare/badkidsjs@1.1.0...badkidsjs@1.1.1) (2023-07-14)
 
 **Note:** Version bump only for package badkidsjs
 
-
-
-
-
 # 1.1.0 (2023-07-14)
 
 **Note:** Version bump only for package badkidsjs
-
-
-
-
 
 # [0.14.0](https://github.com/pyramation/badkidsjs/compare/stargazejs@0.13.0...stargazejs@0.14.0) (2023-06-07)
 
