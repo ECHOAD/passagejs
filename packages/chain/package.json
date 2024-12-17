@@ -1,6 +1,6 @@
 {
   "name": "@passage-zone/chain",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Chain Registry info for passage",
   "author": "Adrian Estevez <adrianeea.ae@gmail.com>",
   "homepage": "https://github.com/ECHOAD/passagejs",
