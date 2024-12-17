@@ -33,7 +33,16 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/pyramation/badkidsjs"
+    "url": "git+https://github.com/ECHOAD/passagejs.git"
   },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
+  "description": "<p align=\"center\" width=\"100%\"> \r     <img height=\"140\" src=\"https://avatars.githubusercontent.com/u/160188595?s=200&v=4\"  />\r </p>",
+  "main": ".eslintrc.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ECHOAD/passagejs/issues"
+  },
+  "homepage": "https://github.com/ECHOAD/passagejs#readme"
 }
