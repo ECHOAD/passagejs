@@ -111,29 +111,6 @@ telescope({
     cosmwasm: {
       contracts,
       outPath: join(__dirname, '../src/codegen'),
-      options: {
-        bundle: {
-          enabled: true,
-          bundleFile: 'contracts.ts',
-          scope: 'contracts'
-        },
-        types: {
-          enabled: true
-        },
-        client: {
-          enabled: true
-        },
-        messageComposer: {
-          enabled: true
-        },
-        reactQuery: {
-          enabled: true,
-          version: 'v4'
-        },
-        useContractsHooks: {
-          enabled: true
-        }
-      }
     },
     aminoEncoding: {
       enabled: true,
