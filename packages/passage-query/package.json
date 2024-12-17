@@ -93,5 +93,6 @@
     "@tanstack/react-query": ">= 4",
     "react": ">= 18",
     "react-dom": ">= 18"
-  }
+  },
+  "gitHead": "636e4f9ddebec86792bcc579ffd911c24222a4e2"
 }

@@ -88,5 +88,6 @@
     "protobufjs": "^7.4.0",
     "react": "19.0.0",
     "react-dom": "19.0.0"
-  }
+  },
+  "gitHead": "636e4f9ddebec86792bcc579ffd911c24222a4e2"
 }

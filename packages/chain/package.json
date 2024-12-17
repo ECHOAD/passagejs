@@ -74,5 +74,6 @@
   "dependencies": {
     "@babel/runtime": "^7.26.0",
     "@chain-registry/types": "0.50.36"
-  }
+  },
+  "gitHead": "636e4f9ddebec86792bcc579ffd911c24222a4e2"
 }
