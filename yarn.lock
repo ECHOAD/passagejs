@@ -2883,7 +2883,7 @@
     case "1.6.3"
     dotty "0.1.2"
 
-"@cosmology/lcd@1.0.3", "@cosmology/lcd@^0.14.0":
+"@cosmology/lcd@0.14.0", "@cosmology/lcd@^0.14.0":
   version "0.14.0"
   resolved "https://registry.npmjs.org/@cosmology/lcd/-/lcd-0.14.0.tgz#de1eeb01bc2be075cea768182114d3466e27c4b4"
   integrity sha512-qy/q56NWpoQfyUX3nl80YjxKMf70QKKQ1Rh9EqJO9OMysj48UeLPcxEWwv0jfOBzPsCX/Jj8Ha6Sb1McFVSk9g==
