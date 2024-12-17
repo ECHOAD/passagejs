@@ -16,25 +16,25 @@ export interface VendingMinterReactQuery<TResponse, TData = TResponse> {
 }
 export interface VendingMinterStatusQuery<TData> extends VendingMinterReactQuery<StatusResponse, TData> {
 }
-export declare function useVendingMinterStatusQuery<TData = StatusResponse>({ client, options }: VendingMinterStatusQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useVendingMinterStatusQuery<TData = StatusResponse>({ client, options }: VendingMinterStatusQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface VendingMinterMintCountQuery<TData> extends VendingMinterReactQuery<MintCountResponse, TData> {
     args: {
         address: string;
     };
 }
-export declare function useVendingMinterMintCountQuery<TData = MintCountResponse>({ client, args, options }: VendingMinterMintCountQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useVendingMinterMintCountQuery<TData = MintCountResponse>({ client, args, options }: VendingMinterMintCountQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface VendingMinterMintPriceQuery<TData> extends VendingMinterReactQuery<MintPriceResponse, TData> {
 }
-export declare function useVendingMinterMintPriceQuery<TData = MintPriceResponse>({ client, options }: VendingMinterMintPriceQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useVendingMinterMintPriceQuery<TData = MintPriceResponse>({ client, options }: VendingMinterMintPriceQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface VendingMinterStartTimeQuery<TData> extends VendingMinterReactQuery<StartTimeResponse, TData> {
 }
-export declare function useVendingMinterStartTimeQuery<TData = StartTimeResponse>({ client, options }: VendingMinterStartTimeQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useVendingMinterStartTimeQuery<TData = StartTimeResponse>({ client, options }: VendingMinterStartTimeQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface VendingMinterMintableNumTokensQuery<TData> extends VendingMinterReactQuery<MintableNumTokensResponse, TData> {
 }
-export declare function useVendingMinterMintableNumTokensQuery<TData = MintableNumTokensResponse>({ client, options }: VendingMinterMintableNumTokensQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useVendingMinterMintableNumTokensQuery<TData = MintableNumTokensResponse>({ client, options }: VendingMinterMintableNumTokensQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface VendingMinterConfigQuery<TData> extends VendingMinterReactQuery<ConfigResponse, TData> {
 }
-export declare function useVendingMinterConfigQuery<TData = ConfigResponse>({ client, options }: VendingMinterConfigQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useVendingMinterConfigQuery<TData = ConfigResponse>({ client, options }: VendingMinterConfigQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface VendingMinterRemoveDiscountPriceMutation {
     client: VendingMinterClient;
     args?: {

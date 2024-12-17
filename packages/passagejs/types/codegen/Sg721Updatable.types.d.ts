@@ -3,15 +3,15 @@
 * DO NOT MODIFY IT BY HAND. Instead, modify the source JSONSchema file,
 * and run the @cosmwasm/ts-codegen generate command to regenerate this file.
 */
-export declare type Expiration = {
+export type Expiration = {
     at_height: number;
 } | {
     at_time: Timestamp;
 } | {
     never: {};
 };
-export declare type Timestamp = Uint64;
-export declare type Uint64 = string;
+export type Timestamp = Uint64;
+export type Uint64 = string;
 export interface AllNftInfoResponse {
     access: OwnerOfResponse;
     info: NftInfoResponseForEmpty;
@@ -43,7 +43,7 @@ export interface ApprovalResponse {
 export interface ApprovalsResponse {
     approvals: Approval[];
 }
-export declare type Decimal = string;
+export type Decimal = string;
 export interface CollectionInfoResponse {
     creator: string;
     description: string;
@@ -61,7 +61,7 @@ export interface ContractInfoResponse {
     name: string;
     symbol: string;
 }
-export declare type ExecuteMsgForNullable_EmptyAndEmpty = {
+export type ExecuteMsgForNullable_EmptyAndEmpty = {
     freeze_token_metadata: {};
 } | {
     update_token_metadata: {
@@ -120,7 +120,7 @@ export declare type ExecuteMsgForNullable_EmptyAndEmpty = {
         msg: Empty;
     };
 };
-export declare type Binary = string;
+export type Binary = string;
 export interface UpdateCollectionInfoMsgForRoyaltyInfoResponse {
     description?: string | null;
     explicit_content?: boolean | null;
@@ -159,7 +159,7 @@ export interface NftInfoResponse {
 export interface NumTokensResponse {
     count: number;
 }
-export declare type QueryMsg = {
+export type QueryMsg = {
     owner_of: {
         include_expired?: boolean | null;
         token_id: string;

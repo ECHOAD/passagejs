@@ -16,16 +16,16 @@ export interface MarketplaceReactQuery<TResponse, TData = TResponse> {
 }
 export interface MarketplaceParamsQuery<TData> extends MarketplaceReactQuery<ParamsResponse, TData> {
 }
-export declare function useMarketplaceParamsQuery<TData = ParamsResponse>({ client, options }: MarketplaceParamsQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useMarketplaceParamsQuery<TData = ParamsResponse>({ client, options }: MarketplaceParamsQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface MarketplaceSaleHooksQuery<TData> extends MarketplaceReactQuery<HooksResponse, TData> {
 }
-export declare function useMarketplaceSaleHooksQuery<TData = HooksResponse>({ client, options }: MarketplaceSaleHooksQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useMarketplaceSaleHooksQuery<TData = HooksResponse>({ client, options }: MarketplaceSaleHooksQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface MarketplaceBidHooksQuery<TData> extends MarketplaceReactQuery<HooksResponse, TData> {
 }
-export declare function useMarketplaceBidHooksQuery<TData = HooksResponse>({ client, options }: MarketplaceBidHooksQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useMarketplaceBidHooksQuery<TData = HooksResponse>({ client, options }: MarketplaceBidHooksQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface MarketplaceAskHooksQuery<TData> extends MarketplaceReactQuery<HooksResponse, TData> {
 }
-export declare function useMarketplaceAskHooksQuery<TData = HooksResponse>({ client, options }: MarketplaceAskHooksQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useMarketplaceAskHooksQuery<TData = HooksResponse>({ client, options }: MarketplaceAskHooksQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface MarketplaceReverseCollectionBidsSortedByPriceQuery<TData> extends MarketplaceReactQuery<CollectionBidResponse, TData> {
     args: {
         collection: string;
@@ -33,7 +33,7 @@ export interface MarketplaceReverseCollectionBidsSortedByPriceQuery<TData> exten
         startBefore?: CollectionBidOffset;
     };
 }
-export declare function useMarketplaceReverseCollectionBidsSortedByPriceQuery<TData = CollectionBidResponse>({ client, args, options }: MarketplaceReverseCollectionBidsSortedByPriceQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useMarketplaceReverseCollectionBidsSortedByPriceQuery<TData = CollectionBidResponse>({ client, args, options }: MarketplaceReverseCollectionBidsSortedByPriceQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface MarketplaceCollectionBidsSortedByPriceQuery<TData> extends MarketplaceReactQuery<CollectionBidResponse, TData> {
     args: {
         collection: string;
@@ -41,7 +41,7 @@ export interface MarketplaceCollectionBidsSortedByPriceQuery<TData> extends Mark
         startAfter?: CollectionBidOffset;
     };
 }
-export declare function useMarketplaceCollectionBidsSortedByPriceQuery<TData = CollectionBidResponse>({ client, args, options }: MarketplaceCollectionBidsSortedByPriceQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useMarketplaceCollectionBidsSortedByPriceQuery<TData = CollectionBidResponse>({ client, args, options }: MarketplaceCollectionBidsSortedByPriceQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface MarketplaceCollectionBidsByBidderSortedByExpirationQuery<TData> extends MarketplaceReactQuery<CollectionBidResponse, TData> {
     args: {
         bidder: string;
@@ -49,7 +49,7 @@ export interface MarketplaceCollectionBidsByBidderSortedByExpirationQuery<TData>
         startAfter?: CollectionBidOffset;
     };
 }
-export declare function useMarketplaceCollectionBidsByBidderSortedByExpirationQuery<TData = CollectionBidResponse>({ client, args, options }: MarketplaceCollectionBidsByBidderSortedByExpirationQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useMarketplaceCollectionBidsByBidderSortedByExpirationQuery<TData = CollectionBidResponse>({ client, args, options }: MarketplaceCollectionBidsByBidderSortedByExpirationQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface MarketplaceCollectionBidsByBidderQuery<TData> extends MarketplaceReactQuery<CollectionBidResponse, TData> {
     args: {
         bidder: string;
@@ -57,14 +57,14 @@ export interface MarketplaceCollectionBidsByBidderQuery<TData> extends Marketpla
         startAfter?: CollectionOffset;
     };
 }
-export declare function useMarketplaceCollectionBidsByBidderQuery<TData = CollectionBidResponse>({ client, args, options }: MarketplaceCollectionBidsByBidderQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useMarketplaceCollectionBidsByBidderQuery<TData = CollectionBidResponse>({ client, args, options }: MarketplaceCollectionBidsByBidderQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface MarketplaceCollectionBidQuery<TData> extends MarketplaceReactQuery<CollectionBidResponse, TData> {
     args: {
         bidder: string;
         collection: string;
     };
 }
-export declare function useMarketplaceCollectionBidQuery<TData = CollectionBidResponse>({ client, args, options }: MarketplaceCollectionBidQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useMarketplaceCollectionBidQuery<TData = CollectionBidResponse>({ client, args, options }: MarketplaceCollectionBidQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface MarketplaceReverseBidsSortedByPriceQuery<TData> extends MarketplaceReactQuery<BidsResponse, TData> {
     args: {
         collection: string;
@@ -72,7 +72,7 @@ export interface MarketplaceReverseBidsSortedByPriceQuery<TData> extends Marketp
         startBefore?: BidOffset;
     };
 }
-export declare function useMarketplaceReverseBidsSortedByPriceQuery<TData = BidsResponse>({ client, args, options }: MarketplaceReverseBidsSortedByPriceQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useMarketplaceReverseBidsSortedByPriceQuery<TData = BidsResponse>({ client, args, options }: MarketplaceReverseBidsSortedByPriceQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface MarketplaceBidsSortedByPriceQuery<TData> extends MarketplaceReactQuery<BidsResponse, TData> {
     args: {
         collection: string;
@@ -80,7 +80,7 @@ export interface MarketplaceBidsSortedByPriceQuery<TData> extends MarketplaceRea
         startAfter?: BidOffset;
     };
 }
-export declare function useMarketplaceBidsSortedByPriceQuery<TData = BidsResponse>({ client, args, options }: MarketplaceBidsSortedByPriceQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useMarketplaceBidsSortedByPriceQuery<TData = BidsResponse>({ client, args, options }: MarketplaceBidsSortedByPriceQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface MarketplaceBidsQuery<TData> extends MarketplaceReactQuery<BidsResponse, TData> {
     args: {
         collection: string;
@@ -89,7 +89,7 @@ export interface MarketplaceBidsQuery<TData> extends MarketplaceReactQuery<BidsR
         tokenId: number;
     };
 }
-export declare function useMarketplaceBidsQuery<TData = BidsResponse>({ client, args, options }: MarketplaceBidsQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useMarketplaceBidsQuery<TData = BidsResponse>({ client, args, options }: MarketplaceBidsQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface MarketplaceBidsByBidderSortedByExpirationQuery<TData> extends MarketplaceReactQuery<BidsResponse, TData> {
     args: {
         bidder: string;
@@ -97,7 +97,7 @@ export interface MarketplaceBidsByBidderSortedByExpirationQuery<TData> extends M
         startAfter?: CollectionOffset;
     };
 }
-export declare function useMarketplaceBidsByBidderSortedByExpirationQuery<TData = BidsResponse>({ client, args, options }: MarketplaceBidsByBidderSortedByExpirationQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useMarketplaceBidsByBidderSortedByExpirationQuery<TData = BidsResponse>({ client, args, options }: MarketplaceBidsByBidderSortedByExpirationQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface MarketplaceBidsByBidderQuery<TData> extends MarketplaceReactQuery<BidsResponse, TData> {
     args: {
         bidder: string;
@@ -105,7 +105,7 @@ export interface MarketplaceBidsByBidderQuery<TData> extends MarketplaceReactQue
         startAfter?: CollectionOffset;
     };
 }
-export declare function useMarketplaceBidsByBidderQuery<TData = BidsResponse>({ client, args, options }: MarketplaceBidsByBidderQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useMarketplaceBidsByBidderQuery<TData = BidsResponse>({ client, args, options }: MarketplaceBidsByBidderQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface MarketplaceBidQuery<TData> extends MarketplaceReactQuery<BidResponse, TData> {
     args: {
         bidder: string;
@@ -113,7 +113,7 @@ export interface MarketplaceBidQuery<TData> extends MarketplaceReactQuery<BidRes
         tokenId: number;
     };
 }
-export declare function useMarketplaceBidQuery<TData = BidResponse>({ client, args, options }: MarketplaceBidQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useMarketplaceBidQuery<TData = BidResponse>({ client, args, options }: MarketplaceBidQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface MarketplaceAsksBySellerQuery<TData> extends MarketplaceReactQuery<AsksResponse, TData> {
     args: {
         includeInactive?: boolean;
@@ -122,13 +122,13 @@ export interface MarketplaceAsksBySellerQuery<TData> extends MarketplaceReactQue
         startAfter?: CollectionOffset;
     };
 }
-export declare function useMarketplaceAsksBySellerQuery<TData = AsksResponse>({ client, args, options }: MarketplaceAsksBySellerQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useMarketplaceAsksBySellerQuery<TData = AsksResponse>({ client, args, options }: MarketplaceAsksBySellerQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface MarketplaceAskCountQuery<TData> extends MarketplaceReactQuery<AskCountResponse, TData> {
     args: {
         collection: string;
     };
 }
-export declare function useMarketplaceAskCountQuery<TData = AskCountResponse>({ client, args, options }: MarketplaceAskCountQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useMarketplaceAskCountQuery<TData = AskCountResponse>({ client, args, options }: MarketplaceAskCountQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface MarketplaceReverseAsksSortedByPriceQuery<TData> extends MarketplaceReactQuery<AsksResponse, TData> {
     args: {
         collection: string;
@@ -137,7 +137,7 @@ export interface MarketplaceReverseAsksSortedByPriceQuery<TData> extends Marketp
         startBefore?: AskOffset;
     };
 }
-export declare function useMarketplaceReverseAsksSortedByPriceQuery<TData = AsksResponse>({ client, args, options }: MarketplaceReverseAsksSortedByPriceQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useMarketplaceReverseAsksSortedByPriceQuery<TData = AsksResponse>({ client, args, options }: MarketplaceReverseAsksSortedByPriceQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface MarketplaceAsksSortedByPriceQuery<TData> extends MarketplaceReactQuery<AsksResponse, TData> {
     args: {
         collection: string;
@@ -146,7 +146,7 @@ export interface MarketplaceAsksSortedByPriceQuery<TData> extends MarketplaceRea
         startAfter?: AskOffset;
     };
 }
-export declare function useMarketplaceAsksSortedByPriceQuery<TData = AsksResponse>({ client, args, options }: MarketplaceAsksSortedByPriceQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useMarketplaceAsksSortedByPriceQuery<TData = AsksResponse>({ client, args, options }: MarketplaceAsksSortedByPriceQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface MarketplaceReverseAsksQuery<TData> extends MarketplaceReactQuery<AsksResponse, TData> {
     args: {
         collection: string;
@@ -155,7 +155,7 @@ export interface MarketplaceReverseAsksQuery<TData> extends MarketplaceReactQuer
         startBefore?: number;
     };
 }
-export declare function useMarketplaceReverseAsksQuery<TData = AsksResponse>({ client, args, options }: MarketplaceReverseAsksQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useMarketplaceReverseAsksQuery<TData = AsksResponse>({ client, args, options }: MarketplaceReverseAsksQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface MarketplaceAsksQuery<TData> extends MarketplaceReactQuery<AsksResponse, TData> {
     args: {
         collection: string;
@@ -164,21 +164,21 @@ export interface MarketplaceAsksQuery<TData> extends MarketplaceReactQuery<AsksR
         startAfter?: number;
     };
 }
-export declare function useMarketplaceAsksQuery<TData = AsksResponse>({ client, args, options }: MarketplaceAsksQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useMarketplaceAsksQuery<TData = AsksResponse>({ client, args, options }: MarketplaceAsksQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface MarketplaceAskQuery<TData> extends MarketplaceReactQuery<AsksResponse, TData> {
     args: {
         collection: string;
         tokenId: number;
     };
 }
-export declare function useMarketplaceAskQuery<TData = AsksResponse>({ client, args, options }: MarketplaceAskQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useMarketplaceAskQuery<TData = AsksResponse>({ client, args, options }: MarketplaceAskQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface MarketplaceCollectionsQuery<TData> extends MarketplaceReactQuery<CollectionsResponse, TData> {
     args: {
         limit?: number;
         startAfter?: string;
     };
 }
-export declare function useMarketplaceCollectionsQuery<TData = CollectionsResponse>({ client, args, options }: MarketplaceCollectionsQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useMarketplaceCollectionsQuery<TData = CollectionsResponse>({ client, args, options }: MarketplaceCollectionsQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface MarketplaceRemoveStaleCollectionBidMutation {
     client: MarketplaceClient;
     msg: {

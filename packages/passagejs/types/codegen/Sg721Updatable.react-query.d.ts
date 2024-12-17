@@ -16,17 +16,17 @@ export interface Sg721UpdatableReactQuery<TResponse, TData = TResponse> {
 }
 export interface Sg721UpdatableCollectionInfoQuery<TData> extends Sg721UpdatableReactQuery<CollectionInfoResponse, TData> {
 }
-export declare function useSg721UpdatableCollectionInfoQuery<TData = CollectionInfoResponse>({ client, options }: Sg721UpdatableCollectionInfoQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useSg721UpdatableCollectionInfoQuery<TData = CollectionInfoResponse>({ client, options }: Sg721UpdatableCollectionInfoQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface Sg721UpdatableMinterQuery<TData> extends Sg721UpdatableReactQuery<MinterResponse, TData> {
 }
-export declare function useSg721UpdatableMinterQuery<TData = MinterResponse>({ client, options }: Sg721UpdatableMinterQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useSg721UpdatableMinterQuery<TData = MinterResponse>({ client, options }: Sg721UpdatableMinterQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface Sg721UpdatableAllTokensQuery<TData> extends Sg721UpdatableReactQuery<AllTokensResponse, TData> {
     args: {
         limit?: number;
         startAfter?: string;
     };
 }
-export declare function useSg721UpdatableAllTokensQuery<TData = AllTokensResponse>({ client, args, options }: Sg721UpdatableAllTokensQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useSg721UpdatableAllTokensQuery<TData = AllTokensResponse>({ client, args, options }: Sg721UpdatableAllTokensQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface Sg721UpdatableTokensQuery<TData> extends Sg721UpdatableReactQuery<TokensResponse, TData> {
     args: {
         limit?: number;
@@ -34,26 +34,26 @@ export interface Sg721UpdatableTokensQuery<TData> extends Sg721UpdatableReactQue
         startAfter?: string;
     };
 }
-export declare function useSg721UpdatableTokensQuery<TData = TokensResponse>({ client, args, options }: Sg721UpdatableTokensQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useSg721UpdatableTokensQuery<TData = TokensResponse>({ client, args, options }: Sg721UpdatableTokensQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface Sg721UpdatableAllNftInfoQuery<TData> extends Sg721UpdatableReactQuery<AllNftInfoResponse, TData> {
     args: {
         includeExpired?: boolean;
         tokenId: string;
     };
 }
-export declare function useSg721UpdatableAllNftInfoQuery<TData = AllNftInfoResponse>({ client, args, options }: Sg721UpdatableAllNftInfoQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useSg721UpdatableAllNftInfoQuery<TData = AllNftInfoResponse>({ client, args, options }: Sg721UpdatableAllNftInfoQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface Sg721UpdatableNftInfoQuery<TData> extends Sg721UpdatableReactQuery<NftInfoResponse, TData> {
     args: {
         tokenId: string;
     };
 }
-export declare function useSg721UpdatableNftInfoQuery<TData = NftInfoResponse>({ client, args, options }: Sg721UpdatableNftInfoQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useSg721UpdatableNftInfoQuery<TData = NftInfoResponse>({ client, args, options }: Sg721UpdatableNftInfoQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface Sg721UpdatableContractInfoQuery<TData> extends Sg721UpdatableReactQuery<ContractInfoResponse, TData> {
 }
-export declare function useSg721UpdatableContractInfoQuery<TData = ContractInfoResponse>({ client, options }: Sg721UpdatableContractInfoQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useSg721UpdatableContractInfoQuery<TData = ContractInfoResponse>({ client, options }: Sg721UpdatableContractInfoQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface Sg721UpdatableNumTokensQuery<TData> extends Sg721UpdatableReactQuery<NumTokensResponse, TData> {
 }
-export declare function useSg721UpdatableNumTokensQuery<TData = NumTokensResponse>({ client, options }: Sg721UpdatableNumTokensQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useSg721UpdatableNumTokensQuery<TData = NumTokensResponse>({ client, options }: Sg721UpdatableNumTokensQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface Sg721UpdatableAllOperatorsQuery<TData> extends Sg721UpdatableReactQuery<AllOperatorsResponse, TData> {
     args: {
         includeExpired?: boolean;
@@ -62,14 +62,14 @@ export interface Sg721UpdatableAllOperatorsQuery<TData> extends Sg721UpdatableRe
         startAfter?: string;
     };
 }
-export declare function useSg721UpdatableAllOperatorsQuery<TData = AllOperatorsResponse>({ client, args, options }: Sg721UpdatableAllOperatorsQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useSg721UpdatableAllOperatorsQuery<TData = AllOperatorsResponse>({ client, args, options }: Sg721UpdatableAllOperatorsQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface Sg721UpdatableApprovalsQuery<TData> extends Sg721UpdatableReactQuery<ApprovalsResponse, TData> {
     args: {
         includeExpired?: boolean;
         tokenId: string;
     };
 }
-export declare function useSg721UpdatableApprovalsQuery<TData = ApprovalsResponse>({ client, args, options }: Sg721UpdatableApprovalsQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useSg721UpdatableApprovalsQuery<TData = ApprovalsResponse>({ client, args, options }: Sg721UpdatableApprovalsQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface Sg721UpdatableApprovalQuery<TData> extends Sg721UpdatableReactQuery<ApprovalResponse, TData> {
     args: {
         includeExpired?: boolean;
@@ -77,14 +77,14 @@ export interface Sg721UpdatableApprovalQuery<TData> extends Sg721UpdatableReactQ
         tokenId: string;
     };
 }
-export declare function useSg721UpdatableApprovalQuery<TData = ApprovalResponse>({ client, args, options }: Sg721UpdatableApprovalQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useSg721UpdatableApprovalQuery<TData = ApprovalResponse>({ client, args, options }: Sg721UpdatableApprovalQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface Sg721UpdatableOwnerOfQuery<TData> extends Sg721UpdatableReactQuery<OwnerOfResponse, TData> {
     args: {
         includeExpired?: boolean;
         tokenId: string;
     };
 }
-export declare function useSg721UpdatableOwnerOfQuery<TData = OwnerOfResponse>({ client, args, options }: Sg721UpdatableOwnerOfQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useSg721UpdatableOwnerOfQuery<TData = OwnerOfResponse>({ client, args, options }: Sg721UpdatableOwnerOfQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface Sg721UpdatableExtensionMutation {
     client: Sg721UpdatableClient;
     msg: {

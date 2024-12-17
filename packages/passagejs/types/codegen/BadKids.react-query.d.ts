@@ -19,13 +19,13 @@ export interface BadKidsGetRegisteredQueryQuery<TData> extends BadKidsReactQuery
         queryId: number;
     };
 }
-export declare function useBadKidsGetRegisteredQueryQuery<TData = QueryRegisteredQueryResponse>({ client, args, options }: BadKidsGetRegisteredQueryQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useBadKidsGetRegisteredQueryQuery<TData = QueryRegisteredQueryResponse>({ client, args, options }: BadKidsGetRegisteredQueryQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface BadKidsTransferNftQuery<TData> extends BadKidsReactQuery<TransferNftResponse, TData> {
     args: {
         queryId: number;
     };
 }
-export declare function useBadKidsTransferNftQuery<TData = TransferNftResponse>({ client, args, options }: BadKidsTransferNftQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export declare function useBadKidsTransferNftQuery<TData = TransferNftResponse>({ client, args, options }: BadKidsTransferNftQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
 export interface BadKidsUnlockNftMutation {
     client: BadKidsClient;
     msg: {

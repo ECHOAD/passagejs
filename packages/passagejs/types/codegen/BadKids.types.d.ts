@@ -8,7 +8,7 @@ export interface InstantiateMsg {
     contract_addr: string;
     [k: string]: unknown;
 }
-export declare type ExecuteMsg = {
+export type ExecuteMsg = {
     mint_nft: {
         token_id: string;
         [k: string]: unknown;
@@ -36,7 +36,7 @@ export declare type ExecuteMsg = {
         [k: string]: unknown;
     };
 };
-export declare type QueryMsg = {
+export type QueryMsg = {
     transfer_nft: {
         query_id: number;
         [k: string]: unknown;
@@ -47,9 +47,9 @@ export declare type QueryMsg = {
         [k: string]: unknown;
     };
 };
-export declare type Uint128 = string;
-export declare type Binary = string;
-export declare type QueryType = "kv" | "tx";
+export type Uint128 = string;
+export type Binary = string;
+export type QueryType = "kv" | "tx";
 export interface QueryRegisteredQueryResponse {
     registered_query: RegisteredQuery;
     [k: string]: unknown;

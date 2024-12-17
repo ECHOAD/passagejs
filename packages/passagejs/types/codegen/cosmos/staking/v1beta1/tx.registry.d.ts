@@ -6,23 +6,23 @@ export declare const MessageComposer: {
     encoded: {
         createValidator(value: MsgCreateValidator): {
             typeUrl: string;
-            value: Uint8Array;
+            value: Uint8Array<ArrayBufferLike>;
         };
         editValidator(value: MsgEditValidator): {
             typeUrl: string;
-            value: Uint8Array;
+            value: Uint8Array<ArrayBufferLike>;
         };
         delegate(value: MsgDelegate): {
             typeUrl: string;
-            value: Uint8Array;
+            value: Uint8Array<ArrayBufferLike>;
         };
         beginRedelegate(value: MsgBeginRedelegate): {
             typeUrl: string;
-            value: Uint8Array;
+            value: Uint8Array<ArrayBufferLike>;
         };
         undelegate(value: MsgUndelegate): {
             typeUrl: string;
-            value: Uint8Array;
+            value: Uint8Array<ArrayBufferLike>;
         };
     };
     withTypeUrl: {
