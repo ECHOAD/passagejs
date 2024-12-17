@@ -6,45 +6,49 @@ const contractsDir = resolve(join(__dirname, "/../../../passage-contracts/contra
 
 const contracts = [
   {
-    name: "AuctionEnglish",
-    dir: join(contractsDir, "nft", "auction-english"),
+    name: 'AuctionEnglish',
+    dir: join(contractsDir, 'nft', 'auction-english')
   },
   {
-    name: "MarketplaceLegacy",
-    dir: join(contractsDir, "nft", "marketplace-legacy"),
+    name: 'MarketplaceLegacy',
+    dir: join(contractsDir, 'nft','marketplace-legacy')
   },
   {
-    name: "MarketplaceV2",
-    dir: join(contractsDir, "nft", "marketplace-v2"),
+    name: 'MarketplaceV2',
+    dir: join(contractsDir,'nft', 'marketplace-v2')
   },
   {
-    name: "MinterMetadataOnChain",
-    dir: join(contractsDir, "nft", "minter-metadata-onchain"),
+    name: 'MinterMetadataOnChain',
+    dir: join(contractsDir,'nft', 'minter-metadata-onchain')
   },
   {
-    name: "Minter",
-    dir: join(contractsDir, "nft", "nft-vault"),
+    name: 'Minter',
+    dir: join(contractsDir,'nft', 'nft-vault')
   },
   {
-    name: "PG721",
-    dir: join(contractsDir, "nft", "pg721"),
+    name: 'PG721Legacy',
+    dir: join(contractsDir,'nft', 'pg721-legacy')
   },
   {
-    name: "PG721Legacy",
-    dir: join(contractsDir, "nft", "pg721-legacy"),
+    name: 'PG721Legacy',
+    dir: join(contractsDir,'nft', 'pg721-legacy')
   },
   {
-    name: "PG721MetadataOnChain",
-    dir: join(contractsDir, "nft", "pg721-metadata-onchain"),
+    name: 'PG721MetadataOnChain',
+    dir: join(contractsDir, 'nft','pg721-metadata-onchain')
   },
   {
-    name: "RoyaltyGroup",
-    dir: join(contractsDir, "nft", "royalty-group"),
+    name: 'PG721',
+    dir: join(contractsDir,'nft', 'pg721')
   },
   {
-    name: "Whitelist",
-    dir: join(contractsDir, "nft", "whitelist"),
+    name: 'RoyaltyGroup',
+    dir: join(contractsDir,'nft', 'royalty-group')
   },
+  {
+    name: 'Whitelist',
+    dir: join(contractsDir,'nft', 'whitelist')
+  }
 ];
 
 
@@ -113,7 +117,8 @@ telescope({
       outPath: join(__dirname, '../src/codegen'),
       options: {
         bundle: {
-          bundleFile: 'index.ts',
+          enabled: true,
+          bundleFile: 'contracts.ts',
           scope: 'contracts'
         },
         types: {
@@ -122,25 +127,15 @@ telescope({
         client: {
           enabled: true
         },
+        messageComposer: {
+          enabled: true
+        },
         reactQuery: {
           enabled: true,
-          optionalClient: true,
-          version: 'v4',
-          mutations: true,
-          queryKeys: true,
-          queryFactory: true,
+          version: 'v4'
         },
-        recoil: {
-          enabled: false
-        },
-        messageComposer: {
-          enabled: false
-        },
-        messageBuilder: {
-          enabled: false
-        },
-        useContractsHook: {
-          enabled: false
+        useContractsHooks: {
+          enabled: true
         }
       }
     },
