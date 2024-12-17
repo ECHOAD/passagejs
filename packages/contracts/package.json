@@ -1,6 +1,6 @@
 {
   "name": "@passage-zone/contracts",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Passage contracts",
   "author": "Adrian Estevez <adrianeea.ae@gmail.com>",
   "homepage": "https://github.com/ECHOAD/passagejs#readme",
@@ -78,5 +78,5 @@
     "@cosmjs/stargate": "0.32.4",
     "cosmwasm": "1.1.1"
   },
-  "gitHead": "636e4f9ddebec86792bcc579ffd911c24222a4e2"
+  "gitHead": "b19d5c012d7e4c480cde125b22fd541f255c9b6d"
 }

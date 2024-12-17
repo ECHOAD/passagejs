@@ -1,6 +1,6 @@
 {
-  "name": "passagejs",
-  "version": "0.0.3",
+  "name": "@passage-zone/passagejs",
+  "version": "0.0.4",
   "description": "passagejs",
   "author": "Adrian Estevez <adrianeea.ae@gmail.com>",
   "homepage": "https://github.com/ECHOAD/passagejs#readme",
@@ -89,5 +89,5 @@
     "react": "19.0.0",
     "react-dom": "19.0.0"
   },
-  "gitHead": "636e4f9ddebec86792bcc579ffd911c24222a4e2"
+  "gitHead": "b19d5c012d7e4c480cde125b22fd541f255c9b6d"
 }
