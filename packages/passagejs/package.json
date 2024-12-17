@@ -83,7 +83,7 @@
     "@cosmjs/proto-signing": "0.32.4",
     "@cosmjs/stargate": "0.32.4",
     "@cosmjs/tendermint-rpc": "^0.32.4",
-    "@cosmology/lcd": "1.0.3",
+    "@cosmology/lcd": "0.14.0",
     "@tanstack/react-query": "5.62.7",
     "protobufjs": "^7.4.0",
     "react": "19.0.0",
