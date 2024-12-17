@@ -29,11 +29,11 @@ import * as _21 from "./Minter.client";
 import * as _22 from "./Minter.message-composer";
 import * as _23 from "./Minter.react-query";
 import * as _24 from "./Minter.provider";
-import * as _25 from "./Pg721.types";
-import * as _26 from "./Pg721.client";
-import * as _27 from "./Pg721.message-composer";
-import * as _28 from "./Pg721.react-query";
-import * as _29 from "./Pg721.provider";
+import * as _25 from "./PG721Legacy.types";
+import * as _26 from "./PG721Legacy.client";
+import * as _27 from "./PG721Legacy.message-composer";
+import * as _28 from "./PG721Legacy.react-query";
+import * as _29 from "./PG721Legacy.provider";
 import * as _30 from "./PG721Legacy.types";
 import * as _31 from "./PG721Legacy.client";
 import * as _32 from "./PG721Legacy.message-composer";
@@ -44,19 +44,24 @@ import * as _36 from "./PG721MetadataOnChain.client";
 import * as _37 from "./PG721MetadataOnChain.message-composer";
 import * as _38 from "./PG721MetadataOnChain.react-query";
 import * as _39 from "./PG721MetadataOnChain.provider";
-import * as _40 from "./RoyaltyGroup.types";
-import * as _41 from "./RoyaltyGroup.client";
-import * as _42 from "./RoyaltyGroup.message-composer";
-import * as _43 from "./RoyaltyGroup.react-query";
-import * as _44 from "./RoyaltyGroup.provider";
-import * as _45 from "./Whitelist.types";
-import * as _46 from "./Whitelist.client";
-import * as _47 from "./Whitelist.message-composer";
-import * as _48 from "./Whitelist.react-query";
-import * as _49 from "./Whitelist.provider";
-import * as _50 from "./contractContextProviders";
-import * as _51 from "./contractContextBase";
-import * as _52 from "./contracts-context";
+import * as _40 from "./Pg721.types";
+import * as _41 from "./Pg721.client";
+import * as _42 from "./Pg721.message-composer";
+import * as _43 from "./Pg721.react-query";
+import * as _44 from "./Pg721.provider";
+import * as _45 from "./RoyaltyGroup.types";
+import * as _46 from "./RoyaltyGroup.client";
+import * as _47 from "./RoyaltyGroup.message-composer";
+import * as _48 from "./RoyaltyGroup.react-query";
+import * as _49 from "./RoyaltyGroup.provider";
+import * as _50 from "./Whitelist.types";
+import * as _51 from "./Whitelist.client";
+import * as _52 from "./Whitelist.message-composer";
+import * as _53 from "./Whitelist.react-query";
+import * as _54 from "./Whitelist.provider";
+import * as _55 from "./contractContextProviders";
+import * as _56 from "./contractContextBase";
+import * as _57 from "./contracts-context";
 export namespace contracts {
   export const AuctionEnglish = { ..._0,
     ..._1,
@@ -88,13 +93,12 @@ export namespace contracts {
     ..._23,
     ..._24
   };
-  export const Pg721 = { ..._25,
+  export const PG721Legacy = { ..._25,
     ..._26,
     ..._27,
     ..._28,
-    ..._29
-  };
-  export const PG721Legacy = { ..._30,
+    ..._29,
+    ..._30,
     ..._31,
     ..._32,
     ..._33,
@@ -106,22 +110,28 @@ export namespace contracts {
     ..._38,
     ..._39
   };
-  export const RoyaltyGroup = { ..._40,
+  export const Pg721 = { ..._40,
     ..._41,
     ..._42,
     ..._43,
     ..._44
   };
-  export const Whitelist = { ..._45,
+  export const RoyaltyGroup = { ..._45,
     ..._46,
     ..._47,
     ..._48,
     ..._49
   };
-  export const contractContextProviders = { ..._50
+  export const Whitelist = { ..._50,
+    ..._51,
+    ..._52,
+    ..._53,
+    ..._54
   };
-  export const contractContextBase = { ..._51
+  export const contractContextProviders = { ..._55
   };
-  export const contractsContext = { ..._52
+  export const contractContextBase = { ..._56
+  };
+  export const contractsContext = { ..._57
   };
 }

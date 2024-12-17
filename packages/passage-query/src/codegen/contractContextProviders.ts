@@ -26,10 +26,6 @@ import { MinterQueryClient } from "./Minter.client";
 import { MinterClient } from "./Minter.client";
 import { MinterMsgComposer } from "./Minter.message-composer";
 import { Minter } from "./Minter.provider";
-import { Pg721QueryClient } from "./Pg721.client";
-import { Pg721Client } from "./Pg721.client";
-import { Pg721MsgComposer } from "./Pg721.message-composer";
-import { Pg721 } from "./Pg721.provider";
 import { PG721LegacyQueryClient } from "./PG721Legacy.client";
 import { PG721LegacyClient } from "./PG721Legacy.client";
 import { PG721LegacyMsgComposer } from "./PG721Legacy.message-composer";
@@ -38,6 +34,10 @@ import { PG721MetadataOnChainQueryClient } from "./PG721MetadataOnChain.client";
 import { PG721MetadataOnChainClient } from "./PG721MetadataOnChain.client";
 import { PG721MetadataOnChainMsgComposer } from "./PG721MetadataOnChain.message-composer";
 import { PG721MetadataOnChain } from "./PG721MetadataOnChain.provider";
+import { Pg721QueryClient } from "./Pg721.client";
+import { Pg721Client } from "./Pg721.client";
+import { Pg721MsgComposer } from "./Pg721.message-composer";
+import { Pg721 } from "./Pg721.provider";
 import { RoyaltyGroupQueryClient } from "./RoyaltyGroup.client";
 import { RoyaltyGroupClient } from "./RoyaltyGroup.client";
 import { RoyaltyGroupMsgComposer } from "./RoyaltyGroup.message-composer";
@@ -52,9 +52,9 @@ export interface IContractsContext {
   marketplaceV2: IQueryClientProvider<MarketplaceV2QueryClient> & ISigningClientProvider<MarketplaceV2Client> & IMessageComposerProvider<MarketplaceV2MsgComposer>;
   minterMetadataOnChain: IQueryClientProvider<MinterMetadataOnChainQueryClient> & ISigningClientProvider<MinterMetadataOnChainClient> & IMessageComposerProvider<MinterMetadataOnChainMsgComposer>;
   minter: IQueryClientProvider<MinterQueryClient> & ISigningClientProvider<MinterClient> & IMessageComposerProvider<MinterMsgComposer>;
-  pg721: IQueryClientProvider<Pg721QueryClient> & ISigningClientProvider<Pg721Client> & IMessageComposerProvider<Pg721MsgComposer>;
   pG721Legacy: IQueryClientProvider<PG721LegacyQueryClient> & ISigningClientProvider<PG721LegacyClient> & IMessageComposerProvider<PG721LegacyMsgComposer>;
   pG721MetadataOnChain: IQueryClientProvider<PG721MetadataOnChainQueryClient> & ISigningClientProvider<PG721MetadataOnChainClient> & IMessageComposerProvider<PG721MetadataOnChainMsgComposer>;
+  pg721: IQueryClientProvider<Pg721QueryClient> & ISigningClientProvider<Pg721Client> & IMessageComposerProvider<Pg721MsgComposer>;
   royaltyGroup: IQueryClientProvider<RoyaltyGroupQueryClient> & ISigningClientProvider<RoyaltyGroupClient> & IMessageComposerProvider<RoyaltyGroupMsgComposer>;
   whitelist: IQueryClientProvider<WhitelistQueryClient> & ISigningClientProvider<WhitelistClient> & IMessageComposerProvider<WhitelistMsgComposer>;
 }
@@ -84,17 +84,17 @@ export const getProviders = (address?: string, cosmWasmClient?: CosmWasmClient, 
     cosmWasmClient,
     signingCosmWasmClient
   }),
-  pg721: new Pg721({
-    address,
-    cosmWasmClient,
-    signingCosmWasmClient
-  }),
   pG721Legacy: new PG721Legacy({
     address,
     cosmWasmClient,
     signingCosmWasmClient
   }),
   pG721MetadataOnChain: new PG721MetadataOnChain({
+    address,
+    cosmWasmClient,
+    signingCosmWasmClient
+  }),
+  pg721: new Pg721({
     address,
     cosmWasmClient,
     signingCosmWasmClient
