@@ -1,7 +1,7 @@
-# BadKids 
+# Passage
 
-<p align="center" width="100%">
-    <img height="140" src="https://res.cloudinary.com/stargaze/image/upload/w_700/tlmhniznlstlddende1v.jpg" />
+<p align="center" width="100%"> 
+    <img height="140" src="https://avatars.githubusercontent.com/u/160188595?s=200&v=4"  />
 </p>
 
 <p align="center" width="100%">
@@ -12,9 +12,11 @@ Typescript libraries for the Passage ecosystem.
 
 ## Packages
 
-#### [badkidsjs](packages/badkidsjs)
+#### [contracts](packages/contracts)
+#### [passagejs](packages/passagejs)
+#### [passage-query](packages/passage-query)
 
-TS library with Cosmos SDK and BadKids smart contracts.
+TS library with Cosmos SDK and Passage smart contracts.
 
 ## Developing
 
@@ -22,7 +24,6 @@ When first cloning the repo:
 
 ```
 yarn
-yarn bootstrap
 yarn build
 ```
 
@@ -46,11 +47,10 @@ lerna publish
 ```
 ## Credits
 
-🛠 Built by Cosmology — if you like our tools, please consider delegating to [our validator ⚛️](https://cosmology.tech/validator)
 
 Code built with the help of these related projects:
 
 * [@cosmwasm/ts-codegen](https://github.com/CosmWasm/ts-codegen) for generated CosmWasm contract Typescript classes
-* [@osmonauts/telescope](https://github.com/osmosis-labs/telescope) a "babel for the Cosmos", Telescope is a TypeScript Transpiler for Cosmos Protobufs.
+* [@cosmology/telescope](https://github.com/osmosis-labs/telescope) a "babel for the Cosmos", Telescope is a TypeScript Transpiler for Cosmos Protobufs.
 * [chain-registry](https://github.com/cosmology/chain-registry) an npm module for the official Cosmos chain-registry
 * [cosmos-kit](https://github.com/cosmology-tech/cosmos-kit) A wallet connector for the Cosmos ⚛️

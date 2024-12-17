@@ -1,25 +1,24 @@
-# stargaze-query
+# passage-query
 
 <p align="center" width="100%">
-    <img height="90" src="https://user-images.githubusercontent.com/545047/184694732-f4a3d397-14fb-415a-9562-a532f510f812.png" />
+    <img height="90" src="https://avatars.githubusercontent.com/u/160188595?s=200&v=4" />
 </p>
 
 <p align="center" width="100%">
    <a href="https://github.com/cosmology-tech/stargazejs/blob/main/LICENSE"><img height="20" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
-   <a href="https://www.npmjs.com/package/stargaze-query"><img height="20" src="https://img.shields.io/github/package-json/v/cosmology-tech/stargazejs?filename=packages%2Fstargaze-query%2Fpackage.json"></a>
 </p>
 
 
-TS library with Cosmos SDK and Stargaze smart contracts, with react-query hooks.
+TS library with Cosmos SDK and Passage smart contracts, with react-query hooks.
 
 ```
-npm install stargaze-query
+npm install passage-query
 ```
 
 ### Cosmos SDK clients
 
 ```js
-import {stargaze} from 'packages/passage-query';
+import {passage} from 'packages/passage-query';
 
 const main = async () => {
     const {createLCDClient} = stargaze.ClientFactory;
@@ -27,11 +26,11 @@ const main = async () => {
 
     // now you can query the modules
     const balance = await client.cosmos.bank.v1beta1
-        .allBalances({address: 'stars1addresshere'});
+        .allBalances({address: 'pgaddresshere'});
 };
 ```
 
-### Stargaze contracts
+### Passage contracts
 
 #### clients
 
@@ -41,9 +40,8 @@ All contracts are scoped under the `contracts` object:
 import {contracts} from 'packages/passage-query';
 
 const {
-    SG721Base,
-    VendingFactory,
-    VendingMinter,
+    Pg721
+    MarketplaceV2
     Whitelist
 } = contracts;
 ```
@@ -196,7 +194,7 @@ const { send } = cosmos.bank.v1beta1.MessageComposer.withTypeUrl;
 const msg = send({
     amount: [
     {
-        denom: 'ustars',
+        denom: 'upasg',
         amount: '1000'
     }
     ],
@@ -207,7 +205,7 @@ const msg = send({
 const fee: StdFee = {
     amount: [
     {
-        denom: 'ustars',
+        denom: 'upasg',
         amount: '864'
     }
     ],
@@ -236,7 +234,7 @@ import {
 } from 'packages/passage-query';
 
 const signer: OfflineSigner = /* create your signer (see above)  */
-const rpcEndpint = 'https://rpc.cosmos.directory/stargaze'; // or another URL
+const rpcEndpint = 'https://rpc.cosmos.directory/passage'; // or another URL
 
 const protoRegistry: ReadonlyArray<[string, GeneratedType]> = [
     ...cosmosProtoRegistry,
@@ -263,7 +261,7 @@ const stargateClient = await SigningStargateClient.connectWithSigner(rpcEndpoint
 
 ## Credits
 
-🛠 Built by Cosmology — if you like our tools, please consider delegating to [our validator ⚛️](https://cosmology.zone/validator)
+🛠 Built by Cosmology
 
 ## Related
 

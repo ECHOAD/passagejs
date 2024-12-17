@@ -1,7 +1,7 @@
 # badkidsjs
 
 <p align="center" width="100%">
-    <img height="140" src="https://res.cloudinary.com/stargaze/image/upload/w_700/tlmhniznlstlddende1v.jpg" />
+    <img height="140" src="https://avatars.githubusercontent.com/u/160188595?s=200&v=4" />
 </p>
 
 <p align="center" width="100%">
@@ -12,7 +12,7 @@
 TS library with Cosmos SDK and BadKids smart contracts.
 
 ```
-npm install badkidsjs
+npm install passagejs
 ```
 
 ### Providers
@@ -20,7 +20,7 @@ npm install badkidsjs
 First, make sure to create a provider for the chain you want to use. You can use the `useChain` hook from `cosmos-kit` or pass in `address` and promises to return the query/signing clients:
 
 ```tsx
-import { ContractsProvider } from 'badkidsjs';
+import { ContractsProvider } from 'passagejs';
 import { useChain } from '@cosmos-kit/react';
 
 const ChainContractProvider = ({ chainName, children }: { chainName: string, children: any }) => {
@@ -42,19 +42,17 @@ const ChainContractProvider = ({ chainName, children }: { chainName: string, chi
 After you've created your provider, you can leverage the `useContracts` hook:
 
 ```tsx
-import { useContracts } from 'badkidsjs';
+import { useContracts } from 'passagejs';
 import { useChain } from '@cosmos-kit/react';
 
 const ExampleComponent = ({chainName}:{chainName: string}) => {
   const { 
-    badKids, 
-    sg721Updatable,
     marketplace
   } = useContracts();
 
   const { address, status } = useChain(chainName);
 
-  if (address && badKids.cosmWasmClient) {
+  if (address && marketplace.cosmWasmClient) {
       const composer = badKids.getMessageComposer(badKidsAddr)
       // do something with composer
       console.log(composer);
@@ -94,15 +92,15 @@ const ExampleComponent = ({chainName}:{chainName: string}) => {
 ### Cosmos SDK clients
 
 ```js
-import { stargaze } from 'badkidsjs';
+import { passage } from 'passagejs';
 
 const main = async () => {
-   const { createLCDClient } = stargaze.ClientFactory; 
+   const { createLCDClient } = passage.ClientFactory; 
    const client = await createLCDClient({ restEndpoint: REST_ENDPOINT });
 
    // now you can query the modules
    const balance = await client.cosmos.bank.v1beta1
-        .allBalances({ address: 'stars1addresshere' });
+        .allBalances({ address: 'pasgaddresshere' });
 };
 ```
 
@@ -113,7 +111,7 @@ const main = async () => {
 All contracts are scoped under the `contracts` object:
 
 ```js
-import { contracts } from 'badkidsjs';
+import { contracts } from 'passagejs';
 const {
     SG721Base,
     VendingFactory,
@@ -153,7 +151,7 @@ await client.addMembers({
 ### CosmWasm Messages
 
 ```js
-import { cosmwasm } from "badkidsjs";
+import { cosmwasm } from "passagejs";
 
 const {
     clearAdmin,
@@ -168,7 +166,7 @@ const {
 ### IBC Messages
 
 ```js
-import { ibc } from 'badkidsjs';
+import { ibc } from 'passagejs';
 
 const {
     transfer
@@ -178,7 +176,7 @@ const {
 ### Cosmos Messages
 
 ```js
-import { cosmos } from 'badkidsjs';
+import { cosmos } from 'passagejs';
 
 const {
     fundCommunityPool,
@@ -216,7 +214,7 @@ const {
 Use `getSigningPublicawesomeClient` to get your `SigningStargateClient`, with the proto/amino messages full-loaded. No need to manually add amino types, just require and initialize the client:
 
 ```js
-import { getSigningPublicawesomeClient } from 'badkidsjs';
+import { getSigningPublicawesomeClient } from 'passagejs';
 
 const stargateClient = await getSigningPublicawesomeClient({
   rpcEndpoint,
@@ -254,7 +252,7 @@ import { chains } from 'chain-registry';
 
 const mnemonic =
   'unfold client turtle either pilot stock floor glow toward bullet car science';
-  const chain = chains.find(({ chain_name }) => chain_name === 'stargaze');
+  const chain = chains.find(({ chain_name }) => chain_name === 'passage');
   const signer = await getOfflineSigner({
     mnemonic,
     chain
@@ -262,7 +260,7 @@ const mnemonic =
 ```
 ### Broadcasting messages
 
-Now that you have your `stargateClient`, you can broadcast messages:
+Now that you have your `passageClient`, you can broadcast messages:
 
 ```js
 const { send } = cosmos.bank.v1beta1.MessageComposer.withTypeUrl;
@@ -270,7 +268,7 @@ const { send } = cosmos.bank.v1beta1.MessageComposer.withTypeUrl;
 const msg = send({
     amount: [
     {
-        denom: 'ustars',
+        denom: 'upasg',
         amount: '1000'
     }
     ],
@@ -281,7 +279,7 @@ const msg = send({
 const fee: StdFee = {
     amount: [
     {
-        denom: 'ustars',
+        denom: 'upasg',
         amount: '864'
     }
     ],
@@ -337,11 +335,11 @@ const stargateClient = await SigningStargateClient.connectWithSigner(rpcEndpoint
 
 ## Credits
 
-🛠 Built by Cosmology — if you like our tools, please consider delegating to [our validator ⚛️](https://cosmology.tech/validator)
+🛠 Built by Cosmology 
 
 Code built with the help of these related projects:
 
 * [@cosmwasm/ts-codegen](https://github.com/CosmWasm/ts-codegen) for generated CosmWasm contract Typescript classes
-* [@osmonauts/telescope](https://github.com/osmosis-labs/telescope) a "babel for the Cosmos", Telescope is a TypeScript Transpiler for Cosmos Protobufs.
+* [@cosmology/telescope](https://github.com/osmosis-labs/telescope) a "babel for the Cosmos", Telescope is a TypeScript Transpiler for Cosmos Protobufs.
 * [cosmos-kit](https://github.com/cosmology-tech/cosmos-kit) A wallet connector for the Cosmos ⚛️
 

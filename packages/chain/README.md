@@ -1,7 +1,7 @@
 # @stargaze-zone/chain
 
 <p align="center" width="100%">
-    <img height="90" src="https://user-images.githubusercontent.com/545047/184694732-f4a3d397-14fb-415a-9562-a532f510f812.png" />
+    <img height="90" src="https://avatars.githubusercontent.com/u/160188595?s=200&v=4" />
 </p>
 
 <p align="center" width="100%">
@@ -9,14 +9,14 @@
    <a href="https://www.npmjs.com/package/@stargaze-zone/chain"><img height="20" src="https://img.shields.io/github/package-json/v/cosmology-tech/stargaze-zone?filename=packages%2Fchain%2Fpackage.json"></a>
 </p>
 
-Chain Registry info for Stargaze, including asset lists.
+Chain Registry info for Passage, including asset lists.
 
 ```
 npm install @stargaze-zone/chain
 ```
 
 ```js
-import { chain, assets, asset_list } from '@stargaze-zone/chain';
+import { chain, assets, asset_list } from '@passage-zone/chain';
 ```
 
 ### assets
@@ -25,17 +25,17 @@ import { chain, assets, asset_list } from '@stargaze-zone/chain';
 console.log(assets);
 {
   '$schema': '../assetlist.schema.json',
-  chain_name: 'stargaze',
+  chain_name: 'passage',
   assets: [
     {
-      description: 'The native token of Stargaze',
+      description: 'The native token of Passage',
       denom_units: [Array],
-      base: 'ustars',
-      name: 'Stargaze',
-      display: 'stars',
-      symbol: 'STARS',
+      base: 'upasg',
+      name: 'Passage',
+      display: 'passage',
+      symbol: 'PASG',
       logo_URIs: [Object],
-      coingecko_id: 'stargaze'
+      coingecko_id: 'passage'
     }
   ]
 }
@@ -46,64 +46,71 @@ console.log(assets);
 ```js
 console.log(chain);
 {
-  '$schema': '../chain.schema.json',
-  chain_name: 'stargaze',
-  status: 'live',
-  network_type: 'mainnet',
-  pretty_name: 'Stargaze',
-  chain_id: 'stargaze-1',
-  bech32_prefix: 'stars',
-  daemon_name: 'starsd',
-  node_home: '$HOME/.starsd',
-  slip44: 118,
-  genesis: {
-    genesis_url: 'https://raw.githubusercontent.com/public-awesome/mainnet/main/stargaze-1/genesis.tar.gz'
-  },
-  codebase: {
-    git_repo: 'https://github.com/public-awesome/stargaze',
-    recommended_version: 'v6.0.1',
-    compatible_versions: [ 'v6.0.1' ]
-  },
-  peers: {
-    seeds: [ [Object], [Object], [Object], [Object], [Object] ],
-    persistent_peers: [
-      [Object], [Object], [Object],
-      [Object], [Object], [Object],
-      [Object], [Object], [Object],
-      [Object], [Object], [Object],
-      [Object], [Object], [Object],
-      [Object], [Object], [Object],
-      [Object], [Object]
+ "$schema": "../chain.schema.json",
+  "chain_name": "passage",
+  "chain_type": "cosmos",
+  "chain_id": "passage-2",
+  "pre_fork_chain_name": "passage1",
+  "pretty_name": "Passage",
+  "status": "live",
+  "network_type": "mainnet",
+  "website": "https://passage3d.com/",
+  "bech32_prefix": "pasg",
+  "daemon_name": "passage",
+  "node_home": "$HOME/.passage",
+  "key_algos": [
+    "secp256k1"
+  ],
+  "slip44": 118,
+  "fees": {
+    "fee_tokens": [
+      {
+        "denom": "upasg",
+        "fixed_min_gas_price": 0,
+        "low_gas_price": 0.001,
+        "average_gas_price": 0.0025,
+        "high_gas_price": 0.01
+      }
     ]
   },
+  "staking": {
+    "staking_tokens": [
+      {
+        "denom": "upasg"
+      }
+    ]
+  },
+
+  codebase: { },
   apis: {
     rpc: [ [Object], [Object], [Object], [Object], [Object], [Object] ],
     rest: [ [Object], [Object], [Object], [Object], [Object] ],
     grpc: [ [Object] ]
   },
   explorers: [
-    {
-      kind: 'mintscan',
-      url: 'https://www.mintscan.io/stargaze/',
-      tx_page: 'https://www.mintscan.io/stargaze/txs/${txHash}'
+     {
+      "kind": "aneka",
+      "url": "https://passage.aneka.io",
+      "tx_page": "https://passage.aneka.io/txs/${txHash}",
+      "account_page": "https://passage.aneka.io/accounts/${accountAddress}"
     },
     {
-      kind: 'ping-pub',
-      url: 'https://ping.pub/stargaze',
-      tx_page: 'https://ping.pub/stargaze/tx/${txHash}'
+      "kind": "mintscan",
+      "url": "https://www.mintscan.io/passage",
+      "tx_page": "https://www.mintscan.io/passage/transactions/${txHash}",
+      "account_page": "https://www.mintscan.io/passage/accounts/${accountAddress}"
     },
     {
-      kind: 'atomscan',
-      url: 'https://atomscan.com/stargaze',
-      tx_page: 'https://atomscan.com/stargaze/transactions/${txHash}'
-    }
+      "kind": "ezstaking",
+      "url": "https://ezstaking.app/passage",
+      "tx_page": "https://ezstaking.app/passage/txs/${txHash}",
+      "account_page": "https://ezstaking.app/passage/account/${accountAddress}"
+    },
   ]
 }
 ```
 
 ## Credits
-
-🛠 Built by Cosmology — if you like our tools, please consider delegating to [our validator ⚛️](https://cosmology.zone/validator)
 
 Code built with the help of these related projects:
 

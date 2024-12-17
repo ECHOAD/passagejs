@@ -33,11 +33,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cosmology-tech/stargazejs"
+    "url": "https://github.com/ECHOAD/passagejs"
   },
   "keywords": [],
   "bugs": {
-    "url": "https://github.com/cosmology-tech/stargazejs/issues"
+    "url": "https://github.com/ECHOAD/passagejs/issues"
   },
   "devDependencies": {
     "@babel/cli": "7.26.4",

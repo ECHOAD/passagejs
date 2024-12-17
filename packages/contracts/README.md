@@ -1,32 +1,31 @@
-# @stargaze-zone/contracts
+# @passage-zone/contracts
 
 <p align="center" width="100%">
-    <img height="90" src="https://user-images.githubusercontent.com/545047/184694732-f4a3d397-14fb-415a-9562-a532f510f812.png" />
+    <img height="90" src="https://avatars.githubusercontent.com/u/160188595?s=200&v=4" />
 </p>
 
 <p align="center" width="100%">
-   <a href="https://github.com/cosmology-tech/stargazejs/blob/main/LICENSE"><img height="20" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
-   <a href="https://www.npmjs.com/package/@stargaze-zone/contracts"><img height="20" src="https://img.shields.io/github/package-json/v/cosmology-tech/stargaze-zone?filename=packages%2Fcontracts%2Fpackage.json"></a>
+   <a href="https://github.com/ECHOAD/passagejs/blob/main/LICENSE"><img height="20" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
 </p>
 
-Stargaze smart contract bindings
+Passage smart contract bindings
 
 ```
-npm install @stargaze-zone/contracts
+npm install @passage-zone/contracts
 ```
 
-### Stargaze contracts
+### Passage contracts
 
 #### clients
 
 All contracts are scoped under the `contracts` object:
 
 ```js
-import { contracts } from '@stargaze-zone/contracts';
+import { contracts } from '@passage-zone/contracts';
 const {
-    SG721Base,
-    VendingFactory,
-    VendingMinter,
+    Pg721,
+    Minter,
+    MarketplaceV2,
     Whitelist
 } = contracts;
 ```
@@ -61,7 +60,6 @@ await client.addMembers({
 
 ## Credits 
 
-🛠 Built by Cosmology — if you like our tools, please consider delegating to [our validator ⚛️](https://cosmology.zone/validator)
 
 Code built with the help of these related projects:
 
