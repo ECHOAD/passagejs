@@ -11,10 +11,6 @@ const contracts = [
     dir: join(contractsDir,'nft', 'pg721')
   },
   {
-    name: 'PG721Legacy',
-    dir: join(contractsDir,'nft', 'pg721-legacy')
-  },
-  {
     name: 'PG721MetadataOnChain',
     dir: join(contractsDir, 'nft','pg721-metadata-onchain')
   },
@@ -23,12 +19,16 @@ const contracts = [
     dir: join(contractsDir,'nft', 'minter')
   },
   {
-    name: 'RoyaltyGroup',
-    dir: join(contractsDir,'nft', 'royalty-group')
-  },
-  {
     name: 'Whitelist',
     dir: join(contractsDir,'nft', 'whitelist')
+  },
+  {
+    name: 'Marketplace',
+    dir: join(contractsDir,'nft', 'marketplace-legacy')
+  },
+  {
+    name: 'MarketplaceV2',
+    dir: join(contractsDir,'nft', 'marketplace-v2')
   }
 ];
 
