@@ -7,45 +7,29 @@ const contractsDir = resolve(join(__dirname, "/../../../passage-contracts/contra
 
 const contracts = [
   {
-    name: "AuctionEnglish",
-    dir: join(contractsDir, "nft", "auction-english"),
+    name: 'PG721',
+    dir: join(contractsDir,'nft', 'pg721')
   },
   {
-    name: "MarketplaceLegacy",
-    dir: join(contractsDir, "nft", "marketplace-legacy"),
+    name: 'PG721Legacy',
+    dir: join(contractsDir,'nft', 'pg721-legacy')
   },
   {
-    name: "MarketplaceV2",
-    dir: join(contractsDir, "nft", "marketplace-v2"),
+    name: 'PG721MetadataOnChain',
+    dir: join(contractsDir, 'nft','pg721-metadata-onchain')
   },
   {
-    name: "MinterMetadataOnChain",
-    dir: join(contractsDir, "nft", "minter-metadata-onchain"),
+    name: 'Minter',
+    dir: join(contractsDir,'nft', 'minter')
   },
   {
-    name: "Minter",
-    dir: join(contractsDir, "nft", "nft-vault"),
+    name: 'RoyaltyGroup',
+    dir: join(contractsDir,'nft', 'royalty-group')
   },
   {
-    name: "PG721",
-    dir: join(contractsDir, "nft", "pg721"),
-  },
-  {
-    name: "PG721Legacy",
-    dir: join(contractsDir, "nft", "pg721-legacy"),
-  },
-  {
-    name: "PG721MetadataOnChain",
-    dir: join(contractsDir, "nft", "pg721-metadata-onchain"),
-  },
-  {
-    name: "RoyaltyGroup",
-    dir: join(contractsDir, "nft", "royalty-group"),
-  },
-  {
-    name: "Whitelist",
-    dir: join(contractsDir, "nft", "whitelist"),
-  },
+    name: 'Whitelist',
+    dir: join(contractsDir,'nft', 'whitelist')
+  }
 ];
 
 telescope({

@@ -6,28 +6,8 @@ const contractsDir = resolve(join(__dirname, "/../../../passage-contracts/contra
 
 const contracts = [
   {
-    name: 'AuctionEnglish',
-    dir: join(contractsDir, 'nft', 'auction-english')
-  },
-  {
-    name: 'MarketplaceLegacy',
-    dir: join(contractsDir, 'nft','marketplace-legacy')
-  },
-  {
-    name: 'MarketplaceV2',
-    dir: join(contractsDir,'nft', 'marketplace-v2')
-  },
-  {
-    name: 'MinterMetadataOnChain',
-    dir: join(contractsDir,'nft', 'minter-metadata-onchain')
-  },
-  {
-    name: 'Minter',
-    dir: join(contractsDir,'nft', 'nft-vault')
-  },
-  {
-    name: 'PG721Legacy',
-    dir: join(contractsDir,'nft', 'pg721-legacy')
+    name: 'PG721',
+    dir: join(contractsDir,'nft', 'pg721')
   },
   {
     name: 'PG721Legacy',
@@ -38,8 +18,8 @@ const contracts = [
     dir: join(contractsDir, 'nft','pg721-metadata-onchain')
   },
   {
-    name: 'PG721',
-    dir: join(contractsDir,'nft', 'pg721')
+    name: 'Minter',
+    dir: join(contractsDir,'nft', 'minter')
   },
   {
     name: 'RoyaltyGroup',
