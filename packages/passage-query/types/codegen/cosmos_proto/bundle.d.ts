@@ -10,8 +10,8 @@ export declare const cosmos_proto: {
         is(o: any): o is _1.InterfaceDescriptor;
         isSDK(o: any): o is _1.InterfaceDescriptorSDKType;
         isAmino(o: any): o is _1.InterfaceDescriptorAmino;
-        encode(message: _1.InterfaceDescriptor, writer?: import("..").BinaryWriter): import("..").BinaryWriter;
-        decode(input: import("..").BinaryReader | Uint8Array, length?: number): _1.InterfaceDescriptor;
+        encode(message: _1.InterfaceDescriptor, writer?: import("../index").BinaryWriter): import("../index").BinaryWriter;
+        decode(input: import("../index").BinaryReader | Uint8Array, length?: number): _1.InterfaceDescriptor;
         fromPartial(object: import("../helpers").DeepPartial<_1.InterfaceDescriptor>): _1.InterfaceDescriptor;
         fromAmino(object: _1.InterfaceDescriptorAmino): _1.InterfaceDescriptor;
         toAmino(message: _1.InterfaceDescriptor): _1.InterfaceDescriptorAmino;
@@ -25,8 +25,8 @@ export declare const cosmos_proto: {
         is(o: any): o is _1.ScalarDescriptor;
         isSDK(o: any): o is _1.ScalarDescriptorSDKType;
         isAmino(o: any): o is _1.ScalarDescriptorAmino;
-        encode(message: _1.ScalarDescriptor, writer?: import("..").BinaryWriter): import("..").BinaryWriter;
-        decode(input: import("..").BinaryReader | Uint8Array, length?: number): _1.ScalarDescriptor;
+        encode(message: _1.ScalarDescriptor, writer?: import("../index").BinaryWriter): import("../index").BinaryWriter;
+        decode(input: import("../index").BinaryReader | Uint8Array, length?: number): _1.ScalarDescriptor;
         fromPartial(object: import("../helpers").DeepPartial<_1.ScalarDescriptor>): _1.ScalarDescriptor;
         fromAmino(object: _1.ScalarDescriptorAmino): _1.ScalarDescriptor;
         toAmino(message: _1.ScalarDescriptor): _1.ScalarDescriptorAmino;

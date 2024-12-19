@@ -18,7 +18,7 @@ npm install passage-query
 ### Cosmos SDK clients
 
 ```js
-import {passage} from 'packages/passage-query';
+import {passage} from '@passage-zone/passage-query/types/codegen';
 
 const main = async () => {
     const {createLCDClient} = stargaze.ClientFactory;
@@ -37,7 +37,7 @@ const main = async () => {
 All contracts are scoped under the `contracts` object:
 
 ```js
-import {contracts} from 'packages/passage-query';
+import {contracts} from '@passage-zone/passage-query/types/codegen';
 
 const {
     Pg721
@@ -77,7 +77,7 @@ await client.addMembers({
 ### CosmWasm Messages
 
 ```js
-import {cosmwasm} from "packages/passage-query";
+import {cosmwasm} from "@passage-zone/passage-query/types/codegen";
 
 const {
     clearAdmin,
@@ -92,7 +92,7 @@ const {
 ### IBC Messages
 
 ```js
-import {ibc} from 'packages/passage-query';
+import {ibc} from '@passage-zone/passage-query/types/codegen';
 
 const {
     transfer
@@ -102,7 +102,7 @@ const {
 ### Cosmos Messages
 
 ```js
-import {cosmos} from 'packages/passage-query';
+import {cosmos} from '@passage-zone/passage-query/types/codegen';
 
 const {
     fundCommunityPool,
@@ -140,7 +140,7 @@ const {
 Use `getSigningPublicawesomeClient` to get your `SigningStargateClient`, with the proto/amino messages full-loaded. No need to manually add amino types, just require and initialize the client:
 
 ```js
-import {getSigningPublicawesomeClient} from 'packages/passage-query';
+import {getSigningPublicawesomeClient} from '@passage-zone/passage-query/types/codegen';
 
 const stargateClient = await getSigningPublicawesomeClient({
     rpcEndpoint,
@@ -231,7 +231,7 @@ import {
     ibcAminoConverters,
     publicawesomeAminoConverters,
     publicawesomeProtoRegistry
-} from 'packages/passage-query';
+} from '@passage-zone/passage-query/types/codegen';
 
 const signer: OfflineSigner = /* create your signer (see above)  */
 const rpcEndpint = 'https://rpc.cosmos.directory/passage'; // or another URL
