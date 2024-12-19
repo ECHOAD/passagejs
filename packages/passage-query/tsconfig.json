@@ -1,20 +1,17 @@
 {
   "compilerOptions": {
     "declaration": true,
-    "declarationDir": "./types",
+    "declarationDir": "./types",   // Los tipos generados se exportarán aquí
     "emitDeclarationOnly": true,
     "isolatedModules": true,
     "esModuleInterop": true,
+    "moduleResolution": "node",  // Garantiza que los módulos se resuelvan correctamente
+    "module": "ESNext",
     "jsx": "react-jsx",
     "allowJs": true,
-    "lib": [
-      "es2020"
-    ]
+    "lib": ["es2020"],
+    "outDir": "main"
   },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }
