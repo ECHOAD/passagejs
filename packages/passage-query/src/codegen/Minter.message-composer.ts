@@ -7,22 +7,37 @@
 import { MsgExecuteContractEncodeObject } from "@cosmjs/cosmwasm-stargate";
 import { MsgExecuteContract } from "cosmjs-types/cosmwasm/wasm/v1/tx";
 import { toUtf8 } from "@cosmjs/encoding";
-import { Timestamp, Uint64, Uint128, ConfigResponse, Coin, Addr, Config, ExecuteMsg, Decimal, InstantiateMsg, InstantiateMsg1, CollectionInfoForRoyaltyInfoResponse, RoyaltyInfoResponse, QueryMsg } from "./Minter.types";
+import {
+  Timestamp,
+  Uint64,
+  Uint128,
+  ConfigResponse,
+  Coin,
+  Addr,
+  Config,
+  ExecuteMsg,
+  MintCountResponse,
+  MintPriceResponse,
+  MintableNumTokensResponse,
+  QueryMsg,
+  StartTimeResponse,
+  AlternativeCoin
+} from "./Minter.types";
 export interface MinterMsg {
   contractAddress: string;
   sender: string;
-  mint: (_funds?: Coin[]) => MsgExecuteContractEncodeObject;
+  mint: (_funds?: AlternativeCoin[]) => MsgExecuteContractEncodeObject;
   setWhitelist: ({
     whitelist
   }: {
     whitelist: string;
-  }, _funds?: Coin[]) => MsgExecuteContractEncodeObject;
-  updateStartTime: (_funds?: Coin[]) => MsgExecuteContractEncodeObject;
+  }, _funds?: AlternativeCoin[]) => MsgExecuteContractEncodeObject;
+  updateStartTime: (_funds?: AlternativeCoin[]) => MsgExecuteContractEncodeObject;
   updatePerAddressLimit: ({
     perAddressLimit
   }: {
     perAddressLimit: number;
-  }, _funds?: Coin[]) => MsgExecuteContractEncodeObject;
+  }, _funds?: AlternativeCoin[]) => MsgExecuteContractEncodeObject;
   mintTo: ({
     recipient
   }: {
@@ -53,7 +68,7 @@ export class MinterMsgComposer implements MinterMsg {
     this.withdraw = this.withdraw.bind(this);
   }
 
-  mint = (_funds?: Coin[]): MsgExecuteContractEncodeObject => {
+  mint = (_funds?: AlternativeCoin[]): MsgExecuteContractEncodeObject => {
     return {
       typeUrl: "/cosmwasm.wasm.v1.MsgExecuteContract",
       value: MsgExecuteContract.fromPartial({
@@ -70,7 +85,7 @@ export class MinterMsgComposer implements MinterMsg {
     whitelist
   }: {
     whitelist: string;
-  }, _funds?: Coin[]): MsgExecuteContractEncodeObject => {
+  }, _funds?: AlternativeCoin[]): MsgExecuteContractEncodeObject => {
     return {
       typeUrl: "/cosmwasm.wasm.v1.MsgExecuteContract",
       value: MsgExecuteContract.fromPartial({
@@ -85,7 +100,7 @@ export class MinterMsgComposer implements MinterMsg {
       })
     };
   };
-  updateStartTime = (_funds?: Coin[]): MsgExecuteContractEncodeObject => {
+  updateStartTime = (_funds?: AlternativeCoin[]): MsgExecuteContractEncodeObject => {
     return {
       typeUrl: "/cosmwasm.wasm.v1.MsgExecuteContract",
       value: MsgExecuteContract.fromPartial({
@@ -102,7 +117,7 @@ export class MinterMsgComposer implements MinterMsg {
     perAddressLimit
   }: {
     perAddressLimit: number;
-  }, _funds?: Coin[]): MsgExecuteContractEncodeObject => {
+  }, _funds?: AlternativeCoin[]): MsgExecuteContractEncodeObject => {
     return {
       typeUrl: "/cosmwasm.wasm.v1.MsgExecuteContract",
       value: MsgExecuteContract.fromPartial({
@@ -121,7 +136,7 @@ export class MinterMsgComposer implements MinterMsg {
     recipient
   }: {
     recipient: string;
-  }, _funds?: Coin[]): MsgExecuteContractEncodeObject => {
+  }, _funds?: AlternativeCoin[]): MsgExecuteContractEncodeObject => {
     return {
       typeUrl: "/cosmwasm.wasm.v1.MsgExecuteContract",
       value: MsgExecuteContract.fromPartial({
@@ -142,7 +157,7 @@ export class MinterMsgComposer implements MinterMsg {
   }: {
     recipient: string;
     tokenId: number;
-  }, _funds?: Coin[]): MsgExecuteContractEncodeObject => {
+  }, _funds?: AlternativeCoin[]): MsgExecuteContractEncodeObject => {
     return {
       typeUrl: "/cosmwasm.wasm.v1.MsgExecuteContract",
       value: MsgExecuteContract.fromPartial({
@@ -158,7 +173,7 @@ export class MinterMsgComposer implements MinterMsg {
       })
     };
   };
-  withdraw = (_funds?: Coin[]): MsgExecuteContractEncodeObject => {
+  withdraw = (_funds?: AlternativeCoin[]): MsgExecuteContractEncodeObject => {
     return {
       typeUrl: "/cosmwasm.wasm.v1.MsgExecuteContract",
       value: MsgExecuteContract.fromPartial({

@@ -5,7 +5,7 @@
 */
 import { CosmWasmClient, SigningCosmWasmClient, ExecuteResult } from "@cosmjs/cosmwasm-stargate";
 import { StdFee } from "@cosmjs/amino";
-import { ConfigResponse, Coin } from "./Minter.types";
+import { ConfigResponse, Coin, MintCountResponse, MintPriceResponse, MintableNumTokensResponse, StartTimeResponse } from "./Minter.types";
 export interface MinterReadOnlyInterface {
     contractAddress: string;
     config: () => Promise<ConfigResponse>;

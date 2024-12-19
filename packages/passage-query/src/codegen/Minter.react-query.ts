@@ -5,7 +5,7 @@
 */
 
 import { UseQueryOptions, useQuery } from "@tanstack/react-query";
-import { Timestamp, Uint64, Uint128, ConfigResponse, Coin, Addr, Config, ExecuteMsg, Decimal, InstantiateMsg, InstantiateMsg1, CollectionInfoForRoyaltyInfoResponse, RoyaltyInfoResponse, QueryMsg } from "./Minter.types";
+import { Timestamp, Uint64, Uint128, ConfigResponse, Coin, Addr, Config, ExecuteMsg, MintCountResponse, MintPriceResponse, MintableNumTokensResponse, QueryMsg, StartTimeResponse } from "./Minter.types";
 import { MinterQueryClient } from "./Minter.client";
 export interface MinterReactQuery<TResponse, TData = TResponse> {
   client: MinterQueryClient;
@@ -23,35 +23,57 @@ export function useMinterMintCountQuery<TData = MintCountResponse>({
   args,
   options
 }: MinterMintCountQuery<TData>) {
-  return useQuery<MintCountResponse, Error, TData>(["minterMintCount", client.contractAddress, JSON.stringify(args)], () => client.mintCount({
-    address: args.address
-  }), options);
+  return useQuery<MintCountResponse, Error, TData>({
+    queryKey: ["minterMintCount", client.contractAddress, JSON.stringify(args)],
+    queryFn: () => client.mintCount({ address: args.address }),
+    ...options
+  });
 }
 export interface MinterMintPriceQuery<TData> extends MinterReactQuery<MintPriceResponse, TData> {}
 export function useMinterMintPriceQuery<TData = MintPriceResponse>({
   client,
   options
 }: MinterMintPriceQuery<TData>) {
-  return useQuery<MintPriceResponse, Error, TData>(["minterMintPrice", client.contractAddress], () => client.mintPrice(), options);
+  return useQuery<MintPriceResponse, Error, TData>({
+    queryKey: ["minterMintPrice", client.contractAddress],
+    queryFn: () => client.mintPrice(),
+    ...options
+  });
 }
+
 export interface MinterStartTimeQuery<TData> extends MinterReactQuery<StartTimeResponse, TData> {}
 export function useMinterStartTimeQuery<TData = StartTimeResponse>({
   client,
   options
 }: MinterStartTimeQuery<TData>) {
-  return useQuery<StartTimeResponse, Error, TData>(["minterStartTime", client.contractAddress], () => client.startTime(), options);
+  return useQuery<StartTimeResponse, Error, TData>({
+    queryKey: ["minterStartTime", client.contractAddress],
+    queryFn: () => client.startTime(),
+    ...options
+  });
 }
+
 export interface MinterMintableNumTokensQuery<TData> extends MinterReactQuery<MintableNumTokensResponse, TData> {}
 export function useMinterMintableNumTokensQuery<TData = MintableNumTokensResponse>({
   client,
   options
 }: MinterMintableNumTokensQuery<TData>) {
-  return useQuery<MintableNumTokensResponse, Error, TData>(["minterMintableNumTokens", client.contractAddress], () => client.mintableNumTokens(), options);
+  return useQuery<MintableNumTokensResponse, Error, TData>({
+    queryKey: ["minterMintableNumTokens", client.contractAddress],
+    queryFn: () => client.mintableNumTokens(),
+    ...options
+  });
 }
+
 export interface MinterConfigQuery<TData> extends MinterReactQuery<ConfigResponse, TData> {}
 export function useMinterConfigQuery<TData = ConfigResponse>({
   client,
   options
 }: MinterConfigQuery<TData>) {
-  return useQuery<ConfigResponse, Error, TData>(["minterConfig", client.contractAddress], () => client.config(), options);
+  return useQuery<ConfigResponse, Error, TData>({
+    queryKey: ["minterConfig", client.contractAddress],
+    queryFn: () => client.config(),
+    ...options
+
+  });
 }

@@ -5,7 +5,7 @@
 */
 import { Coin } from "@cosmjs/amino";
 import { MsgExecuteContractEncodeObject } from "@cosmjs/cosmwasm-stargate";
-import { Expiration, Binary, Metadata } from "./PG721MetadataOnChain.types";
+import { Expiration, Metadata, Binary } from "./PG721MetadataOnChain.types";
 export interface PG721MetadataOnChainMsg {
     contractAddress: string;
     sender: string;

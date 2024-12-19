@@ -5,7 +5,7 @@
 */
 
 import { UseQueryOptions, useQuery } from "@tanstack/react-query";
-import { Timestamp, Uint64, Uint128, ConfigResponse, Coin, Addr, Config, ExecuteMsg, AddMembersMsg, RemoveMembersMsg, InstantiateMsg, MembersResponse, QueryMsg } from "./Whitelist.types";
+import { Timestamp, Uint64, Uint128, ConfigResponse, Coin, Addr, Config, ExecuteMsg, AddMembersMsg, RemoveMembersMsg, HasEndedResponse, HasMemberResponse, HasStartedResponse, InstantiateMsg, IsActiveResponse, MembersResponse, QueryMsg } from "./Whitelist.types";
 import { WhitelistQueryClient } from "./Whitelist.client";
 export interface WhitelistReactQuery<TResponse, TData = TResponse> {
   client: WhitelistQueryClient;
@@ -18,8 +18,13 @@ export function useWhitelistConfigQuery<TData = ConfigResponse>({
   client,
   options
 }: WhitelistConfigQuery<TData>) {
-  return useQuery<ConfigResponse, Error, TData>(["whitelistConfig", client.contractAddress], () => client.config(), options);
+  return useQuery<ConfigResponse, Error, TData>({
+    queryKey: ["whitelistConfig", client.contractAddress],
+    queryFn: () => client.config(),
+    ...options
+  });
 }
+
 export interface WhitelistHasMemberQuery<TData> extends WhitelistReactQuery<HasMemberResponse, TData> {
   args: {
     member: string;
@@ -30,10 +35,15 @@ export function useWhitelistHasMemberQuery<TData = HasMemberResponse>({
   args,
   options
 }: WhitelistHasMemberQuery<TData>) {
-  return useQuery<HasMemberResponse, Error, TData>(["whitelistHasMember", client.contractAddress, JSON.stringify(args)], () => client.hasMember({
-    member: args.member
-  }), options);
+  return useQuery<HasMemberResponse, Error, TData>({
+    queryKey: ["whitelistHasMember", client.contractAddress, JSON.stringify(args)],
+    queryFn: () => client.hasMember({
+      member: args.member
+    }),
+    ...options
+  });
 }
+
 export interface WhitelistMembersQuery<TData> extends WhitelistReactQuery<MembersResponse, TData> {
   args: {
     limit?: number;
@@ -45,29 +55,48 @@ export function useWhitelistMembersQuery<TData = MembersResponse>({
   args,
   options
 }: WhitelistMembersQuery<TData>) {
-  return useQuery<MembersResponse, Error, TData>(["whitelistMembers", client.contractAddress, JSON.stringify(args)], () => client.members({
-    limit: args.limit,
-    startAfter: args.startAfter
-  }), options);
+  return useQuery<MembersResponse, Error, TData>({
+    queryKey: ["whitelistMembers", client.contractAddress, JSON.stringify(args)],
+    queryFn: () => client.members({
+      limit: args.limit,
+      startAfter: args.startAfter
+    }),
+    ...options
+  });
 }
+
+
 export interface WhitelistIsActiveQuery<TData> extends WhitelistReactQuery<IsActiveResponse, TData> {}
 export function useWhitelistIsActiveQuery<TData = IsActiveResponse>({
   client,
   options
 }: WhitelistIsActiveQuery<TData>) {
-  return useQuery<IsActiveResponse, Error, TData>(["whitelistIsActive", client.contractAddress], () => client.isActive(), options);
+  return useQuery<IsActiveResponse, Error, TData>({
+    queryKey: ["whitelistIsActive", client.contractAddress],
+    queryFn: () => client.isActive(),
+    ...options
+  });
 }
+
 export interface WhitelistHasEndedQuery<TData> extends WhitelistReactQuery<HasEndedResponse, TData> {}
 export function useWhitelistHasEndedQuery<TData = HasEndedResponse>({
   client,
   options
 }: WhitelistHasEndedQuery<TData>) {
-  return useQuery<HasEndedResponse, Error, TData>(["whitelistHasEnded", client.contractAddress], () => client.hasEnded(), options);
+  return useQuery<HasEndedResponse, Error, TData>({
+    queryKey: ["whitelistHasEnded", client.contractAddress],
+    queryFn: () => client.hasEnded(),
+    ...options
+  });
 }
 export interface WhitelistHasStartedQuery<TData> extends WhitelistReactQuery<HasStartedResponse, TData> {}
 export function useWhitelistHasStartedQuery<TData = HasStartedResponse>({
   client,
   options
 }: WhitelistHasStartedQuery<TData>) {
-  return useQuery<HasStartedResponse, Error, TData>(["whitelistHasStarted", client.contractAddress], () => client.hasStarted(), options);
+  return useQuery<HasStartedResponse, Error, TData>({
+    queryKey: ["whitelistHasStarted", client.contractAddress],
+    queryFn: () => client.hasStarted(),
+    ...options
+  });
 }

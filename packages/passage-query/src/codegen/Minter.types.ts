@@ -24,6 +24,17 @@ export interface Coin {
   denom: string;
   [k: string]: unknown;
 }
+
+
+// {
+//   denom?: string | undefined;
+//   amount?: string | undefined;
+// }[] | undefined
+export interface AlternativeCoin {
+  denom?: string;
+  amount?: string;
+}
+
 export type Addr = string;
 export interface Config {
   admin: Addr;
@@ -68,36 +79,19 @@ export type ExecuteMsg = {
     [k: string]: unknown;
   };
 };
-export type Decimal = string;
-export interface InstantiateMsg {
-  base_token_uri: string;
-  cw721_code_id: number;
-  cw721_instantiate_msg: InstantiateMsg1;
-  num_tokens: number;
-  per_address_limit: number;
-  start_time: Timestamp;
-  unit_price: Coin;
-  whitelist?: string | null;
+export interface MintCountResponse {
+  address: string;
+  count: number;
   [k: string]: unknown;
 }
-export interface InstantiateMsg1 {
-  collection_info: CollectionInfoForRoyaltyInfoResponse;
-  minter: string;
-  name: string;
-  symbol: string;
+export interface MintPriceResponse {
+  current_price: Coin;
+  public_price: Coin;
+  whitelist_price?: Coin | null;
   [k: string]: unknown;
 }
-export interface CollectionInfoForRoyaltyInfoResponse {
-  creator: string;
-  description: string;
-  external_link?: string | null;
-  image: string;
-  royalty_info?: RoyaltyInfoResponse | null;
-  [k: string]: unknown;
-}
-export interface RoyaltyInfoResponse {
-  payment_address: string;
-  share: Decimal;
+export interface MintableNumTokensResponse {
+  count: number;
   [k: string]: unknown;
 }
 export type QueryMsg = {
@@ -122,3 +116,7 @@ export type QueryMsg = {
     [k: string]: unknown;
   };
 };
+export interface StartTimeResponse {
+  start_time: string;
+  [k: string]: unknown;
+}

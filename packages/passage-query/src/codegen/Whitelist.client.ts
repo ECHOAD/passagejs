@@ -6,7 +6,7 @@
 
 import { CosmWasmClient, SigningCosmWasmClient, ExecuteResult } from "@cosmjs/cosmwasm-stargate";
 import { StdFee } from "@cosmjs/amino";
-import { Timestamp, Uint64, Uint128, ConfigResponse, Coin, Addr, Config, ExecuteMsg, AddMembersMsg, RemoveMembersMsg, InstantiateMsg, MembersResponse, QueryMsg } from "./Whitelist.types";
+import { Timestamp, Uint64, Uint128, ConfigResponse, Coin, Addr, Config, ExecuteMsg, AddMembersMsg, RemoveMembersMsg, HasEndedResponse, HasMemberResponse, HasStartedResponse, InstantiateMsg, IsActiveResponse, MembersResponse, QueryMsg } from "./Whitelist.types";
 export interface WhitelistReadOnlyInterface {
   contractAddress: string;
   hasStarted: () => Promise<HasStartedResponse>;

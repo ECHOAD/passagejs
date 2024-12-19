@@ -4,7 +4,7 @@
 * and run the @cosmwasm/ts-codegen generate command to regenerate this file.
 */
 import { UseQueryOptions } from "@tanstack/react-query";
-import { ConfigResponse, MembersResponse } from "./Whitelist.types";
+import { ConfigResponse, HasEndedResponse, HasMemberResponse, HasStartedResponse, IsActiveResponse, MembersResponse } from "./Whitelist.types";
 import { WhitelistQueryClient } from "./Whitelist.client";
 export interface WhitelistReactQuery<TResponse, TData = TResponse> {
     client: WhitelistQueryClient;

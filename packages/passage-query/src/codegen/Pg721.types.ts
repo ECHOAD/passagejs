@@ -73,59 +73,6 @@ export interface ContractInfoResponse {
   symbol: string;
   [k: string]: unknown;
 }
-export type ExecuteMsgForEmpty = {
-  transfer_nft: {
-    recipient: string;
-    token_id: string;
-    [k: string]: unknown;
-  };
-} | {
-  send_nft: {
-    contract: string;
-    msg: Binary;
-    token_id: string;
-    [k: string]: unknown;
-  };
-} | {
-  approve: {
-    expires?: Expiration | null;
-    spender: string;
-    token_id: string;
-    [k: string]: unknown;
-  };
-} | {
-  revoke: {
-    spender: string;
-    token_id: string;
-    [k: string]: unknown;
-  };
-} | {
-  approve_all: {
-    expires?: Expiration | null;
-    operator: string;
-    [k: string]: unknown;
-  };
-} | {
-  revoke_all: {
-    operator: string;
-    [k: string]: unknown;
-  };
-} | {
-  mint: MintMsgForEmpty;
-} | {
-  burn: {
-    token_id: string;
-    [k: string]: unknown;
-  };
-};
-export type Binary = string;
-export interface MintMsgForEmpty {
-  extension: Empty;
-  owner: string;
-  token_id: string;
-  token_uri?: string | null;
-  [k: string]: unknown;
-}
 export interface InstantiateMsg {
   collection_info: CollectionInfoForRoyaltyInfoResponse;
   minter: string;

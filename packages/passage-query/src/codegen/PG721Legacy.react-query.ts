@@ -7,6 +7,7 @@
 import { UseQueryOptions, useQuery } from "@tanstack/react-query";
 import { Expiration, Timestamp, Uint64, AllNftInfoResponse, OwnerOfResponse, Approval, NftInfoResponseForNullable_Metadata, Metadata, Trait, ApprovalResponse, ApprovalsResponse, ContractInfoResponse, ExecuteMsg, Binary, MintMsgForNullable_Metadata, InstantiateMsg, MinterResponse, NftInfoResponse, NumTokensResponse, OperatorsResponse, QueryMsg, TokensResponse } from "./PG721Legacy.types";
 import { PG721LegacyQueryClient } from "./PG721Legacy.client";
+import {AllOperatorsResponse} from "./Pg721.types";
 export interface PG721LegacyReactQuery<TResponse, TData = TResponse> {
   client: PG721LegacyQueryClient;
   options?: Omit<UseQueryOptions<TResponse, Error, TData>, "'queryKey' | 'queryFn' | 'initialData'"> & {
@@ -18,23 +19,32 @@ export function usePG721LegacyMinterQuery<TData = MinterResponse>({
   client,
   options
 }: PG721LegacyMinterQuery<TData>) {
-  return useQuery<MinterResponse, Error, TData>(["pG721LegacyMinter", client.contractAddress], () => client.minter(), options);
+  return useQuery<MinterResponse, Error, TData>({
+    queryKey: ["pG721LegacyMinter", client.contractAddress],
+    queryFn: () => client.minter(),
+    ...options
+  });
 }
-export interface PG721LegacyAllTokensQuery<TData> extends PG721LegacyReactQuery<AllTokensResponse, TData> {
+
+export interface PG721LegacyAllTokensQuery<TData> extends PG721LegacyReactQuery<TokensResponse, TData> {
   args: {
     limit?: number;
     startAfter?: string;
   };
 }
-export function usePG721LegacyAllTokensQuery<TData = AllTokensResponse>({
+export function usePG721LegacyAllTokensQuery<TData = TokensResponse>({
   client,
   args,
   options
 }: PG721LegacyAllTokensQuery<TData>) {
-  return useQuery<AllTokensResponse, Error, TData>(["pG721LegacyAllTokens", client.contractAddress, JSON.stringify(args)], () => client.allTokens({
-    limit: args.limit,
-    startAfter: args.startAfter
-  }), options);
+  return useQuery<TokensResponse, Error, TData>({
+    queryKey: ["pG721LegacyAllTokens", client.contractAddress, JSON.stringify(args)],
+    queryFn: () => client.allTokens({
+      limit: args.limit,
+      startAfter: args.startAfter
+    }),
+    ...options
+  });
 }
 export interface PG721LegacyTokensQuery<TData> extends PG721LegacyReactQuery<TokensResponse, TData> {
   args: {
@@ -48,12 +58,17 @@ export function usePG721LegacyTokensQuery<TData = TokensResponse>({
   args,
   options
 }: PG721LegacyTokensQuery<TData>) {
-  return useQuery<TokensResponse, Error, TData>(["pG721LegacyTokens", client.contractAddress, JSON.stringify(args)], () => client.tokens({
-    limit: args.limit,
-    owner: args.owner,
-    startAfter: args.startAfter
-  }), options);
+  return useQuery<TokensResponse, Error, TData>({
+    queryKey: ["pG721LegacyTokens", client.contractAddress, JSON.stringify(args)],
+    queryFn: () => client.tokens({
+      limit: args.limit,
+      owner: args.owner,
+      startAfter: args.startAfter
+    }),
+    ...options
+  });
 }
+
 export interface PG721LegacyAllNftInfoQuery<TData> extends PG721LegacyReactQuery<AllNftInfoResponse, TData> {
   args: {
     includeExpired?: boolean;
@@ -65,10 +80,14 @@ export function usePG721LegacyAllNftInfoQuery<TData = AllNftInfoResponse>({
   args,
   options
 }: PG721LegacyAllNftInfoQuery<TData>) {
-  return useQuery<AllNftInfoResponse, Error, TData>(["pG721LegacyAllNftInfo", client.contractAddress, JSON.stringify(args)], () => client.allNftInfo({
-    includeExpired: args.includeExpired,
-    tokenId: args.tokenId
-  }), options);
+  return useQuery<AllNftInfoResponse, Error, TData>({
+    queryKey: ["pG721LegacyAllNftInfo", client.contractAddress, JSON.stringify(args)],
+    queryFn: () => client.allNftInfo({
+      includeExpired: args.includeExpired,
+      tokenId: args.tokenId
+    }),
+    ...options
+  });
 }
 export interface PG721LegacyNftInfoQuery<TData> extends PG721LegacyReactQuery<NftInfoResponse, TData> {
   args: {
@@ -80,24 +99,40 @@ export function usePG721LegacyNftInfoQuery<TData = NftInfoResponse>({
   args,
   options
 }: PG721LegacyNftInfoQuery<TData>) {
-  return useQuery<NftInfoResponse, Error, TData>(["pG721LegacyNftInfo", client.contractAddress, JSON.stringify(args)], () => client.nftInfo({
-    tokenId: args.tokenId
-  }), options);
+  return useQuery<NftInfoResponse, Error, TData>({
+    queryKey: ["pG721LegacyNftInfo", client.contractAddress, JSON.stringify(args)],
+    queryFn: () => client.nftInfo({
+      tokenId: args.tokenId
+    }),
+    ...options
+
+  });
 }
+
 export interface PG721LegacyContractInfoQuery<TData> extends PG721LegacyReactQuery<ContractInfoResponse, TData> {}
 export function usePG721LegacyContractInfoQuery<TData = ContractInfoResponse>({
   client,
   options
 }: PG721LegacyContractInfoQuery<TData>) {
-  return useQuery<ContractInfoResponse, Error, TData>(["pG721LegacyContractInfo", client.contractAddress], () => client.contractInfo(), options);
+  return useQuery<ContractInfoResponse, Error, TData>({
+    queryKey: ["pG721LegacyContractInfo", client.contractAddress],
+    queryFn: () => client.contractInfo(),
+    ...options
+  });
 }
+
 export interface PG721LegacyNumTokensQuery<TData> extends PG721LegacyReactQuery<NumTokensResponse, TData> {}
 export function usePG721LegacyNumTokensQuery<TData = NumTokensResponse>({
   client,
   options
 }: PG721LegacyNumTokensQuery<TData>) {
-  return useQuery<NumTokensResponse, Error, TData>(["pG721LegacyNumTokens", client.contractAddress], () => client.numTokens(), options);
+  return useQuery<NumTokensResponse, Error, TData>({
+    queryKey: ["pG721LegacyNumTokens", client.contractAddress],
+    queryFn: () => client.numTokens(),
+    ...options
+  });
 }
+
 export interface PG721LegacyAllOperatorsQuery<TData> extends PG721LegacyReactQuery<AllOperatorsResponse, TData> {
   args: {
     includeExpired?: boolean;
@@ -111,13 +146,19 @@ export function usePG721LegacyAllOperatorsQuery<TData = AllOperatorsResponse>({
   args,
   options
 }: PG721LegacyAllOperatorsQuery<TData>) {
-  return useQuery<AllOperatorsResponse, Error, TData>(["pG721LegacyAllOperators", client.contractAddress, JSON.stringify(args)], () => client.allOperators({
-    includeExpired: args.includeExpired,
-    limit: args.limit,
-    owner: args.owner,
-    startAfter: args.startAfter
-  }), options);
+  return useQuery<AllOperatorsResponse, Error, TData>({
+    queryKey: ["pG721LegacyAllOperators", client.contractAddress, JSON.stringify(args)],
+    queryFn: () => client.allOperators({
+      includeExpired: args.includeExpired,
+      limit: args.limit,
+      owner: args.owner,
+      startAfter: args.startAfter
+    }),
+    ...options
+  });
 }
+
+
 export interface PG721LegacyApprovalsQuery<TData> extends PG721LegacyReactQuery<ApprovalsResponse, TData> {
   args: {
     includeExpired?: boolean;
@@ -129,11 +170,17 @@ export function usePG721LegacyApprovalsQuery<TData = ApprovalsResponse>({
   args,
   options
 }: PG721LegacyApprovalsQuery<TData>) {
-  return useQuery<ApprovalsResponse, Error, TData>(["pG721LegacyApprovals", client.contractAddress, JSON.stringify(args)], () => client.approvals({
-    includeExpired: args.includeExpired,
-    tokenId: args.tokenId
-  }), options);
+  return useQuery<ApprovalsResponse, Error, TData>({
+    queryKey: ["pG721LegacyApprovals", client.contractAddress, JSON.stringify(args)],
+    queryFn: () => client.approvals({
+      includeExpired: args.includeExpired,
+      tokenId: args.tokenId
+    }),
+    ...options
+
+  });
 }
+
 export interface PG721LegacyApprovalQuery<TData> extends PG721LegacyReactQuery<ApprovalResponse, TData> {
   args: {
     includeExpired?: boolean;
@@ -146,12 +193,17 @@ export function usePG721LegacyApprovalQuery<TData = ApprovalResponse>({
   args,
   options
 }: PG721LegacyApprovalQuery<TData>) {
-  return useQuery<ApprovalResponse, Error, TData>(["pG721LegacyApproval", client.contractAddress, JSON.stringify(args)], () => client.approval({
-    includeExpired: args.includeExpired,
-    spender: args.spender,
-    tokenId: args.tokenId
-  }), options);
+  return useQuery<ApprovalResponse, Error, TData>({
+    queryKey: ["pG721LegacyApproval", client.contractAddress, JSON.stringify(args)],
+    queryFn: () => client.approval({
+      includeExpired: args.includeExpired,
+      spender: args.spender,
+      tokenId: args.tokenId
+    }),
+    ...options
+  });
 }
+
 export interface PG721LegacyOwnerOfQuery<TData> extends PG721LegacyReactQuery<OwnerOfResponse, TData> {
   args: {
     includeExpired?: boolean;
@@ -163,8 +215,12 @@ export function usePG721LegacyOwnerOfQuery<TData = OwnerOfResponse>({
   args,
   options
 }: PG721LegacyOwnerOfQuery<TData>) {
-  return useQuery<OwnerOfResponse, Error, TData>(["pG721LegacyOwnerOf", client.contractAddress, JSON.stringify(args)], () => client.ownerOf({
-    includeExpired: args.includeExpired,
-    tokenId: args.tokenId
-  }), options);
+  return useQuery<OwnerOfResponse, Error, TData>({
+    queryKey: ["pG721LegacyOwnerOf", client.contractAddress, JSON.stringify(args)],
+    queryFn: () => client.ownerOf({
+      includeExpired: args.includeExpired,
+      tokenId: args.tokenId
+    }),
+    ...options
+  });
 }

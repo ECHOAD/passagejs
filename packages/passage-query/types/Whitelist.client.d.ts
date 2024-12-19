@@ -5,7 +5,7 @@
 */
 import { CosmWasmClient, SigningCosmWasmClient, ExecuteResult } from "@cosmjs/cosmwasm-stargate";
 import { StdFee } from "@cosmjs/amino";
-import { ConfigResponse, Coin, MembersResponse } from "./Whitelist.types";
+import { ConfigResponse, Coin, HasEndedResponse, HasMemberResponse, HasStartedResponse, IsActiveResponse, MembersResponse } from "./Whitelist.types";
 export interface WhitelistReadOnlyInterface {
     contractAddress: string;
     hasStarted: () => Promise<HasStartedResponse>;

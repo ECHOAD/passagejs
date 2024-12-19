@@ -5,7 +5,7 @@
 */
 
 import { UseQueryOptions, useQuery } from "@tanstack/react-query";
-import { AdminResponse, ExecuteMsg, Uint128, Member, Coin, InstantiateMsg, MemberListResponse, MemberResponse, QueryMsg, TotalWeightResponse } from "./RoyaltyGroup.types";
+import { AdminResponse, ExecuteMsg, Uint128, Member, Coin, InstantiateMsg, MemberListResponse, MemberResponse, QueryMsg, TotalWeightResponse, } from "./RoyaltyGroup.types";
 import { RoyaltyGroupQueryClient } from "./RoyaltyGroup.client";
 export interface RoyaltyGroupReactQuery<TResponse, TData = TResponse> {
   client: RoyaltyGroupQueryClient;
@@ -13,13 +13,22 @@ export interface RoyaltyGroupReactQuery<TResponse, TData = TResponse> {
     initialData?: undefined;
   };
 }
+
+export interface HooksResponse {
+}
+
 export interface RoyaltyGroupHooksQuery<TData> extends RoyaltyGroupReactQuery<HooksResponse, TData> {}
 export function useRoyaltyGroupHooksQuery<TData = HooksResponse>({
   client,
   options
 }: RoyaltyGroupHooksQuery<TData>) {
-  return useQuery<HooksResponse, Error, TData>(["royaltyGroupHooks", client.contractAddress], () => client.hooks(), options);
+  return useQuery<HooksResponse, Error, TData>({
+    queryKey: ["royaltyGroupHooks", client.contractAddress],
+    queryFn: () => client.hooks(),
+    ...options
+  });
 }
+
 export interface RoyaltyGroupMemberQuery<TData> extends RoyaltyGroupReactQuery<MemberResponse, TData> {
   args: {
     addr: string;
@@ -31,38 +40,57 @@ export function useRoyaltyGroupMemberQuery<TData = MemberResponse>({
   args,
   options
 }: RoyaltyGroupMemberQuery<TData>) {
-  return useQuery<MemberResponse, Error, TData>(["royaltyGroupMember", client.contractAddress, JSON.stringify(args)], () => client.member({
-    addr: args.addr,
-    atHeight: args.atHeight
-  }), options);
+  return useQuery<MemberResponse, Error, TData>({
+    queryKey: ["royaltyGroupMember", client.contractAddress, JSON.stringify(args)],
+    queryFn: () => client.member({
+      addr: args.addr,
+      atHeight: args.atHeight
+    }),
+    ...options
+
+  });
 }
-export interface RoyaltyGroupListMembersQuery<TData> extends RoyaltyGroupReactQuery<ListMembersResponse, TData> {
+
+export interface RoyaltyGroupListMembersQuery<TData> extends RoyaltyGroupReactQuery<MemberListResponse, TData> {
   args: {
     limit?: number;
     startAfter?: string;
   };
 }
-export function useRoyaltyGroupListMembersQuery<TData = ListMembersResponse>({
+export function useRoyaltyGroupListMembersQuery<TData = MemberListResponse>({
   client,
   args,
   options
 }: RoyaltyGroupListMembersQuery<TData>) {
-  return useQuery<ListMembersResponse, Error, TData>(["royaltyGroupListMembers", client.contractAddress, JSON.stringify(args)], () => client.listMembers({
-    limit: args.limit,
-    startAfter: args.startAfter
-  }), options);
+  return useQuery<MemberListResponse, Error, TData>({
+    queryKey: ["royaltyGroupListMembers", client.contractAddress, JSON.stringify(args)],
+    queryFn: () => client.listMembers({
+      limit: args.limit,
+      startAfter: args.startAfter
+    }),
+    ...options
+  });
 }
 export interface RoyaltyGroupTotalWeightQuery<TData> extends RoyaltyGroupReactQuery<TotalWeightResponse, TData> {}
 export function useRoyaltyGroupTotalWeightQuery<TData = TotalWeightResponse>({
   client,
   options
 }: RoyaltyGroupTotalWeightQuery<TData>) {
-  return useQuery<TotalWeightResponse, Error, TData>(["royaltyGroupTotalWeight", client.contractAddress], () => client.totalWeight(), options);
+  return useQuery<TotalWeightResponse, Error, TData>({
+    queryKey: ["royaltyGroupTotalWeight", client.contractAddress],
+    queryFn: () => client.totalWeight(),
+    ...options
+  });
 }
+
 export interface RoyaltyGroupAdminQuery<TData> extends RoyaltyGroupReactQuery<AdminResponse, TData> {}
 export function useRoyaltyGroupAdminQuery<TData = AdminResponse>({
   client,
   options
 }: RoyaltyGroupAdminQuery<TData>) {
-  return useQuery<AdminResponse, Error, TData>(["royaltyGroupAdmin", client.contractAddress], () => client.admin(), options);
+  return useQuery<AdminResponse, Error, TData>({
+    queryKey: ["royaltyGroupAdmin", client.contractAddress],
+    queryFn: () => client.admin(),
+    ...options
+  });
 }

@@ -7,7 +7,26 @@
 import { MsgExecuteContractEncodeObject } from "@cosmjs/cosmwasm-stargate";
 import { MsgExecuteContract } from "cosmjs-types/cosmwasm/wasm/v1/tx";
 import { toUtf8 } from "@cosmjs/encoding";
-import { Timestamp, Uint64, Uint128, ConfigResponse, Coin, Addr, Config, ExecuteMsg, AddMembersMsg, RemoveMembersMsg, InstantiateMsg, MembersResponse, QueryMsg } from "./Whitelist.types";
+import {
+  Timestamp,
+  Uint64,
+  Uint128,
+  ConfigResponse,
+  Coin,
+  Addr,
+  Config,
+  ExecuteMsg,
+  AddMembersMsg,
+  RemoveMembersMsg,
+  HasEndedResponse,
+  HasMemberResponse,
+  HasStartedResponse,
+  InstantiateMsg,
+  IsActiveResponse,
+  MembersResponse,
+  QueryMsg,
+  AlternativeCoin
+} from "./Whitelist.types";
 export interface WhitelistMsg {
   contractAddress: string;
   sender: string;
@@ -41,7 +60,7 @@ export class WhitelistMsgComposer implements WhitelistMsg {
     this.increaseMemberLimit = this.increaseMemberLimit.bind(this);
   }
 
-  updateStartTime = (_funds?: Coin[]): MsgExecuteContractEncodeObject => {
+  updateStartTime = (_funds?: AlternativeCoin[]): MsgExecuteContractEncodeObject => {
     return {
       typeUrl: "/cosmwasm.wasm.v1.MsgExecuteContract",
       value: MsgExecuteContract.fromPartial({
@@ -54,7 +73,7 @@ export class WhitelistMsgComposer implements WhitelistMsg {
       })
     };
   };
-  updateEndTime = (_funds?: Coin[]): MsgExecuteContractEncodeObject => {
+  updateEndTime = (_funds?: AlternativeCoin[]): MsgExecuteContractEncodeObject => {
     return {
       typeUrl: "/cosmwasm.wasm.v1.MsgExecuteContract",
       value: MsgExecuteContract.fromPartial({
@@ -71,7 +90,7 @@ export class WhitelistMsgComposer implements WhitelistMsg {
     toAdd
   }: {
     toAdd: string[];
-  }, _funds?: Coin[]): MsgExecuteContractEncodeObject => {
+  }, _funds?: AlternativeCoin[]): MsgExecuteContractEncodeObject => {
     return {
       typeUrl: "/cosmwasm.wasm.v1.MsgExecuteContract",
       value: MsgExecuteContract.fromPartial({
@@ -90,7 +109,7 @@ export class WhitelistMsgComposer implements WhitelistMsg {
     toRemove
   }: {
     toRemove: string[];
-  }, _funds?: Coin[]): MsgExecuteContractEncodeObject => {
+  }, _funds?: AlternativeCoin[]): MsgExecuteContractEncodeObject => {
     return {
       typeUrl: "/cosmwasm.wasm.v1.MsgExecuteContract",
       value: MsgExecuteContract.fromPartial({
@@ -105,7 +124,7 @@ export class WhitelistMsgComposer implements WhitelistMsg {
       })
     };
   };
-  updatePerAddressLimit = (_funds?: Coin[]): MsgExecuteContractEncodeObject => {
+  updatePerAddressLimit = (_funds?: AlternativeCoin[]): MsgExecuteContractEncodeObject => {
     return {
       typeUrl: "/cosmwasm.wasm.v1.MsgExecuteContract",
       value: MsgExecuteContract.fromPartial({
@@ -118,7 +137,7 @@ export class WhitelistMsgComposer implements WhitelistMsg {
       })
     };
   };
-  increaseMemberLimit = (_funds?: Coin[]): MsgExecuteContractEncodeObject => {
+  increaseMemberLimit = (_funds?: AlternativeCoin[]): MsgExecuteContractEncodeObject => {
     return {
       typeUrl: "/cosmwasm.wasm.v1.MsgExecuteContract",
       value: MsgExecuteContract.fromPartial({

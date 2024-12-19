@@ -4,7 +4,7 @@
 * and run the @cosmwasm/ts-codegen generate command to regenerate this file.
 */
 import { UseQueryOptions } from "@tanstack/react-query";
-import { ConfigResponse } from "./Minter.types";
+import { ConfigResponse, MintCountResponse, MintPriceResponse, MintableNumTokensResponse, StartTimeResponse } from "./Minter.types";
 import { MinterQueryClient } from "./Minter.client";
 export interface MinterReactQuery<TResponse, TData = TResponse> {
     client: MinterQueryClient;

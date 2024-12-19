@@ -53,6 +53,18 @@ export interface RemoveMembersMsg {
     to_remove: string[];
     [k: string]: unknown;
 }
+export interface HasEndedResponse {
+    has_ended: boolean;
+    [k: string]: unknown;
+}
+export interface HasMemberResponse {
+    has_member: boolean;
+    [k: string]: unknown;
+}
+export interface HasStartedResponse {
+    has_started: boolean;
+    [k: string]: unknown;
+}
 export interface InstantiateMsg {
     end_time: Timestamp;
     member_limit: number;
@@ -60,6 +72,10 @@ export interface InstantiateMsg {
     per_address_limit: number;
     start_time: Timestamp;
     unit_price: Coin;
+    [k: string]: unknown;
+}
+export interface IsActiveResponse {
+    is_active: boolean;
     [k: string]: unknown;
 }
 export interface MembersResponse {

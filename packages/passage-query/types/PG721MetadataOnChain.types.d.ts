@@ -16,7 +16,7 @@ export type Timestamp = Uint64;
 export type Uint64 = string;
 export interface AllNftInfoResponse {
     access: OwnerOfResponse;
-    info: NftInfoResponseForEmpty;
+    info: NftInfoResponseForMetadata;
     [k: string]: unknown;
 }
 export interface OwnerOfResponse {
@@ -29,12 +29,27 @@ export interface Approval {
     spender: string;
     [k: string]: unknown;
 }
-export interface NftInfoResponseForEmpty {
-    extension: Empty;
+export interface NftInfoResponseForMetadata {
+    extension: Metadata;
     token_uri?: string | null;
     [k: string]: unknown;
 }
-export interface Empty {
+export interface Metadata {
+    animation_url?: string | null;
+    attributes?: Trait[] | null;
+    background_color?: string | null;
+    description?: string | null;
+    external_url?: string | null;
+    image?: string | null;
+    image_data?: string | null;
+    name?: string | null;
+    youtube_url?: string | null;
+    [k: string]: unknown;
+}
+export interface Trait {
+    display_type?: string | null;
+    trait_type: string;
+    value: string;
     [k: string]: unknown;
 }
 export interface AllOperatorsResponse {
@@ -125,24 +140,6 @@ export interface MintMsgForNullable_Metadata {
     token_uri?: string | null;
     [k: string]: unknown;
 }
-export interface Metadata {
-    animation_url?: string | null;
-    attributes?: Trait[] | null;
-    background_color?: string | null;
-    description?: string | null;
-    external_url?: string | null;
-    image?: string | null;
-    image_data?: string | null;
-    name?: string | null;
-    youtube_url?: string | null;
-    [k: string]: unknown;
-}
-export interface Trait {
-    display_type?: string | null;
-    trait_type: string;
-    value: string;
-    [k: string]: unknown;
-}
 export interface InstantiateMsg {
     collection_info: CollectionInfoForRoyaltyInfoResponse;
     minter: string;
@@ -163,7 +160,7 @@ export interface MinterResponse {
     [k: string]: unknown;
 }
 export interface NftInfoResponse {
-    extension: Empty;
+    extension: Metadata;
     token_uri?: string | null;
     [k: string]: unknown;
 }

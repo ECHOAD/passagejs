@@ -7,13 +7,7 @@
 import { CosmWasmClient, SigningCosmWasmClient } from "@cosmjs/cosmwasm-stargate";
 import { IQueryClientProvider, ISigningClientProvider, IMessageComposerProvider } from "./contractContextBase";
 import { Pg721QueryClient } from "./Pg721.client";
-import { Pg721Client } from "./Pg721.client";
-import { Pg721MsgComposer } from "./Pg721.message-composer";
 import { Pg721 } from "./Pg721.provider";
-import { PG721LegacyQueryClient } from "./PG721Legacy.client";
-import { PG721LegacyClient } from "./PG721Legacy.client";
-import { PG721LegacyMsgComposer } from "./PG721Legacy.message-composer";
-import { PG721Legacy } from "./PG721Legacy.provider";
 import { PG721MetadataOnChainQueryClient } from "./PG721MetadataOnChain.client";
 import { PG721MetadataOnChainClient } from "./PG721MetadataOnChain.client";
 import { PG721MetadataOnChainMsgComposer } from "./PG721MetadataOnChain.message-composer";
@@ -22,29 +16,28 @@ import { MinterQueryClient } from "./Minter.client";
 import { MinterClient } from "./Minter.client";
 import { MinterMsgComposer } from "./Minter.message-composer";
 import { Minter } from "./Minter.provider";
-import { RoyaltyGroupQueryClient } from "./RoyaltyGroup.client";
-import { RoyaltyGroupClient } from "./RoyaltyGroup.client";
-import { RoyaltyGroupMsgComposer } from "./RoyaltyGroup.message-composer";
-import { RoyaltyGroup } from "./RoyaltyGroup.provider";
 import { WhitelistQueryClient } from "./Whitelist.client";
 import { WhitelistClient } from "./Whitelist.client";
 import { WhitelistMsgComposer } from "./Whitelist.message-composer";
 import { Whitelist } from "./Whitelist.provider";
+import { MarketplaceQueryClient } from "./Marketplace.client";
+import { MarketplaceClient } from "./Marketplace.client";
+import { MarketplaceMsgComposer } from "./Marketplace.message-composer";
+import { Marketplace } from "./Marketplace.provider";
+import { MarketplaceV2QueryClient } from "./MarketplaceV2.client";
+import { MarketplaceV2Client } from "./MarketplaceV2.client";
+import { MarketplaceV2MsgComposer } from "./MarketplaceV2.message-composer";
+import { MarketplaceV2 } from "./MarketplaceV2.provider";
 export interface IContractsContext {
-  pg721: IQueryClientProvider<Pg721QueryClient> & ISigningClientProvider<Pg721Client> & IMessageComposerProvider<Pg721MsgComposer>;
-  pG721Legacy: IQueryClientProvider<PG721LegacyQueryClient> & ISigningClientProvider<PG721LegacyClient> & IMessageComposerProvider<PG721LegacyMsgComposer>;
+  pg721: IQueryClientProvider<Pg721QueryClient>;
   pG721MetadataOnChain: IQueryClientProvider<PG721MetadataOnChainQueryClient> & ISigningClientProvider<PG721MetadataOnChainClient> & IMessageComposerProvider<PG721MetadataOnChainMsgComposer>;
   minter: IQueryClientProvider<MinterQueryClient> & ISigningClientProvider<MinterClient> & IMessageComposerProvider<MinterMsgComposer>;
-  royaltyGroup: IQueryClientProvider<RoyaltyGroupQueryClient> & ISigningClientProvider<RoyaltyGroupClient> & IMessageComposerProvider<RoyaltyGroupMsgComposer>;
   whitelist: IQueryClientProvider<WhitelistQueryClient> & ISigningClientProvider<WhitelistClient> & IMessageComposerProvider<WhitelistMsgComposer>;
+  marketplace: IQueryClientProvider<MarketplaceQueryClient> & ISigningClientProvider<MarketplaceClient> & IMessageComposerProvider<MarketplaceMsgComposer>;
+  marketplaceV2: IQueryClientProvider<MarketplaceV2QueryClient> & ISigningClientProvider<MarketplaceV2Client> & IMessageComposerProvider<MarketplaceV2MsgComposer>;
 }
 export const getProviders = (address?: string, cosmWasmClient?: CosmWasmClient, signingCosmWasmClient?: SigningCosmWasmClient) => ({
   pg721: new Pg721({
-    address,
-    cosmWasmClient,
-    signingCosmWasmClient
-  }),
-  pG721Legacy: new PG721Legacy({
     address,
     cosmWasmClient,
     signingCosmWasmClient
@@ -59,12 +52,17 @@ export const getProviders = (address?: string, cosmWasmClient?: CosmWasmClient, 
     cosmWasmClient,
     signingCosmWasmClient
   }),
-  royaltyGroup: new RoyaltyGroup({
+  whitelist: new Whitelist({
     address,
     cosmWasmClient,
     signingCosmWasmClient
   }),
-  whitelist: new Whitelist({
+  marketplace: new Marketplace({
+    address,
+    cosmWasmClient,
+    signingCosmWasmClient
+  }),
+  marketplaceV2: new MarketplaceV2({
     address,
     cosmWasmClient,
     signingCosmWasmClient

@@ -5,7 +5,7 @@
 */
 import { CosmWasmClient, SigningCosmWasmClient, ExecuteResult } from "@cosmjs/cosmwasm-stargate";
 import { Coin, StdFee } from "@cosmjs/amino";
-import { Expiration, AllNftInfoResponse, OwnerOfResponse, AllOperatorsResponse, AllTokensResponse, ApprovalResponse, ApprovalsResponse, CollectionInfoResponse, ContractInfoResponse, Binary, Metadata, MinterResponse, NftInfoResponse, NumTokensResponse, TokensResponse } from "./PG721MetadataOnChain.types";
+import { Expiration, AllNftInfoResponse, OwnerOfResponse, Metadata, AllOperatorsResponse, AllTokensResponse, ApprovalResponse, ApprovalsResponse, CollectionInfoResponse, ContractInfoResponse, Binary, MinterResponse, NftInfoResponse, NumTokensResponse, TokensResponse } from "./PG721MetadataOnChain.types";
 export interface PG721MetadataOnChainReadOnlyInterface {
     contractAddress: string;
     ownerOf: ({ includeExpired, tokenId }: {

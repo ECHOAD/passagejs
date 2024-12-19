@@ -9,31 +9,31 @@ import * as _1 from "./Pg721.client";
 import * as _2 from "./Pg721.message-composer";
 import * as _3 from "./Pg721.react-query";
 import * as _4 from "./Pg721.provider";
-import * as _5 from "./PG721Legacy.types";
-import * as _6 from "./PG721Legacy.client";
-import * as _7 from "./PG721Legacy.message-composer";
-import * as _8 from "./PG721Legacy.react-query";
-import * as _9 from "./PG721Legacy.provider";
-import * as _10 from "./PG721MetadataOnChain.types";
-import * as _11 from "./PG721MetadataOnChain.client";
-import * as _12 from "./PG721MetadataOnChain.message-composer";
-import * as _13 from "./PG721MetadataOnChain.react-query";
-import * as _14 from "./PG721MetadataOnChain.provider";
-import * as _15 from "./Minter.types";
-import * as _16 from "./Minter.client";
-import * as _17 from "./Minter.message-composer";
-import * as _18 from "./Minter.react-query";
-import * as _19 from "./Minter.provider";
-import * as _20 from "./RoyaltyGroup.types";
-import * as _21 from "./RoyaltyGroup.client";
-import * as _22 from "./RoyaltyGroup.message-composer";
-import * as _23 from "./RoyaltyGroup.react-query";
-import * as _24 from "./RoyaltyGroup.provider";
-import * as _25 from "./Whitelist.types";
-import * as _26 from "./Whitelist.client";
-import * as _27 from "./Whitelist.message-composer";
-import * as _28 from "./Whitelist.react-query";
-import * as _29 from "./Whitelist.provider";
+import * as _5 from "./PG721MetadataOnChain.types";
+import * as _6 from "./PG721MetadataOnChain.client";
+import * as _7 from "./PG721MetadataOnChain.message-composer";
+import * as _8 from "./PG721MetadataOnChain.react-query";
+import * as _9 from "./PG721MetadataOnChain.provider";
+import * as _10 from "./Minter.types";
+import * as _11 from "./Minter.client";
+import * as _12 from "./Minter.message-composer";
+import * as _13 from "./Minter.react-query";
+import * as _14 from "./Minter.provider";
+import * as _15 from "./Whitelist.types";
+import * as _16 from "./Whitelist.client";
+import * as _17 from "./Whitelist.message-composer";
+import * as _18 from "./Whitelist.react-query";
+import * as _19 from "./Whitelist.provider";
+import * as _20 from "./Marketplace.types";
+import * as _21 from "./Marketplace.client";
+import * as _22 from "./Marketplace.message-composer";
+import * as _23 from "./Marketplace.react-query";
+import * as _24 from "./Marketplace.provider";
+import * as _25 from "./MarketplaceV2.types";
+import * as _26 from "./MarketplaceV2.client";
+import * as _27 from "./MarketplaceV2.message-composer";
+import * as _28 from "./MarketplaceV2.react-query";
+import * as _29 from "./MarketplaceV2.provider";
 import * as _30 from "./contractContextProviders";
 import * as _31 from "./contractContextBase";
 import * as _32 from "./contracts-context";
@@ -44,31 +44,31 @@ export namespace contracts {
     ..._3,
     ..._4
   };
-  export const PG721Legacy = { ..._5,
+  export const PG721MetadataOnChain = { ..._5,
     ..._6,
     ..._7,
     ..._8,
     ..._9
   };
-  export const PG721MetadataOnChain = { ..._10,
+  export const Minter = { ..._10,
     ..._11,
     ..._12,
     ..._13,
     ..._14
   };
-  export const Minter = { ..._15,
+  export const Whitelist = { ..._15,
     ..._16,
     ..._17,
     ..._18,
     ..._19
   };
-  export const RoyaltyGroup = { ..._20,
+  export const Marketplace = { ..._20,
     ..._21,
     ..._22,
     ..._23,
     ..._24
   };
-  export const Whitelist = { ..._25,
+  export const MarketplaceV2 = { ..._25,
     ..._26,
     ..._27,
     ..._28,

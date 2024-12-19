@@ -4,162 +4,173 @@
 * and run the @cosmwasm/ts-codegen generate command to regenerate this file.
 */
 
+import { Coin } from "@cosmjs/amino";
 import { MsgExecuteContractEncodeObject } from "@cosmjs/cosmwasm-stargate";
 import { MsgExecuteContract } from "cosmjs-types/cosmwasm/wasm/v1/tx";
 import { toUtf8 } from "@cosmjs/encoding";
-import { AdminResponse, ExecuteMsg, Uint128, Member, Coin, InstantiateMsg, MemberListResponse, MemberResponse, QueryMsg, TotalWeightResponse } from "./RoyaltyGroup.types";
-export interface RoyaltyGroupMsg {
+import { Addr, Decimal, ConfigResponse, Config, ExecuteMsg, Uint128, Token, InstantiateMsg, QueryMsg, TokenResponse, TokensResponse } from "./Marketplace.types";
+export interface MarketplaceMsg {
   contractAddress: string;
   sender: string;
-  updateAdmin: ({
-    admin
+  buy: ({
+    recipient,
+    tokenId
+  }: {
+    recipient?: string;
+    tokenId: string;
+  }, _funds?: Coin[]) => MsgExecuteContractEncodeObject;
+  listTokens: ({
+    tokens
+  }: {
+    tokens: Token[];
+  }, _funds?: Coin[]) => MsgExecuteContractEncodeObject;
+  delistTokens: ({
+    tokens
+  }: {
+    tokens: string[];
+  }, _funds?: Coin[]) => MsgExecuteContractEncodeObject;
+  updatePrice: ({
+    price,
+    token
+  }: {
+    price: Uint128;
+    token: string;
+  }, _funds?: Coin[]) => MsgExecuteContractEncodeObject;
+  updateConfig: ({
+    admin,
+    allowedNative,
+    collectorAddr,
+    feePercentage,
+    nftAddr
   }: {
     admin?: string;
-  }, _funds?: Coin[]) => MsgExecuteContractEncodeObject;
-  updateMembers: ({
-    add,
-    remove
-  }: {
-    add: Member[];
-    remove: string[];
-  }, _funds?: Coin[]) => MsgExecuteContractEncodeObject;
-  addHook: ({
-    addr
-  }: {
-    addr: string;
-  }, _funds?: Coin[]) => MsgExecuteContractEncodeObject;
-  removeHook: ({
-    addr
-  }: {
-    addr: string;
-  }, _funds?: Coin[]) => MsgExecuteContractEncodeObject;
-  distribute: ({
-    funds
-  }: {
-    funds: Coin;
+    allowedNative?: string;
+    collectorAddr?: string;
+    feePercentage?: Decimal;
+    nftAddr?: string;
   }, _funds?: Coin[]) => MsgExecuteContractEncodeObject;
 }
-export class RoyaltyGroupMsgComposer implements RoyaltyGroupMsg {
+export class MarketplaceMsgComposer implements MarketplaceMsg {
   sender: string;
   contractAddress: string;
 
   constructor(sender: string, contractAddress: string) {
     this.sender = sender;
     this.contractAddress = contractAddress;
-    this.updateAdmin = this.updateAdmin.bind(this);
-    this.updateMembers = this.updateMembers.bind(this);
-    this.addHook = this.addHook.bind(this);
-    this.removeHook = this.removeHook.bind(this);
-    this.distribute = this.distribute.bind(this);
+    this.buy = this.buy.bind(this);
+    this.listTokens = this.listTokens.bind(this);
+    this.delistTokens = this.delistTokens.bind(this);
+    this.updatePrice = this.updatePrice.bind(this);
+    this.updateConfig = this.updateConfig.bind(this);
   }
 
-  updateAdmin = ({
-    admin
+  buy = ({
+    recipient,
+    tokenId
+  }: {
+    recipient?: string;
+    tokenId: string;
+  }, _funds?: Coin[]): MsgExecuteContractEncodeObject => {
+    return {
+      typeUrl: "/cosmwasm.wasm.v1.MsgExecuteContract",
+      value: MsgExecuteContract.fromPartial({
+        sender: this.sender,
+        contract: this.contractAddress,
+        msg: toUtf8(JSON.stringify({
+          buy: {
+            recipient,
+            token_id: tokenId
+          }
+        })),
+        funds: _funds
+      })
+    };
+  };
+  listTokens = ({
+    tokens
+  }: {
+    tokens: Token[];
+  }, _funds?: Coin[]): MsgExecuteContractEncodeObject => {
+    return {
+      typeUrl: "/cosmwasm.wasm.v1.MsgExecuteContract",
+      value: MsgExecuteContract.fromPartial({
+        sender: this.sender,
+        contract: this.contractAddress,
+        msg: toUtf8(JSON.stringify({
+          list_tokens: {
+            tokens
+          }
+        })),
+        funds: _funds
+      })
+    };
+  };
+  delistTokens = ({
+    tokens
+  }: {
+    tokens: string[];
+  }, _funds?: Coin[]): MsgExecuteContractEncodeObject => {
+    return {
+      typeUrl: "/cosmwasm.wasm.v1.MsgExecuteContract",
+      value: MsgExecuteContract.fromPartial({
+        sender: this.sender,
+        contract: this.contractAddress,
+        msg: toUtf8(JSON.stringify({
+          delist_tokens: {
+            tokens
+          }
+        })),
+        funds: _funds
+      })
+    };
+  };
+  updatePrice = ({
+    price,
+    token
+  }: {
+    price: Uint128;
+    token: string;
+  }, _funds?: Coin[]): MsgExecuteContractEncodeObject => {
+    return {
+      typeUrl: "/cosmwasm.wasm.v1.MsgExecuteContract",
+      value: MsgExecuteContract.fromPartial({
+        sender: this.sender,
+        contract: this.contractAddress,
+        msg: toUtf8(JSON.stringify({
+          update_price: {
+            price,
+            token
+          }
+        })),
+        funds: _funds
+      })
+    };
+  };
+  updateConfig = ({
+    admin,
+    allowedNative,
+    collectorAddr,
+    feePercentage,
+    nftAddr
   }: {
     admin?: string;
-  }, _funds?:  {
-    denom?: string | undefined;
-    amount?: string | undefined;
-  }[] | undefined): MsgExecuteContractEncodeObject => {
+    allowedNative?: string;
+    collectorAddr?: string;
+    feePercentage?: Decimal;
+    nftAddr?: string;
+  }, _funds?: Coin[]): MsgExecuteContractEncodeObject => {
     return {
       typeUrl: "/cosmwasm.wasm.v1.MsgExecuteContract",
       value: MsgExecuteContract.fromPartial({
         sender: this.sender,
         contract: this.contractAddress,
         msg: toUtf8(JSON.stringify({
-          update_admin: {
-            admin
-          }
-        })),
-        funds: _funds
-      })
-    };
-  };
-  updateMembers = ({
-    add,
-    remove
-  }: {
-    add: Member[];
-    remove: string[];
-  }, _funds?:  {
-    denom?: string | undefined;
-    amount?: string | undefined;
-  }[] | undefined): MsgExecuteContractEncodeObject => {
-    return {
-      typeUrl: "/cosmwasm.wasm.v1.MsgExecuteContract",
-      value: MsgExecuteContract.fromPartial({
-        sender: this.sender,
-        contract: this.contractAddress,
-        msg: toUtf8(JSON.stringify({
-          update_members: {
-            add,
-            remove
-          }
-        })),
-        funds: _funds
-      })
-    };
-  };
-  addHook = ({
-    addr
-  }: {
-    addr: string;
-  }, _funds?:  {
-    denom?: string | undefined;
-    amount?: string | undefined;
-  }[] | undefined): MsgExecuteContractEncodeObject => {
-    return {
-      typeUrl: "/cosmwasm.wasm.v1.MsgExecuteContract",
-      value: MsgExecuteContract.fromPartial({
-        sender: this.sender,
-        contract: this.contractAddress,
-        msg: toUtf8(JSON.stringify({
-          add_hook: {
-            addr
-          }
-        })),
-        funds: _funds
-      })
-    };
-  };
-  removeHook = ({
-    addr
-  }: {
-    addr: string;
-  }, _funds?:  {
-    denom?: string | undefined;
-    amount?: string | undefined;
-  }[] | undefined): MsgExecuteContractEncodeObject => {
-    return {
-      typeUrl: "/cosmwasm.wasm.v1.MsgExecuteContract",
-      value: MsgExecuteContract.fromPartial({
-        sender: this.sender,
-        contract: this.contractAddress,
-        msg: toUtf8(JSON.stringify({
-          remove_hook: {
-            addr
-          }
-        })),
-        funds: _funds
-      })
-    };
-  };
-  distribute = ({
-    funds
-  }: {
-    funds: Coin;
-  }, _funds?:  {
-    denom?: string | undefined;
-    amount?: string | undefined;
-  }[] | undefined): MsgExecuteContractEncodeObject => {
-    return {
-      typeUrl: "/cosmwasm.wasm.v1.MsgExecuteContract",
-      value: MsgExecuteContract.fromPartial({
-        sender: this.sender,
-        contract: this.contractAddress,
-        msg: toUtf8(JSON.stringify({
-          distribute: {
-            funds
+          update_config: {
+            admin,
+            allowed_native: allowedNative,
+            collector_addr: collectorAddr,
+            fee_percentage: feePercentage,
+            nft_addr: nftAddr
           }
         })),
         funds: _funds

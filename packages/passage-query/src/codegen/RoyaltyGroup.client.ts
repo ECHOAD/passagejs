@@ -7,6 +7,7 @@
 import { CosmWasmClient, SigningCosmWasmClient, ExecuteResult } from "@cosmjs/cosmwasm-stargate";
 import { StdFee } from "@cosmjs/amino";
 import { AdminResponse, ExecuteMsg, Uint128, Member, Coin, InstantiateMsg, MemberListResponse, MemberResponse, QueryMsg, TotalWeightResponse } from "./RoyaltyGroup.types";
+import {HooksResponse} from "./RoyaltyGroup.react-query";
 export interface RoyaltyGroupReadOnlyInterface {
   contractAddress: string;
   admin: () => Promise<AdminResponse>;
@@ -17,7 +18,7 @@ export interface RoyaltyGroupReadOnlyInterface {
   }: {
     limit?: number;
     startAfter?: string;
-  }) => Promise<ListMembersResponse>;
+  }) => Promise<MemberListResponse>;
   member: ({
     addr,
     atHeight
@@ -57,7 +58,7 @@ export class RoyaltyGroupQueryClient implements RoyaltyGroupReadOnlyInterface {
   }: {
     limit?: number;
     startAfter?: string;
-  }): Promise<ListMembersResponse> => {
+  }): Promise<MemberListResponse> => {
     return this.client.queryContractSmart(this.contractAddress, {
       list_members: {
         limit,
