@@ -6,6 +6,7 @@
 import { UseQueryOptions } from "@tanstack/react-query";
 import { AllNftInfoResponse, OwnerOfResponse, ApprovalResponse, ApprovalsResponse, ContractInfoResponse, MinterResponse, NftInfoResponse, NumTokensResponse, TokensResponse } from "./PG721Legacy.types";
 import { PG721LegacyQueryClient } from "./PG721Legacy.client";
+import { AllOperatorsResponse } from "./Pg721.types";
 export interface PG721LegacyReactQuery<TResponse, TData = TResponse> {
     client: PG721LegacyQueryClient;
     options?: Omit<UseQueryOptions<TResponse, Error, TData>, "'queryKey' | 'queryFn' | 'initialData'"> & {
@@ -14,14 +15,14 @@ export interface PG721LegacyReactQuery<TResponse, TData = TResponse> {
 }
 export interface PG721LegacyMinterQuery<TData> extends PG721LegacyReactQuery<MinterResponse, TData> {
 }
-export declare function usePG721LegacyMinterQuery<TData = MinterResponse>({ client, options }: PG721LegacyMinterQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
-export interface PG721LegacyAllTokensQuery<TData> extends PG721LegacyReactQuery<AllTokensResponse, TData> {
+export declare function usePG721LegacyMinterQuery<TData = MinterResponse>({ client, options }: PG721LegacyMinterQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export interface PG721LegacyAllTokensQuery<TData> extends PG721LegacyReactQuery<TokensResponse, TData> {
     args: {
         limit?: number;
         startAfter?: string;
     };
 }
-export declare function usePG721LegacyAllTokensQuery<TData = AllTokensResponse>({ client, args, options }: PG721LegacyAllTokensQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
+export declare function usePG721LegacyAllTokensQuery<TData = TokensResponse>({ client, args, options }: PG721LegacyAllTokensQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface PG721LegacyTokensQuery<TData> extends PG721LegacyReactQuery<TokensResponse, TData> {
     args: {
         limit?: number;
@@ -29,26 +30,26 @@ export interface PG721LegacyTokensQuery<TData> extends PG721LegacyReactQuery<Tok
         startAfter?: string;
     };
 }
-export declare function usePG721LegacyTokensQuery<TData = TokensResponse>({ client, args, options }: PG721LegacyTokensQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
+export declare function usePG721LegacyTokensQuery<TData = TokensResponse>({ client, args, options }: PG721LegacyTokensQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface PG721LegacyAllNftInfoQuery<TData> extends PG721LegacyReactQuery<AllNftInfoResponse, TData> {
     args: {
         includeExpired?: boolean;
         tokenId: string;
     };
 }
-export declare function usePG721LegacyAllNftInfoQuery<TData = AllNftInfoResponse>({ client, args, options }: PG721LegacyAllNftInfoQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
+export declare function usePG721LegacyAllNftInfoQuery<TData = AllNftInfoResponse>({ client, args, options }: PG721LegacyAllNftInfoQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface PG721LegacyNftInfoQuery<TData> extends PG721LegacyReactQuery<NftInfoResponse, TData> {
     args: {
         tokenId: string;
     };
 }
-export declare function usePG721LegacyNftInfoQuery<TData = NftInfoResponse>({ client, args, options }: PG721LegacyNftInfoQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
+export declare function usePG721LegacyNftInfoQuery<TData = NftInfoResponse>({ client, args, options }: PG721LegacyNftInfoQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface PG721LegacyContractInfoQuery<TData> extends PG721LegacyReactQuery<ContractInfoResponse, TData> {
 }
-export declare function usePG721LegacyContractInfoQuery<TData = ContractInfoResponse>({ client, options }: PG721LegacyContractInfoQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
+export declare function usePG721LegacyContractInfoQuery<TData = ContractInfoResponse>({ client, options }: PG721LegacyContractInfoQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface PG721LegacyNumTokensQuery<TData> extends PG721LegacyReactQuery<NumTokensResponse, TData> {
 }
-export declare function usePG721LegacyNumTokensQuery<TData = NumTokensResponse>({ client, options }: PG721LegacyNumTokensQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
+export declare function usePG721LegacyNumTokensQuery<TData = NumTokensResponse>({ client, options }: PG721LegacyNumTokensQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface PG721LegacyAllOperatorsQuery<TData> extends PG721LegacyReactQuery<AllOperatorsResponse, TData> {
     args: {
         includeExpired?: boolean;
@@ -57,14 +58,14 @@ export interface PG721LegacyAllOperatorsQuery<TData> extends PG721LegacyReactQue
         startAfter?: string;
     };
 }
-export declare function usePG721LegacyAllOperatorsQuery<TData = AllOperatorsResponse>({ client, args, options }: PG721LegacyAllOperatorsQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
+export declare function usePG721LegacyAllOperatorsQuery<TData = AllOperatorsResponse>({ client, args, options }: PG721LegacyAllOperatorsQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface PG721LegacyApprovalsQuery<TData> extends PG721LegacyReactQuery<ApprovalsResponse, TData> {
     args: {
         includeExpired?: boolean;
         tokenId: string;
     };
 }
-export declare function usePG721LegacyApprovalsQuery<TData = ApprovalsResponse>({ client, args, options }: PG721LegacyApprovalsQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
+export declare function usePG721LegacyApprovalsQuery<TData = ApprovalsResponse>({ client, args, options }: PG721LegacyApprovalsQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface PG721LegacyApprovalQuery<TData> extends PG721LegacyReactQuery<ApprovalResponse, TData> {
     args: {
         includeExpired?: boolean;
@@ -72,11 +73,11 @@ export interface PG721LegacyApprovalQuery<TData> extends PG721LegacyReactQuery<A
         tokenId: string;
     };
 }
-export declare function usePG721LegacyApprovalQuery<TData = ApprovalResponse>({ client, args, options }: PG721LegacyApprovalQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
+export declare function usePG721LegacyApprovalQuery<TData = ApprovalResponse>({ client, args, options }: PG721LegacyApprovalQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface PG721LegacyOwnerOfQuery<TData> extends PG721LegacyReactQuery<OwnerOfResponse, TData> {
     args: {
         includeExpired?: boolean;
         tokenId: string;
     };
 }
-export declare function usePG721LegacyOwnerOfQuery<TData = OwnerOfResponse>({ client, args, options }: PG721LegacyOwnerOfQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
+export declare function usePG721LegacyOwnerOfQuery<TData = OwnerOfResponse>({ client, args, options }: PG721LegacyOwnerOfQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;

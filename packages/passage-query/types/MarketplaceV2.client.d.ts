@@ -5,7 +5,7 @@
 */
 import { CosmWasmClient, SigningCosmWasmClient, ExecuteResult } from "@cosmjs/cosmwasm-stargate";
 import { StdFee } from "@cosmjs/amino";
-import { AskCountResponse, Timestamp, Uint128, AskResponse, Coin, BidResponse, CollectionBidResponse, ConfigResponse, ExpiryRange, QueryOptionsForTokenTimestampOffset, QueryOptionsForTokenPriceOffset, QueryOptionsForBidExpiryOffset, QueryOptionsForBidTokenPriceOffset, QueryOptionsForCollectionBidPriceOffset, QueryOptionsForCollectionBidExpiryOffset } from "./MarketplaceV2.types";
+import { AskCountResponse, Timestamp, Uint128, AskResponse, Coin, AsksResponse, BidResponse, BidsResponse, CollectionBidResponse, ConfigResponse, ExpiryRange, QueryOptionsForTokenTimestampOffset, QueryOptionsForTokenPriceOffset, QueryOptionsForBidExpiryOffset, QueryOptionsForBidTokenPriceOffset, QueryOptionsForCollectionBidPriceOffset, QueryOptionsForCollectionBidExpiryOffset } from "./MarketplaceV2.types";
 export interface MarketplaceV2ReadOnlyInterface {
     contractAddress: string;
     config: () => Promise<ConfigResponse>;
@@ -14,14 +14,14 @@ export interface MarketplaceV2ReadOnlyInterface {
     }) => Promise<AskResponse>;
     asksSortedByExpiry: ({ queryOptions }: {
         queryOptions: QueryOptionsForTokenTimestampOffset;
-    }) => Promise<AsksSortedByExpiryResponse>;
+    }) => Promise<AskResponse>;
     asksSortedByPrice: ({ queryOptions }: {
         queryOptions: QueryOptionsForTokenPriceOffset;
-    }) => Promise<AsksSortedByPriceResponse>;
+    }) => Promise<AskResponse>;
     asksBySellerExpiry: ({ queryOptions, seller }: {
         queryOptions: QueryOptionsForTokenTimestampOffset;
         seller: string;
-    }) => Promise<AsksBySellerExpiryResponse>;
+    }) => Promise<AskResponse>;
     askCount: () => Promise<AskCountResponse>;
     bid: ({ bidder, tokenId }: {
         bidder: string;
@@ -29,24 +29,24 @@ export interface MarketplaceV2ReadOnlyInterface {
     }) => Promise<BidResponse>;
     bidsSortedByExpiry: ({ queryOptions }: {
         queryOptions: QueryOptionsForBidExpiryOffset;
-    }) => Promise<BidsSortedByExpiryResponse>;
+    }) => Promise<BidResponse>;
     bidsByTokenPrice: ({ queryOptions, tokenId }: {
         queryOptions: QueryOptionsForBidTokenPriceOffset;
         tokenId: string;
-    }) => Promise<BidsByTokenPriceResponse>;
+    }) => Promise<BidResponse>;
     bidsByBidderExpiry: ({ bidder, queryOptions }: {
         bidder: string;
         queryOptions: QueryOptionsForBidExpiryOffset;
-    }) => Promise<BidsByBidderExpiryResponse>;
+    }) => Promise<BidResponse>;
     collectionBid: ({ bidder }: {
         bidder: string;
     }) => Promise<CollectionBidResponse>;
     collectionBidsByPrice: ({ queryOptions }: {
         queryOptions: QueryOptionsForCollectionBidPriceOffset;
-    }) => Promise<CollectionBidsByPriceResponse>;
+    }) => Promise<CollectionBidResponse>;
     collectionBidsByExpiry: ({ queryOptions }: {
         queryOptions: QueryOptionsForCollectionBidExpiryOffset;
-    }) => Promise<CollectionBidsByExpiryResponse>;
+    }) => Promise<CollectionBidResponse>;
 }
 export declare class MarketplaceV2QueryClient implements MarketplaceV2ReadOnlyInterface {
     client: CosmWasmClient;
@@ -58,14 +58,14 @@ export declare class MarketplaceV2QueryClient implements MarketplaceV2ReadOnlyIn
     }) => Promise<AskResponse>;
     asksSortedByExpiry: ({ queryOptions }: {
         queryOptions: QueryOptionsForTokenTimestampOffset;
-    }) => Promise<AsksSortedByExpiryResponse>;
+    }) => Promise<AsksResponse>;
     asksSortedByPrice: ({ queryOptions }: {
         queryOptions: QueryOptionsForTokenPriceOffset;
-    }) => Promise<AsksSortedByPriceResponse>;
+    }) => Promise<AsksResponse>;
     asksBySellerExpiry: ({ queryOptions, seller }: {
         queryOptions: QueryOptionsForTokenTimestampOffset;
         seller: string;
-    }) => Promise<AsksBySellerExpiryResponse>;
+    }) => Promise<AsksResponse>;
     askCount: () => Promise<AskCountResponse>;
     bid: ({ bidder, tokenId }: {
         bidder: string;
@@ -73,24 +73,24 @@ export declare class MarketplaceV2QueryClient implements MarketplaceV2ReadOnlyIn
     }) => Promise<BidResponse>;
     bidsSortedByExpiry: ({ queryOptions }: {
         queryOptions: QueryOptionsForBidExpiryOffset;
-    }) => Promise<BidsSortedByExpiryResponse>;
+    }) => Promise<BidsResponse>;
     bidsByTokenPrice: ({ queryOptions, tokenId }: {
         queryOptions: QueryOptionsForBidTokenPriceOffset;
         tokenId: string;
-    }) => Promise<BidsByTokenPriceResponse>;
+    }) => Promise<BidsResponse>;
     bidsByBidderExpiry: ({ bidder, queryOptions }: {
         bidder: string;
         queryOptions: QueryOptionsForBidExpiryOffset;
-    }) => Promise<BidsByBidderExpiryResponse>;
+    }) => Promise<BidsResponse>;
     collectionBid: ({ bidder }: {
         bidder: string;
     }) => Promise<CollectionBidResponse>;
     collectionBidsByPrice: ({ queryOptions }: {
         queryOptions: QueryOptionsForCollectionBidPriceOffset;
-    }) => Promise<CollectionBidsByPriceResponse>;
+    }) => Promise<CollectionBidResponse>;
     collectionBidsByExpiry: ({ queryOptions }: {
         queryOptions: QueryOptionsForCollectionBidExpiryOffset;
-    }) => Promise<CollectionBidsByExpiryResponse>;
+    }) => Promise<CollectionBidResponse>;
 }
 export interface MarketplaceV2Interface extends MarketplaceV2ReadOnlyInterface {
     contractAddress: string;

@@ -31,18 +31,33 @@ export declare class RoyaltyGroupMsgComposer implements RoyaltyGroupMsg {
     constructor(sender: string, contractAddress: string);
     updateAdmin: ({ admin }: {
         admin?: string;
-    }, _funds?: Coin[]) => MsgExecuteContractEncodeObject;
+    }, _funds?: {
+        denom?: string | undefined;
+        amount?: string | undefined;
+    }[] | undefined) => MsgExecuteContractEncodeObject;
     updateMembers: ({ add, remove }: {
         add: Member[];
         remove: string[];
-    }, _funds?: Coin[]) => MsgExecuteContractEncodeObject;
+    }, _funds?: {
+        denom?: string | undefined;
+        amount?: string | undefined;
+    }[] | undefined) => MsgExecuteContractEncodeObject;
     addHook: ({ addr }: {
         addr: string;
-    }, _funds?: Coin[]) => MsgExecuteContractEncodeObject;
+    }, _funds?: {
+        denom?: string | undefined;
+        amount?: string | undefined;
+    }[] | undefined) => MsgExecuteContractEncodeObject;
     removeHook: ({ addr }: {
         addr: string;
-    }, _funds?: Coin[]) => MsgExecuteContractEncodeObject;
+    }, _funds?: {
+        denom?: string | undefined;
+        amount?: string | undefined;
+    }[] | undefined) => MsgExecuteContractEncodeObject;
     distribute: ({ funds }: {
         funds: Coin;
-    }, _funds?: Coin[]) => MsgExecuteContractEncodeObject;
+    }, _funds?: {
+        denom?: string | undefined;
+        amount?: string | undefined;
+    }[] | undefined) => MsgExecuteContractEncodeObject;
 }

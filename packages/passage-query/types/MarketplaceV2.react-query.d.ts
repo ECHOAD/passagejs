@@ -12,79 +12,79 @@ export interface MarketplaceV2ReactQuery<TResponse, TData = TResponse> {
         initialData?: undefined;
     };
 }
-export interface MarketplaceV2CollectionBidsByExpiryQuery<TData> extends MarketplaceV2ReactQuery<CollectionBidsByExpiryResponse, TData> {
+export interface MarketplaceV2CollectionBidsByExpiryQuery<TData> extends MarketplaceV2ReactQuery<BidResponse, TData> {
     args: {
         queryOptions: QueryOptionsForCollectionBidExpiryOffset;
     };
 }
-export declare function useMarketplaceV2CollectionBidsByExpiryQuery<TData = CollectionBidsByExpiryResponse>({ client, args, options }: MarketplaceV2CollectionBidsByExpiryQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
-export interface MarketplaceV2CollectionBidsByPriceQuery<TData> extends MarketplaceV2ReactQuery<CollectionBidsByPriceResponse, TData> {
+export declare function useMarketplaceV2CollectionBidsByExpiryQuery<TData = BidResponse>({ client, args, options }: MarketplaceV2CollectionBidsByExpiryQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export interface MarketplaceV2CollectionBidsByPriceQuery<TData> extends MarketplaceV2ReactQuery<BidResponse, TData> {
     args: {
         queryOptions: QueryOptionsForCollectionBidPriceOffset;
     };
 }
-export declare function useMarketplaceV2CollectionBidsByPriceQuery<TData = CollectionBidsByPriceResponse>({ client, args, options }: MarketplaceV2CollectionBidsByPriceQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
+export declare function useMarketplaceV2CollectionBidsByPriceQuery<TData = BidResponse>({ client, args, options }: MarketplaceV2CollectionBidsByPriceQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface MarketplaceV2CollectionBidQuery<TData> extends MarketplaceV2ReactQuery<CollectionBidResponse, TData> {
     args: {
         bidder: string;
     };
 }
-export declare function useMarketplaceV2CollectionBidQuery<TData = CollectionBidResponse>({ client, args, options }: MarketplaceV2CollectionBidQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
-export interface MarketplaceV2BidsByBidderExpiryQuery<TData> extends MarketplaceV2ReactQuery<BidsByBidderExpiryResponse, TData> {
+export declare function useMarketplaceV2CollectionBidQuery<TData = CollectionBidResponse>({ client, args, options }: MarketplaceV2CollectionBidQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export interface MarketplaceV2BidsByBidderExpiryQuery<TData> extends MarketplaceV2ReactQuery<BidResponse, TData> {
     args: {
         bidder: string;
         queryOptions: QueryOptionsForBidExpiryOffset;
     };
 }
-export declare function useMarketplaceV2BidsByBidderExpiryQuery<TData = BidsByBidderExpiryResponse>({ client, args, options }: MarketplaceV2BidsByBidderExpiryQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
-export interface MarketplaceV2BidsByTokenPriceQuery<TData> extends MarketplaceV2ReactQuery<BidsByTokenPriceResponse, TData> {
+export declare function useMarketplaceV2BidsByBidderExpiryQuery<TData = BidResponse>({ client, args, options }: MarketplaceV2BidsByBidderExpiryQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export interface MarketplaceV2BidsByTokenPriceQuery<TData> extends MarketplaceV2ReactQuery<BidResponse, TData> {
     args: {
         queryOptions: QueryOptionsForBidTokenPriceOffset;
         tokenId: string;
     };
 }
-export declare function useMarketplaceV2BidsByTokenPriceQuery<TData = BidsByTokenPriceResponse>({ client, args, options }: MarketplaceV2BidsByTokenPriceQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
-export interface MarketplaceV2BidsSortedByExpiryQuery<TData> extends MarketplaceV2ReactQuery<BidsSortedByExpiryResponse, TData> {
+export declare function useMarketplaceV2BidsByTokenPriceQuery<TData = BidResponse>({ client, args, options }: MarketplaceV2BidsByTokenPriceQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export interface MarketplaceV2BidsSortedByExpiryQuery<TData> extends MarketplaceV2ReactQuery<BidResponse, TData> {
     args: {
         queryOptions: QueryOptionsForBidExpiryOffset;
     };
 }
-export declare function useMarketplaceV2BidsSortedByExpiryQuery<TData = BidsSortedByExpiryResponse>({ client, args, options }: MarketplaceV2BidsSortedByExpiryQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
+export declare function useMarketplaceV2BidsSortedByExpiryQuery<TData = BidResponse>({ client, args, options }: MarketplaceV2BidsSortedByExpiryQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface MarketplaceV2BidQuery<TData> extends MarketplaceV2ReactQuery<BidResponse, TData> {
     args: {
         bidder: string;
         tokenId: string;
     };
 }
-export declare function useMarketplaceV2BidQuery<TData = BidResponse>({ client, args, options }: MarketplaceV2BidQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
+export declare function useMarketplaceV2BidQuery<TData = BidResponse>({ client, args, options }: MarketplaceV2BidQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface MarketplaceV2AskCountQuery<TData> extends MarketplaceV2ReactQuery<AskCountResponse, TData> {
 }
-export declare function useMarketplaceV2AskCountQuery<TData = AskCountResponse>({ client, options }: MarketplaceV2AskCountQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
-export interface MarketplaceV2AsksBySellerExpiryQuery<TData> extends MarketplaceV2ReactQuery<AsksBySellerExpiryResponse, TData> {
+export declare function useMarketplaceV2AskCountQuery<TData = AskCountResponse>({ client, options }: MarketplaceV2AskCountQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export interface MarketplaceV2AsksBySellerExpiryQuery<TData> extends MarketplaceV2ReactQuery<AskResponse, TData> {
     args: {
         queryOptions: QueryOptionsForTokenTimestampOffset;
         seller: string;
     };
 }
-export declare function useMarketplaceV2AsksBySellerExpiryQuery<TData = AsksBySellerExpiryResponse>({ client, args, options }: MarketplaceV2AsksBySellerExpiryQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
-export interface MarketplaceV2AsksSortedByPriceQuery<TData> extends MarketplaceV2ReactQuery<AsksSortedByPriceResponse, TData> {
+export declare function useMarketplaceV2AsksBySellerExpiryQuery<TData = AskResponse>({ client, args, options }: MarketplaceV2AsksBySellerExpiryQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export interface MarketplaceV2AsksSortedByPriceQuery<TData> extends MarketplaceV2ReactQuery<AskResponse, TData> {
     args: {
         queryOptions: QueryOptionsForTokenPriceOffset;
     };
 }
-export declare function useMarketplaceV2AsksSortedByPriceQuery<TData = AsksSortedByPriceResponse>({ client, args, options }: MarketplaceV2AsksSortedByPriceQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
-export interface MarketplaceV2AsksSortedByExpiryQuery<TData> extends MarketplaceV2ReactQuery<AsksSortedByExpiryResponse, TData> {
+export declare function useMarketplaceV2AsksSortedByPriceQuery<TData = AskResponse>({ client, args, options }: MarketplaceV2AsksSortedByPriceQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export interface MarketplaceV2AsksSortedByExpiryQuery<TData> extends MarketplaceV2ReactQuery<AskResponse, TData> {
     args: {
         queryOptions: QueryOptionsForTokenTimestampOffset;
     };
 }
-export declare function useMarketplaceV2AsksSortedByExpiryQuery<TData = AsksSortedByExpiryResponse>({ client, args, options }: MarketplaceV2AsksSortedByExpiryQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
+export declare function useMarketplaceV2AsksSortedByExpiryQuery<TData = AskResponse>({ client, args, options }: MarketplaceV2AsksSortedByExpiryQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface MarketplaceV2AskQuery<TData> extends MarketplaceV2ReactQuery<AskResponse, TData> {
     args: {
         tokenId: string;
     };
 }
-export declare function useMarketplaceV2AskQuery<TData = AskResponse>({ client, args, options }: MarketplaceV2AskQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
+export declare function useMarketplaceV2AskQuery<TData = AskResponse>({ client, args, options }: MarketplaceV2AskQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface MarketplaceV2ConfigQuery<TData> extends MarketplaceV2ReactQuery<ConfigResponse, TData> {
 }
-export declare function useMarketplaceV2ConfigQuery<TData = ConfigResponse>({ client, options }: MarketplaceV2ConfigQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
+export declare function useMarketplaceV2ConfigQuery<TData = ConfigResponse>({ client, options }: MarketplaceV2ConfigQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;

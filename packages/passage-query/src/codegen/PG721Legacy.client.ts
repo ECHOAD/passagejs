@@ -42,7 +42,7 @@ export interface PG721LegacyReadOnlyInterface {
     limit?: number;
     owner: string;
     startAfter?: string;
-  }) => Promise<AllOperatorsResponse>;
+  }) => Promise<OperatorsResponse>;
   numTokens: () => Promise<NumTokensResponse>;
   contractInfo: () => Promise<ContractInfoResponse>;
   nftInfo: ({
@@ -72,7 +72,7 @@ export interface PG721LegacyReadOnlyInterface {
   }: {
     limit?: number;
     startAfter?: string;
-  }) => Promise<AllTokensResponse>;
+  }) => Promise<TokensResponse>;
   minter: () => Promise<MinterResponse>;
 }
 export class PG721LegacyQueryClient implements PG721LegacyReadOnlyInterface {
@@ -150,7 +150,7 @@ export class PG721LegacyQueryClient implements PG721LegacyReadOnlyInterface {
     limit?: number;
     owner: string;
     startAfter?: string;
-  }): Promise<AllOperatorsResponse> => {
+  }): Promise<OperatorsResponse> => {
     return this.client.queryContractSmart(this.contractAddress, {
       all_operators: {
         include_expired: includeExpired,
@@ -218,7 +218,7 @@ export class PG721LegacyQueryClient implements PG721LegacyReadOnlyInterface {
   }: {
     limit?: number;
     startAfter?: string;
-  }): Promise<AllTokensResponse> => {
+  }): Promise<TokensResponse> => {
     return this.client.queryContractSmart(this.contractAddress, {
       all_tokens: {
         limit,

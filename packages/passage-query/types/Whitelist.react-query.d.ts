@@ -14,26 +14,26 @@ export interface WhitelistReactQuery<TResponse, TData = TResponse> {
 }
 export interface WhitelistConfigQuery<TData> extends WhitelistReactQuery<ConfigResponse, TData> {
 }
-export declare function useWhitelistConfigQuery<TData = ConfigResponse>({ client, options }: WhitelistConfigQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
+export declare function useWhitelistConfigQuery<TData = ConfigResponse>({ client, options }: WhitelistConfigQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface WhitelistHasMemberQuery<TData> extends WhitelistReactQuery<HasMemberResponse, TData> {
     args: {
         member: string;
     };
 }
-export declare function useWhitelistHasMemberQuery<TData = HasMemberResponse>({ client, args, options }: WhitelistHasMemberQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
+export declare function useWhitelistHasMemberQuery<TData = HasMemberResponse>({ client, args, options }: WhitelistHasMemberQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface WhitelistMembersQuery<TData> extends WhitelistReactQuery<MembersResponse, TData> {
     args: {
         limit?: number;
         startAfter?: string;
     };
 }
-export declare function useWhitelistMembersQuery<TData = MembersResponse>({ client, args, options }: WhitelistMembersQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
+export declare function useWhitelistMembersQuery<TData = MembersResponse>({ client, args, options }: WhitelistMembersQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface WhitelistIsActiveQuery<TData> extends WhitelistReactQuery<IsActiveResponse, TData> {
 }
-export declare function useWhitelistIsActiveQuery<TData = IsActiveResponse>({ client, options }: WhitelistIsActiveQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
+export declare function useWhitelistIsActiveQuery<TData = IsActiveResponse>({ client, options }: WhitelistIsActiveQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface WhitelistHasEndedQuery<TData> extends WhitelistReactQuery<HasEndedResponse, TData> {
 }
-export declare function useWhitelistHasEndedQuery<TData = HasEndedResponse>({ client, options }: WhitelistHasEndedQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
+export declare function useWhitelistHasEndedQuery<TData = HasEndedResponse>({ client, options }: WhitelistHasEndedQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface WhitelistHasStartedQuery<TData> extends WhitelistReactQuery<HasStartedResponse, TData> {
 }
-export declare function useWhitelistHasStartedQuery<TData = HasStartedResponse>({ client, options }: WhitelistHasStartedQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
+export declare function useWhitelistHasStartedQuery<TData = HasStartedResponse>({ client, options }: WhitelistHasStartedQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;

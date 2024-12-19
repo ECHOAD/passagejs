@@ -5,7 +5,7 @@
 */
 import { CosmWasmClient, SigningCosmWasmClient, ExecuteResult } from "@cosmjs/cosmwasm-stargate";
 import { Coin, StdFee } from "@cosmjs/amino";
-import { Expiration, AllNftInfoResponse, OwnerOfResponse, Metadata, ApprovalResponse, ApprovalsResponse, ContractInfoResponse, Binary, MinterResponse, NftInfoResponse, NumTokensResponse, TokensResponse } from "./PG721Legacy.types";
+import { Expiration, AllNftInfoResponse, OwnerOfResponse, Metadata, ApprovalResponse, ApprovalsResponse, ContractInfoResponse, Binary, MinterResponse, NftInfoResponse, NumTokensResponse, OperatorsResponse, TokensResponse } from "./PG721Legacy.types";
 export interface PG721LegacyReadOnlyInterface {
     contractAddress: string;
     ownerOf: ({ includeExpired, tokenId }: {
@@ -26,7 +26,7 @@ export interface PG721LegacyReadOnlyInterface {
         limit?: number;
         owner: string;
         startAfter?: string;
-    }) => Promise<AllOperatorsResponse>;
+    }) => Promise<OperatorsResponse>;
     numTokens: () => Promise<NumTokensResponse>;
     contractInfo: () => Promise<ContractInfoResponse>;
     nftInfo: ({ tokenId }: {
@@ -44,7 +44,7 @@ export interface PG721LegacyReadOnlyInterface {
     allTokens: ({ limit, startAfter }: {
         limit?: number;
         startAfter?: string;
-    }) => Promise<AllTokensResponse>;
+    }) => Promise<TokensResponse>;
     minter: () => Promise<MinterResponse>;
 }
 export declare class PG721LegacyQueryClient implements PG721LegacyReadOnlyInterface {
@@ -69,7 +69,7 @@ export declare class PG721LegacyQueryClient implements PG721LegacyReadOnlyInterf
         limit?: number;
         owner: string;
         startAfter?: string;
-    }) => Promise<AllOperatorsResponse>;
+    }) => Promise<OperatorsResponse>;
     numTokens: () => Promise<NumTokensResponse>;
     contractInfo: () => Promise<ContractInfoResponse>;
     nftInfo: ({ tokenId }: {
@@ -87,7 +87,7 @@ export declare class PG721LegacyQueryClient implements PG721LegacyReadOnlyInterf
     allTokens: ({ limit, startAfter }: {
         limit?: number;
         startAfter?: string;
-    }) => Promise<AllTokensResponse>;
+    }) => Promise<TokensResponse>;
     minter: () => Promise<MinterResponse>;
 }
 export interface PG721LegacyInterface extends PG721LegacyReadOnlyInterface {

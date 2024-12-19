@@ -5,6 +5,10 @@
 */
 export type Addr = string;
 export type Decimal = string;
+export interface ConfigResponse {
+    config: Config;
+    [k: string]: unknown;
+}
 export interface Config {
     admin: Addr;
     allowed_native: string;
@@ -87,3 +91,11 @@ export type QueryMsg = {
         [k: string]: unknown;
     };
 };
+export interface TokenResponse {
+    token: Token;
+    [k: string]: unknown;
+}
+export interface TokensResponse {
+    tokens: Token[];
+    [k: string]: unknown;
+}

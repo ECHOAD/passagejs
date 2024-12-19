@@ -4,7 +4,7 @@
 * and run the @cosmwasm/ts-codegen generate command to regenerate this file.
 */
 import { MsgExecuteContractEncodeObject } from "@cosmjs/cosmwasm-stargate";
-import { Coin } from "./Whitelist.types";
+import { Coin, AlternativeCoin } from "./Whitelist.types";
 export interface WhitelistMsg {
     contractAddress: string;
     sender: string;
@@ -23,14 +23,14 @@ export declare class WhitelistMsgComposer implements WhitelistMsg {
     sender: string;
     contractAddress: string;
     constructor(sender: string, contractAddress: string);
-    updateStartTime: (_funds?: Coin[]) => MsgExecuteContractEncodeObject;
-    updateEndTime: (_funds?: Coin[]) => MsgExecuteContractEncodeObject;
+    updateStartTime: (_funds?: AlternativeCoin[]) => MsgExecuteContractEncodeObject;
+    updateEndTime: (_funds?: AlternativeCoin[]) => MsgExecuteContractEncodeObject;
     addMembers: ({ toAdd }: {
         toAdd: string[];
-    }, _funds?: Coin[]) => MsgExecuteContractEncodeObject;
+    }, _funds?: AlternativeCoin[]) => MsgExecuteContractEncodeObject;
     removeMembers: ({ toRemove }: {
         toRemove: string[];
-    }, _funds?: Coin[]) => MsgExecuteContractEncodeObject;
-    updatePerAddressLimit: (_funds?: Coin[]) => MsgExecuteContractEncodeObject;
-    increaseMemberLimit: (_funds?: Coin[]) => MsgExecuteContractEncodeObject;
+    }, _funds?: AlternativeCoin[]) => MsgExecuteContractEncodeObject;
+    updatePerAddressLimit: (_funds?: AlternativeCoin[]) => MsgExecuteContractEncodeObject;
+    increaseMemberLimit: (_funds?: AlternativeCoin[]) => MsgExecuteContractEncodeObject;
 }

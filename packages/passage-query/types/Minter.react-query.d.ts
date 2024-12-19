@@ -17,16 +17,16 @@ export interface MinterMintCountQuery<TData> extends MinterReactQuery<MintCountR
         address: string;
     };
 }
-export declare function useMinterMintCountQuery<TData = MintCountResponse>({ client, args, options }: MinterMintCountQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
+export declare function useMinterMintCountQuery<TData = MintCountResponse>({ client, args, options }: MinterMintCountQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface MinterMintPriceQuery<TData> extends MinterReactQuery<MintPriceResponse, TData> {
 }
-export declare function useMinterMintPriceQuery<TData = MintPriceResponse>({ client, options }: MinterMintPriceQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
+export declare function useMinterMintPriceQuery<TData = MintPriceResponse>({ client, options }: MinterMintPriceQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface MinterStartTimeQuery<TData> extends MinterReactQuery<StartTimeResponse, TData> {
 }
-export declare function useMinterStartTimeQuery<TData = StartTimeResponse>({ client, options }: MinterStartTimeQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
+export declare function useMinterStartTimeQuery<TData = StartTimeResponse>({ client, options }: MinterStartTimeQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface MinterMintableNumTokensQuery<TData> extends MinterReactQuery<MintableNumTokensResponse, TData> {
 }
-export declare function useMinterMintableNumTokensQuery<TData = MintableNumTokensResponse>({ client, options }: MinterMintableNumTokensQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
+export declare function useMinterMintableNumTokensQuery<TData = MintableNumTokensResponse>({ client, options }: MinterMintableNumTokensQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface MinterConfigQuery<TData> extends MinterReactQuery<ConfigResponse, TData> {
 }
-export declare function useMinterConfigQuery<TData = ConfigResponse>({ client, options }: MinterConfigQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
+export declare function useMinterConfigQuery<TData = ConfigResponse>({ client, options }: MinterConfigQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;

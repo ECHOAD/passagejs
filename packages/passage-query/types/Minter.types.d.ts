@@ -23,6 +23,10 @@ export interface Coin {
     denom: string;
     [k: string]: unknown;
 }
+export interface AlternativeCoin {
+    denom?: string;
+    amount?: string;
+}
 export type Addr = string;
 export interface Config {
     admin: Addr;

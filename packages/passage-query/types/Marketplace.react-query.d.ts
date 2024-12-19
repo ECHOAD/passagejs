@@ -4,6 +4,7 @@
 * and run the @cosmwasm/ts-codegen generate command to regenerate this file.
 */
 import { UseQueryOptions } from "@tanstack/react-query";
+import { ConfigResponse, TokenResponse, TokensResponse } from "./Marketplace.types";
 import { MarketplaceQueryClient } from "./Marketplace.client";
 export interface MarketplaceReactQuery<TResponse, TData = TResponse> {
     client: MarketplaceQueryClient;
@@ -11,32 +12,32 @@ export interface MarketplaceReactQuery<TResponse, TData = TResponse> {
         initialData?: undefined;
     };
 }
-export interface MarketplaceListTokensOnSaleQuery<TData> extends MarketplaceReactQuery<ListTokensOnSaleResponse, TData> {
+export interface MarketplaceListTokensOnSaleQuery<TData> extends MarketplaceReactQuery<TokensResponse, TData> {
     args: {
         limit?: number;
         startAfter?: string;
     };
 }
-export declare function useMarketplaceListTokensOnSaleQuery<TData = ListTokensOnSaleResponse>({ client, args, options }: MarketplaceListTokensOnSaleQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
-export interface MarketplaceListTokensQuery<TData> extends MarketplaceReactQuery<ListTokensResponse, TData> {
+export declare function useMarketplaceListTokensOnSaleQuery<TData = TokensResponse>({ client, args, options }: MarketplaceListTokensOnSaleQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export interface MarketplaceListTokensQuery<TData> extends MarketplaceReactQuery<TokensResponse, TData> {
     args: {
         ids: string[];
     };
 }
-export declare function useMarketplaceListTokensQuery<TData = ListTokensResponse>({ client, args, options }: MarketplaceListTokensQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
-export interface MarketplaceRangeTokensQuery<TData> extends MarketplaceReactQuery<RangeTokensResponse, TData> {
+export declare function useMarketplaceListTokensQuery<TData = TokensResponse>({ client, args, options }: MarketplaceListTokensQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export interface MarketplaceRangeTokensQuery<TData> extends MarketplaceReactQuery<TokensResponse, TData> {
     args: {
         limit?: number;
         startAfter?: string;
     };
 }
-export declare function useMarketplaceRangeTokensQuery<TData = RangeTokensResponse>({ client, args, options }: MarketplaceRangeTokensQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
+export declare function useMarketplaceRangeTokensQuery<TData = TokensResponse>({ client, args, options }: MarketplaceRangeTokensQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface MarketplaceTokenQuery<TData> extends MarketplaceReactQuery<TokenResponse, TData> {
     args: {
         id: string;
     };
 }
-export declare function useMarketplaceTokenQuery<TData = TokenResponse>({ client, args, options }: MarketplaceTokenQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
+export declare function useMarketplaceTokenQuery<TData = TokenResponse>({ client, args, options }: MarketplaceTokenQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface MarketplaceConfigQuery<TData> extends MarketplaceReactQuery<ConfigResponse, TData> {
 }
-export declare function useMarketplaceConfigQuery<TData = ConfigResponse>({ client, options }: MarketplaceConfigQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
+export declare function useMarketplaceConfigQuery<TData = ConfigResponse>({ client, options }: MarketplaceConfigQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;

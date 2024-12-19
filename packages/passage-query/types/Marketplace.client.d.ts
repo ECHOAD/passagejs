@@ -5,7 +5,7 @@
 */
 import { CosmWasmClient, SigningCosmWasmClient, ExecuteResult } from "@cosmjs/cosmwasm-stargate";
 import { Coin, StdFee } from "@cosmjs/amino";
-import { Decimal, Uint128, Token } from "./Marketplace.types";
+import { Decimal, ConfigResponse, Uint128, TokenResponse, TokensResponse } from "./Marketplace.types";
 export interface MarketplaceReadOnlyInterface {
     contractAddress: string;
     config: () => Promise<ConfigResponse>;
@@ -15,14 +15,14 @@ export interface MarketplaceReadOnlyInterface {
     rangeTokens: ({ limit, startAfter }: {
         limit?: number;
         startAfter?: string;
-    }) => Promise<RangeTokensResponse>;
+    }) => Promise<any>;
     listTokens: ({ ids }: {
         ids: string[];
-    }) => Promise<ListTokensResponse>;
+    }) => Promise<any>;
     listTokensOnSale: ({ limit, startAfter }: {
         limit?: number;
         startAfter?: string;
-    }) => Promise<ListTokensOnSaleResponse>;
+    }) => Promise<TokensResponse>;
 }
 export declare class MarketplaceQueryClient implements MarketplaceReadOnlyInterface {
     client: CosmWasmClient;
@@ -35,14 +35,14 @@ export declare class MarketplaceQueryClient implements MarketplaceReadOnlyInterf
     rangeTokens: ({ limit, startAfter }: {
         limit?: number;
         startAfter?: string;
-    }) => Promise<RangeTokensResponse>;
+    }) => Promise<TokensResponse>;
     listTokens: ({ ids }: {
         ids: string[];
-    }) => Promise<ListTokensResponse>;
+    }) => Promise<any>;
     listTokensOnSale: ({ limit, startAfter }: {
         limit?: number;
         startAfter?: string;
-    }) => Promise<ListTokensOnSaleResponse>;
+    }) => Promise<TokensResponse>;
 }
 export interface MarketplaceInterface extends MarketplaceReadOnlyInterface {
     contractAddress: string;
@@ -51,9 +51,9 @@ export interface MarketplaceInterface extends MarketplaceReadOnlyInterface {
         recipient?: string;
         tokenId: string;
     }, fee?: number | StdFee | "auto", memo?: string, _funds?: Coin[]) => Promise<ExecuteResult>;
-    listTokens: ({ tokens }: {
-        tokens: Token[];
-    }, fee?: number | StdFee | "auto", memo?: string, _funds?: Coin[]) => Promise<ExecuteResult>;
+    listTokens: ({ ids }: {
+        ids: string[];
+    }, fee?: number | StdFee | "auto", memo?: string, _funds?: Coin[]) => Promise<any>;
     delistTokens: ({ tokens }: {
         tokens: string[];
     }, fee?: number | StdFee | "auto", memo?: string, _funds?: Coin[]) => Promise<ExecuteResult>;
@@ -78,8 +78,8 @@ export declare class MarketplaceClient extends MarketplaceQueryClient implements
         recipient?: string;
         tokenId: string;
     }, fee?: number | StdFee | "auto", memo?: string, _funds?: Coin[]) => Promise<ExecuteResult>;
-    listTokens: ({ tokens }: {
-        tokens: Token[];
+    listTokens: ({ ids }: {
+        ids: String[];
     }, fee?: number | StdFee | "auto", memo?: string, _funds?: Coin[]) => Promise<ExecuteResult>;
     delistTokens: ({ tokens }: {
         tokens: string[];

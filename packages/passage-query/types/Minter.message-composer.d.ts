@@ -4,18 +4,18 @@
 * and run the @cosmwasm/ts-codegen generate command to regenerate this file.
 */
 import { MsgExecuteContractEncodeObject } from "@cosmjs/cosmwasm-stargate";
-import { Coin } from "./Minter.types";
+import { Coin, AlternativeCoin } from "./Minter.types";
 export interface MinterMsg {
     contractAddress: string;
     sender: string;
-    mint: (_funds?: Coin[]) => MsgExecuteContractEncodeObject;
+    mint: (_funds?: AlternativeCoin[]) => MsgExecuteContractEncodeObject;
     setWhitelist: ({ whitelist }: {
         whitelist: string;
-    }, _funds?: Coin[]) => MsgExecuteContractEncodeObject;
-    updateStartTime: (_funds?: Coin[]) => MsgExecuteContractEncodeObject;
+    }, _funds?: AlternativeCoin[]) => MsgExecuteContractEncodeObject;
+    updateStartTime: (_funds?: AlternativeCoin[]) => MsgExecuteContractEncodeObject;
     updatePerAddressLimit: ({ perAddressLimit }: {
         perAddressLimit: number;
-    }, _funds?: Coin[]) => MsgExecuteContractEncodeObject;
+    }, _funds?: AlternativeCoin[]) => MsgExecuteContractEncodeObject;
     mintTo: ({ recipient }: {
         recipient: string;
     }, _funds?: Coin[]) => MsgExecuteContractEncodeObject;
@@ -29,20 +29,20 @@ export declare class MinterMsgComposer implements MinterMsg {
     sender: string;
     contractAddress: string;
     constructor(sender: string, contractAddress: string);
-    mint: (_funds?: Coin[]) => MsgExecuteContractEncodeObject;
+    mint: (_funds?: AlternativeCoin[]) => MsgExecuteContractEncodeObject;
     setWhitelist: ({ whitelist }: {
         whitelist: string;
-    }, _funds?: Coin[]) => MsgExecuteContractEncodeObject;
-    updateStartTime: (_funds?: Coin[]) => MsgExecuteContractEncodeObject;
+    }, _funds?: AlternativeCoin[]) => MsgExecuteContractEncodeObject;
+    updateStartTime: (_funds?: AlternativeCoin[]) => MsgExecuteContractEncodeObject;
     updatePerAddressLimit: ({ perAddressLimit }: {
         perAddressLimit: number;
-    }, _funds?: Coin[]) => MsgExecuteContractEncodeObject;
+    }, _funds?: AlternativeCoin[]) => MsgExecuteContractEncodeObject;
     mintTo: ({ recipient }: {
         recipient: string;
-    }, _funds?: Coin[]) => MsgExecuteContractEncodeObject;
+    }, _funds?: AlternativeCoin[]) => MsgExecuteContractEncodeObject;
     mintFor: ({ recipient, tokenId }: {
         recipient: string;
         tokenId: number;
-    }, _funds?: Coin[]) => MsgExecuteContractEncodeObject;
-    withdraw: (_funds?: Coin[]) => MsgExecuteContractEncodeObject;
+    }, _funds?: AlternativeCoin[]) => MsgExecuteContractEncodeObject;
+    withdraw: (_funds?: AlternativeCoin[]) => MsgExecuteContractEncodeObject;
 }

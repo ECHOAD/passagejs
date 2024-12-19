@@ -58,37 +58,64 @@ export declare class MarketplaceV2MsgComposer implements MarketplaceV2Msg {
         minPrice?: Uint128;
         operators?: string[];
         tradingFeeBps?: number;
-    }, _funds?: Coin[]) => MsgExecuteContractEncodeObject;
+    }, _funds?: {
+        denom?: string | undefined;
+        amount?: string | undefined;
+    }[] | undefined) => MsgExecuteContractEncodeObject;
     setAsk: ({ expiresAt, fundsRecipient, price, reserveFor, tokenId }: {
         expiresAt: Timestamp;
         fundsRecipient?: string;
         price: Coin;
         reserveFor?: string;
         tokenId: string;
-    }, _funds?: Coin[]) => MsgExecuteContractEncodeObject;
+    }, _funds?: {
+        denom?: string | undefined;
+        amount?: string | undefined;
+    }[] | undefined) => MsgExecuteContractEncodeObject;
     removeAsk: ({ tokenId }: {
         tokenId: string;
-    }, _funds?: Coin[]) => MsgExecuteContractEncodeObject;
+    }, _funds?: {
+        denom?: string | undefined;
+        amount?: string | undefined;
+    }[] | undefined) => MsgExecuteContractEncodeObject;
     setBid: ({ expiresAt, price, tokenId }: {
         expiresAt: Timestamp;
         price: Coin;
         tokenId: string;
-    }, _funds?: Coin[]) => MsgExecuteContractEncodeObject;
+    }, _funds?: {
+        denom?: string | undefined;
+        amount?: string | undefined;
+    }[] | undefined) => MsgExecuteContractEncodeObject;
     removeBid: ({ tokenId }: {
         tokenId: string;
-    }, _funds?: Coin[]) => MsgExecuteContractEncodeObject;
+    }, _funds?: {
+        denom?: string | undefined;
+        amount?: string | undefined;
+    }[] | undefined) => MsgExecuteContractEncodeObject;
     acceptBid: ({ bidder, tokenId }: {
         bidder: string;
         tokenId: string;
-    }, _funds?: Coin[]) => MsgExecuteContractEncodeObject;
+    }, _funds?: {
+        denom?: string | undefined;
+        amount?: string | undefined;
+    }[] | undefined) => MsgExecuteContractEncodeObject;
     setCollectionBid: ({ expiresAt, price, units }: {
         expiresAt: Timestamp;
         price: Coin;
         units: number;
-    }, _funds?: Coin[]) => MsgExecuteContractEncodeObject;
-    removeCollectionBid: (_funds?: Coin[]) => MsgExecuteContractEncodeObject;
+    }, _funds?: {
+        denom?: string | undefined;
+        amount?: string | undefined;
+    }[] | undefined) => MsgExecuteContractEncodeObject;
+    removeCollectionBid: (_funds?: {
+        denom?: string | undefined;
+        amount?: string | undefined;
+    }[] | undefined) => MsgExecuteContractEncodeObject;
     acceptCollectionBid: ({ bidder, tokenId }: {
         bidder: string;
         tokenId: string;
-    }, _funds?: Coin[]) => MsgExecuteContractEncodeObject;
+    }, _funds?: {
+        denom?: string | undefined;
+        amount?: string | undefined;
+    }[] | undefined) => MsgExecuteContractEncodeObject;
 }

@@ -4,7 +4,7 @@
 * and run the @cosmwasm/ts-codegen generate command to regenerate this file.
 */
 import { UseQueryOptions } from "@tanstack/react-query";
-import { AdminResponse, MemberResponse, TotalWeightResponse } from "./RoyaltyGroup.types";
+import { AdminResponse, MemberListResponse, MemberResponse, TotalWeightResponse } from "./RoyaltyGroup.types";
 import { RoyaltyGroupQueryClient } from "./RoyaltyGroup.client";
 export interface RoyaltyGroupReactQuery<TResponse, TData = TResponse> {
     client: RoyaltyGroupQueryClient;
@@ -12,26 +12,28 @@ export interface RoyaltyGroupReactQuery<TResponse, TData = TResponse> {
         initialData?: undefined;
     };
 }
+export interface HooksResponse {
+}
 export interface RoyaltyGroupHooksQuery<TData> extends RoyaltyGroupReactQuery<HooksResponse, TData> {
 }
-export declare function useRoyaltyGroupHooksQuery<TData = HooksResponse>({ client, options }: RoyaltyGroupHooksQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
+export declare function useRoyaltyGroupHooksQuery<TData = HooksResponse>({ client, options }: RoyaltyGroupHooksQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface RoyaltyGroupMemberQuery<TData> extends RoyaltyGroupReactQuery<MemberResponse, TData> {
     args: {
         addr: string;
         atHeight?: number;
     };
 }
-export declare function useRoyaltyGroupMemberQuery<TData = MemberResponse>({ client, args, options }: RoyaltyGroupMemberQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
-export interface RoyaltyGroupListMembersQuery<TData> extends RoyaltyGroupReactQuery<ListMembersResponse, TData> {
+export declare function useRoyaltyGroupMemberQuery<TData = MemberResponse>({ client, args, options }: RoyaltyGroupMemberQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
+export interface RoyaltyGroupListMembersQuery<TData> extends RoyaltyGroupReactQuery<MemberListResponse, TData> {
     args: {
         limit?: number;
         startAfter?: string;
     };
 }
-export declare function useRoyaltyGroupListMembersQuery<TData = ListMembersResponse>({ client, args, options }: RoyaltyGroupListMembersQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
+export declare function useRoyaltyGroupListMembersQuery<TData = MemberListResponse>({ client, args, options }: RoyaltyGroupListMembersQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface RoyaltyGroupTotalWeightQuery<TData> extends RoyaltyGroupReactQuery<TotalWeightResponse, TData> {
 }
-export declare function useRoyaltyGroupTotalWeightQuery<TData = TotalWeightResponse>({ client, options }: RoyaltyGroupTotalWeightQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
+export declare function useRoyaltyGroupTotalWeightQuery<TData = TotalWeightResponse>({ client, options }: RoyaltyGroupTotalWeightQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
 export interface RoyaltyGroupAdminQuery<TData> extends RoyaltyGroupReactQuery<AdminResponse, TData> {
 }
-export declare function useRoyaltyGroupAdminQuery<TData = AdminResponse>({ client, options }: RoyaltyGroupAdminQuery<TData>): import("@tanstack/react-query").DefinedUseQueryResult<TData, Error>;
+export declare function useRoyaltyGroupAdminQuery<TData = AdminResponse>({ client, options }: RoyaltyGroupAdminQuery<TData>): import("@tanstack/react-query").UseQueryResult<TData, Error>;
