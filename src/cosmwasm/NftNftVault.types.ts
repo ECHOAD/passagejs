@@ -19,41 +19,6 @@ export interface ConfigResponse {
   unstake_period: number;
   [k: string]: unknown;
 }
-export interface VaultToken {
-  owner: Addr;
-  stake_timestamp: Timestamp;
-  token_id: string;
-  unstake_timestamp?: Timestamp | null;
-  [k: string]: unknown;
-}
-export interface VaultTokenResponse {
-  vault_token?: VaultToken | null;
-  [k: string]: unknown;
-}
-export interface VaultTokensByOwnerResponse {
-  tokens: VaultToken[];
-  [k: string]: unknown;
-}
-export interface VaultTokensByStakeTimestampResponse {
-  tokens: VaultToken[];
-  [k: string]: unknown;
-}
-export interface VaultTokensByUnstakeTimestampResponse {
-  tokens: VaultToken[];
-  [k: string]: unknown;
-}
-export interface StakeHooksResponse {
-  hooks: string[];
-  [k: string]: unknown;
-}
-export interface UnstakeHooksResponse {
-  hooks: string[];
-  [k: string]: unknown;
-}
-export interface WithdrawHooksResponse {
-  hooks: string[];
-  [k: string]: unknown;
-}
 export type ExecuteMsg = {
   update_config: {
     label?: string | null;
@@ -162,5 +127,40 @@ export interface QueryOptionsForTokenTimestampOffset {
 export interface TokenTimestampOffset {
   timestamp: Timestamp;
   token_id: string;
+  [k: string]: unknown;
+}
+export interface VaultToken {
+  owner: Addr;
+  stake_timestamp: Timestamp;
+  token_id: string;
+  unstake_timestamp?: Timestamp | null;
+  [k: string]: unknown;
+}
+export interface VaultTokenResponse {
+  vault_token?: VaultToken | null;
+  [k: string]: unknown;
+}
+export interface VaultTokensByOwnerResponse {
+  tokens: VaultToken[];
+  [k: string]: unknown;
+}
+export interface VaultTokensByStakeTimestampResponse {
+  tokens: VaultToken[];
+  [k: string]: unknown;
+}
+export interface VaultTokensByUnstakeTimestampResponse {
+  tokens: VaultToken[];
+  [k: string]: unknown;
+}
+export interface StakeHooksResponse {
+  hooks: string[];
+  [k: string]: unknown;
+}
+export interface UnstakeHooksResponse {
+  hooks: string[];
+  [k: string]: unknown;
+}
+export interface WithdrawHooksResponse {
+  hooks: string[];
   [k: string]: unknown;
 }

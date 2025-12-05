@@ -7,7 +7,7 @@
 import { EncodeObject } from "@interchainjs/cosmos-types";
 import { MsgExecuteContract } from "interchainjs/cosmwasm/wasm/v1/tx";
 import { toUtf8 } from "@interchainjs/encoding";
-import { AskCountResponse, Timestamp, Uint64, Addr, Uint128, AskResponse, Ask, Coin, AsksResponse, BidResponse, Bid, BidsResponse, CollectionBidExpiryOffset, CollectionBidPriceOffset, CollectionBidResponse, CollectionBid, CollectionBidsResponse, Decimal, ConfigResponse, Config, ExpiryRange, ExecuteMsg, InstantiateMsg, MarketplaceContract, QueryMsg, QueryOptionsForTokenTimestampOffset, TokenTimestampOffset, QueryOptionsForTokenPriceOffset, TokenPriceOffset, QueryOptionsForBidExpiryOffset, BidExpiryOffset, QueryOptionsForBidTokenPriceOffset, BidTokenPriceOffset, QueryOptionsForCollectionBidPriceOffset, QueryOptionsForCollectionBidExpiryOffset } from "./NftMarketplaceV2.types";
+import { AskCountResponse, Timestamp, Uint64, Addr, Uint128, AskResponse, Ask, Coin, AsksBySellerExpiryResponse, AsksResponse, AsksSortedByExpiryResponse, AsksSortedByPriceResponse, BidResponse, Bid, BidsResponse, BidsSortedByExpiryResponse, CollectionBidExpiryOffset, CollectionBidPriceOffset, CollectionBidResponse, CollectionBid, CollectionBidsResponse, Decimal, ConfigResponse, Config, ExpiryRange, ExecuteMsg, InstantiateMsg, MarketplaceContract, QueryMsg, QueryOptionsForTokenTimestampOffset, TokenTimestampOffset, QueryOptionsForTokenPriceOffset, TokenPriceOffset, QueryOptionsForBidExpiryOffset, BidExpiryOffset, QueryOptionsForBidTokenPriceOffset, BidTokenPriceOffset, QueryOptionsForCollectionBidPriceOffset, QueryOptionsForCollectionBidExpiryOffset } from "./NftMarketplaceV2.types";
 export interface NftMarketplaceV2Msg {
   contractAddress: string;
   sender: string;

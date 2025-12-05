@@ -176,7 +176,6 @@ export type QueryMsg = {
     [k: string]: unknown;
   };
 };
-
 export interface NumMintedResponse {
   num_minted: number;
   [k: string]: unknown;
@@ -207,4 +206,3 @@ export interface TokenMintsResponse {
   token_mints: TokenMintResponse[];
   [k: string]: unknown;
 }
-

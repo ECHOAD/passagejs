@@ -14,6 +14,14 @@ export interface Config {
   nft_contract_addr: Addr;
   [k: string]: unknown;
 }
+export interface ConfigResponse {
+  admin: Addr;
+  allowed_native: string;
+  collector_addr: Addr;
+  fee_percentage: Decimal;
+  nft_contract_addr: Addr;
+  [k: string]: unknown;
+}
 export type ExecuteMsg = {
   buy: {
     recipient?: string | null;
@@ -61,6 +69,14 @@ export interface InstantiateMsg {
   nft_addr: string;
   [k: string]: unknown;
 }
+export interface ListTokensOnSaleResponse {
+  tokens: Token[];
+  [k: string]: unknown;
+}
+export interface ListTokensResponse {
+  tokens: Token[];
+  [k: string]: unknown;
+}
 export type QueryMsg = {
   config: {
     [k: string]: unknown;
@@ -88,3 +104,13 @@ export type QueryMsg = {
     [k: string]: unknown;
   };
 };
+export interface RangeTokensResponse {
+  tokens: Token[];
+  [k: string]: unknown;
+}
+export interface TokenResponse {
+  id: string;
+  on_sale: boolean;
+  price: Uint128;
+  [k: string]: unknown;
+}

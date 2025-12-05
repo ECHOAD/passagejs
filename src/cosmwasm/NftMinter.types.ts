@@ -122,7 +122,6 @@ export type QueryMsg = {
     [k: string]: unknown;
   };
 };
-
 export interface MintableNumTokensResponse {
   count: number;
   [k: string]: unknown;
@@ -140,4 +139,3 @@ export interface MintCountResponse {
   count: number;
   [k: string]: unknown;
 }
-

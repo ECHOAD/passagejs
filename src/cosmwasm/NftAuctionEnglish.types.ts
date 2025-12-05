@@ -41,11 +41,6 @@ export interface AuctionsResponse {
   auctions: Auction[];
   [k: string]: unknown;
 }
-export type AuctionsByStartTimeResponse = AuctionsResponse;
-export type AuctionsByEndTimeResponse = AuctionsResponse;
-export type AuctionsByHighestBidPriceResponse = AuctionsResponse;
-export type AuctionsBySellerEndTimeResponse = AuctionsResponse;
-export type AuctionsByBidderEndTimeResponse = AuctionsResponse;
 export type Decimal = string;
 export interface ConfigResponse {
   config: Config;
@@ -186,3 +181,8 @@ export interface TokenPriceOffset {
   token_id: string;
   [k: string]: unknown;
 }
+export type AuctionsByStartTimeResponse = AuctionsResponse;
+export type AuctionsByEndTimeResponse = AuctionsResponse;
+export type AuctionsByHighestBidPriceResponse = AuctionsResponse;
+export type AuctionsBySellerEndTimeResponse = AuctionsResponse;
+export type AuctionsByBidderEndTimeResponse = AuctionsResponse;

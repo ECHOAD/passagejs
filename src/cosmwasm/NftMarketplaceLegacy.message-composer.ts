@@ -8,7 +8,7 @@ import { Coin } from "@interchainjs/types";
 import { EncodeObject } from "@interchainjs/cosmos-types";
 import { MsgExecuteContract } from "interchainjs/cosmwasm/wasm/v1/tx";
 import { toUtf8 } from "@interchainjs/encoding";
-import { Addr, Decimal, Config, ExecuteMsg, Uint128, Token, InstantiateMsg, QueryMsg } from "./NftMarketplaceLegacy.types";
+import { Addr, Decimal, Config, ConfigResponse, ExecuteMsg, Uint128, Token, InstantiateMsg, ListTokensOnSaleResponse, ListTokensResponse, QueryMsg, RangeTokensResponse, TokenResponse } from "./NftMarketplaceLegacy.types";
 export interface NftMarketplaceLegacyMsg {
   contractAddress: string;
   sender: string;

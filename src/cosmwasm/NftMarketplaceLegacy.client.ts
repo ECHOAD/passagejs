@@ -6,7 +6,7 @@
 
 import { ICosmWasmClient, ISigningCosmWasmClient } from "./baseClient";
 import { Coin, StdFee } from "@interchainjs/types";
-import { Addr, Decimal, Config, ExecuteMsg, Uint128, Token, InstantiateMsg, QueryMsg } from "./NftMarketplaceLegacy.types";
+import { Addr, Decimal, Config, ConfigResponse, ExecuteMsg, Uint128, Token, InstantiateMsg, ListTokensOnSaleResponse, ListTokensResponse, QueryMsg, RangeTokensResponse, TokenResponse } from "./NftMarketplaceLegacy.types";
 export interface NftMarketplaceLegacyReadOnlyInterface {
   contractAddress: string;
   config: () => Promise<ConfigResponse>;
@@ -113,7 +113,7 @@ export interface NftMarketplaceLegacyInterface extends NftMarketplaceLegacyReadO
     recipient?: string;
     tokenId: string;
   }, fee_?: number | StdFee | "auto", memo_?: string, funds_?: Coin[]) => Promise<any>;
-  listTokens: ({
+  listTokensForSale: ({
     tokens
   }: {
     tokens: Token[];
@@ -154,7 +154,7 @@ export class NftMarketplaceLegacyClient extends NftMarketplaceLegacyQueryClient 
     this.sender = sender;
     this.contractAddress = contractAddress;
     this.buy = this.buy.bind(this);
-    this.listTokens = this.listTokens.bind(this);
+    this.listTokensForSale = this.listTokensForSale.bind(this);
     this.delistTokens = this.delistTokens.bind(this);
     this.updatePrice = this.updatePrice.bind(this);
     this.updateConfig = this.updateConfig.bind(this);
@@ -173,7 +173,7 @@ export class NftMarketplaceLegacyClient extends NftMarketplaceLegacyQueryClient 
       }
     }, fee_, memo_, funds_);
   };
-  listTokens = async ({
+  listTokensForSale = async ({
     tokens
   }: {
     tokens: Token[];

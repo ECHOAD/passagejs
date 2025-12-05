@@ -6,7 +6,10 @@
       "Bash(npm publish:*)",
       "Bash(npm view:*)",
       "Bash(npm run codegen:cosmwasm:*)",
-      "Bash(chmod:*)"
+      "Bash(chmod:*)",
+      "Bash(npm install)",
+      "Bash(npm run codegen:*)",
+      "Bash(grep -l \"client: ISigningCosmWasmClient;\" *.client.ts)"
     ],
     "deny": [],
     "ask": []

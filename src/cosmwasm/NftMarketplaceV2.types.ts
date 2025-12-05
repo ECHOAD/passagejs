@@ -34,6 +34,7 @@ export interface AsksResponse {
   asks: Ask[];
   [k: string]: unknown;
 }
+
 export interface BidResponse {
   bid?: Bid | null;
   [k: string]: unknown;
@@ -300,9 +301,11 @@ export interface QueryOptionsForCollectionBidExpiryOffset {
   start_after?: CollectionBidExpiryOffset | null;
   [k: string]: unknown;
 }
-
+export type AsksSortedByExpiryResponse = AsksResponse;
+export type AsksSortedByPriceResponse = AsksResponse;
+export type AsksBySellerExpiryResponse = AsksResponse;
+export type BidsSortedByExpiryResponse = BidsResponse;
 export type BidsByTokenPriceResponse = BidsResponse;
 export type BidsByBidderExpiryResponse = BidsResponse;
 export type CollectionBidsByPriceResponse = CollectionBidsResponse;
 export type CollectionBidsByExpiryResponse = CollectionBidsResponse;
-

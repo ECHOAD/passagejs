@@ -67,22 +67,6 @@ export interface MembersResponse {
   members: string[];
   [k: string]: unknown;
 }
-export interface HasStartedResponse {
-  has_started: boolean;
-  [k: string]: unknown;
-}
-export interface HasEndedResponse {
-  has_ended: boolean;
-  [k: string]: unknown;
-}
-export interface IsActiveResponse {
-  is_active: boolean;
-  [k: string]: unknown;
-}
-export interface HasMemberResponse {
-  has_member: boolean;
-  [k: string]: unknown;
-}
 export type QueryMsg = {
   has_started: {
     [k: string]: unknown;
@@ -111,3 +95,19 @@ export type QueryMsg = {
     [k: string]: unknown;
   };
 };
+export interface HasStartedResponse {
+  has_started: boolean;
+  [k: string]: unknown;
+}
+export interface HasEndedResponse {
+  has_ended: boolean;
+  [k: string]: unknown;
+}
+export interface IsActiveResponse {
+  is_active: boolean;
+  [k: string]: unknown;
+}
+export interface HasMemberResponse {
+  has_member: boolean;
+  [k: string]: unknown;
+}
