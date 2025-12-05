@@ -1,6 +1,6 @@
 {
   "name": "@echoad/passagejs",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "TypeScript SDK for Passage blockchain",
   "author": "Echoad",
   "homepage": "https://github.com/echoad/passagejs#readme",
