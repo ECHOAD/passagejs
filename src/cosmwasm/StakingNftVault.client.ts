@@ -9,7 +9,6 @@ import { Coin, StdFee } from "@interchainjs/types";
 import { ExecuteMsg, ExecMsg, Timestamp, Uint64, RewardAsset, Addr, NftForString, InstantiateMsg, ConfigForString, QueryMsg, QueryMsg1, QueryBoundForTupleOfStringAndString, QueryBoundForString, QueryOptionsForTupleOfStringAndString, QueryOptionsForString, Expiration, ArrayOfClaim, Claim, NftForAddr, ConfigForAddr, ArrayOfAddr, NullableUint128, Uint128, ArrayOfTupleOfAddrAndUint64, ArrayOfStakedNft, StakedNft, ConfigResponse, RewardAccountsResponse, UsersStakedNftsResponse, UsersCollectionStakedAmountsResponse, TotalStakedAmountAtHeightResponse, ClaimsResponse } from "./StakingNftVault.types";
 export interface StakingNftVaultReadOnlyInterface {
   contractAddress: string;
-
   config: () => Promise<ConfigResponse>;
   rewardAccounts: () => Promise<RewardAccountsResponse>;
   usersStakedNfts: ({
@@ -113,7 +112,6 @@ export class StakingNftVaultQueryClient implements StakingNftVaultReadOnlyInterf
 }
 export interface StakingNftVaultInterface extends StakingNftVaultReadOnlyInterface {
   contractAddress: string;
-
   sender: string;
   updateConfig: ({
     rewardsCodeId,

@@ -6,19 +6,18 @@
 
 import { ICosmWasmClient, ISigningCosmWasmClient } from "./baseClient";
 import { StdFee } from "@interchainjs/types";
-import { Addr, Timestamp, Uint64, Uint128, Config, Coin, ConfigResponse, ExecuteMsg, Decimal, InstantiateMsg, InstantiateMsg1, CollectionInfoForRoyaltyInfoResponse, RoyaltyInfoResponse, QueryMsg } from "./NftMinter.types";
+import { Addr, Timestamp, Uint64, Uint128, Config, Coin, ConfigResponse, ExecuteMsg, Decimal, InstantiateMsg, InstantiateMsg1, CollectionInfoForRoyaltyInfoResponse, RoyaltyInfoResponse, QueryMsg, MintableNumTokensResponse, StartTimeResponse, MintPriceResponse, MintCountResponse } from "./NftMinter.types";
 export interface NftMinterReadOnlyInterface {
   contractAddress: string;
-
   config: () => Promise<ConfigResponse>;
-  mintableNumTokens: () => Promise<any>;
-  startTime: () => Promise<any>;
-  mintPrice: () => Promise<any>;
+  mintableNumTokens: () => Promise<MintableNumTokensResponse>;
+  startTime: () => Promise<StartTimeResponse>;
+  mintPrice: () => Promise<MintPriceResponse>;
   mintCount: ({
     address
   }: {
     address: string;
-  }) => Promise<any>;
+  }) => Promise<MintCountResponse>;
 }
 export class NftMinterQueryClient implements NftMinterReadOnlyInterface {
   client: ICosmWasmClient;
@@ -37,17 +36,17 @@ export class NftMinterQueryClient implements NftMinterReadOnlyInterface {
       config: {}
     });
   };
-  mintableNumTokens = async (): Promise<any> => {
+  mintableNumTokens = async (): Promise<MintableNumTokensResponse> => {
     return this.client.queryContractSmart(this.contractAddress, {
       mintable_num_tokens: {}
     });
   };
-  startTime = async (): Promise<any> => {
+  startTime = async (): Promise<StartTimeResponse> => {
     return this.client.queryContractSmart(this.contractAddress, {
       start_time: {}
     });
   };
-  mintPrice = async (): Promise<any> => {
+  mintPrice = async (): Promise<MintPriceResponse> => {
     return this.client.queryContractSmart(this.contractAddress, {
       mint_price: {}
     });
@@ -56,7 +55,7 @@ export class NftMinterQueryClient implements NftMinterReadOnlyInterface {
     address
   }: {
     address: string;
-  }): Promise<any> => {
+  }): Promise<MintCountResponse> => {
     return this.client.queryContractSmart(this.contractAddress, {
       mint_count: {
         address
@@ -66,7 +65,6 @@ export class NftMinterQueryClient implements NftMinterReadOnlyInterface {
 }
 export interface NftMinterInterface extends NftMinterReadOnlyInterface {
   contractAddress: string;
-
   sender: string;
   mint: (fee_?: number | StdFee | "auto", memo_?: string, funds_?: Coin[]) => Promise<any>;
   setWhitelist: ({

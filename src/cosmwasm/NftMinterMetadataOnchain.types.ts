@@ -176,3 +176,35 @@ export type QueryMsg = {
     [k: string]: unknown;
   };
 };
+
+export interface NumMintedResponse {
+  num_minted: number;
+  [k: string]: unknown;
+}
+export interface NumRemainingResponse {
+  num_remaining: number;
+  [k: string]: unknown;
+}
+export interface StartTimeResponse {
+  start_time: string;
+  [k: string]: unknown;
+}
+export interface MintPriceResponse {
+  mint_price?: Coin | null;
+  [k: string]: unknown;
+}
+export interface MintCountResponse {
+  address: string;
+  count: number;
+  [k: string]: unknown;
+}
+export interface TokenMintResponse {
+  minter: string;
+  token_id: string;
+  [k: string]: unknown;
+}
+export interface TokenMintsResponse {
+  token_mints: TokenMintResponse[];
+  [k: string]: unknown;
+}
+

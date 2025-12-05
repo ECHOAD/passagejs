@@ -9,32 +9,31 @@ import { Coin, StdFee } from "@interchainjs/types";
 import { Addr, Decimal, Config, ExecuteMsg, Uint128, Token, InstantiateMsg, QueryMsg } from "./NftMarketplaceLegacy.types";
 export interface NftMarketplaceLegacyReadOnlyInterface {
   contractAddress: string;
-
-  config: () => Promise<any>;
+  config: () => Promise<ConfigResponse>;
   token: ({
     id
   }: {
     id: string;
-  }) => Promise<any>;
+  }) => Promise<TokenResponse>;
   rangeTokens: ({
     limit,
     startAfter
   }: {
     limit?: number;
     startAfter?: string;
-  }) => Promise<any>;
-  listTokensQuery: ({
+  }) => Promise<RangeTokensResponse>;
+  listTokens: ({
     ids
   }: {
     ids: string[];
-  }) => Promise<any>;
+  }) => Promise<ListTokensResponse>;
   listTokensOnSale: ({
     limit,
     startAfter
   }: {
     limit?: number;
     startAfter?: string;
-  }) => Promise<any>;
+  }) => Promise<ListTokensOnSaleResponse>;
 }
 export class NftMarketplaceLegacyQueryClient implements NftMarketplaceLegacyReadOnlyInterface {
   client: ICosmWasmClient;
@@ -45,10 +44,10 @@ export class NftMarketplaceLegacyQueryClient implements NftMarketplaceLegacyRead
     this.config = this.config.bind(this);
     this.token = this.token.bind(this);
     this.rangeTokens = this.rangeTokens.bind(this);
-    this.listTokensQuery = this.listTokensQuery.bind(this);
+    this.listTokens = this.listTokens.bind(this);
     this.listTokensOnSale = this.listTokensOnSale.bind(this);
   }
-  config = async (): Promise<any> => {
+  config = async (): Promise<ConfigResponse> => {
     return this.client.queryContractSmart(this.contractAddress, {
       config: {}
     });
@@ -57,7 +56,7 @@ export class NftMarketplaceLegacyQueryClient implements NftMarketplaceLegacyRead
     id
   }: {
     id: string;
-  }): Promise<any> => {
+  }): Promise<TokenResponse> => {
     return this.client.queryContractSmart(this.contractAddress, {
       token: {
         id
@@ -70,7 +69,7 @@ export class NftMarketplaceLegacyQueryClient implements NftMarketplaceLegacyRead
   }: {
     limit?: number;
     startAfter?: string;
-  }): Promise<any> => {
+  }): Promise<RangeTokensResponse> => {
     return this.client.queryContractSmart(this.contractAddress, {
       range_tokens: {
         limit,
@@ -78,11 +77,11 @@ export class NftMarketplaceLegacyQueryClient implements NftMarketplaceLegacyRead
       }
     });
   };
-  listTokensQuery = async ({
+  listTokens = async ({
     ids
   }: {
     ids: string[];
-  }): Promise<any> => {
+  }): Promise<ListTokensResponse> => {
     return this.client.queryContractSmart(this.contractAddress, {
       list_tokens: {
         ids
@@ -95,7 +94,7 @@ export class NftMarketplaceLegacyQueryClient implements NftMarketplaceLegacyRead
   }: {
     limit?: number;
     startAfter?: string;
-  }): Promise<any> => {
+  }): Promise<ListTokensOnSaleResponse> => {
     return this.client.queryContractSmart(this.contractAddress, {
       list_tokens_on_sale: {
         limit,
@@ -106,7 +105,6 @@ export class NftMarketplaceLegacyQueryClient implements NftMarketplaceLegacyRead
 }
 export interface NftMarketplaceLegacyInterface extends NftMarketplaceLegacyReadOnlyInterface {
   contractAddress: string;
-
   sender: string;
   buy: ({
     recipient,

@@ -9,7 +9,6 @@ import { Coin, StdFee } from "@interchainjs/types";
 import { Expiration, Timestamp, Uint64, AllNftInfoResponse, OwnerOfResponse, Approval, NftInfoResponseForEmpty, Empty, AllOperatorsResponse, AllTokensResponse, ApprovalResponse, ApprovalsResponse, Decimal, CollectionInfoResponse, RoyaltyInfoResponse, ContractInfoResponse, ExecuteMsgForEmpty, Binary, MintMsgForEmpty, InstantiateMsg, CollectionInfoForRoyaltyInfoResponse, MinterResponse, NftInfoResponse, NumTokensResponse, OperatorsResponse, QueryMsg, TokensResponse } from "./NftPg721.types";
 export interface NftPg721ReadOnlyInterface {
   contractAddress: string;
-
   ownerOf: ({
     includeExpired,
     tokenId
@@ -240,7 +239,6 @@ export class NftPg721QueryClient implements NftPg721ReadOnlyInterface {
 }
 export interface NftPg721Interface extends NftPg721ReadOnlyInterface {
   contractAddress: string;
-
   sender: string;
   transferNft: ({
     recipient,

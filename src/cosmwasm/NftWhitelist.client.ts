@@ -9,7 +9,6 @@ import { StdFee } from "@interchainjs/types";
 import { Addr, Timestamp, Uint64, Uint128, Config, Coin, ConfigResponse, ExecuteMsg, AddMembersMsg, RemoveMembersMsg, InstantiateMsg, MembersResponse, QueryMsg, HasStartedResponse, HasEndedResponse, IsActiveResponse, HasMemberResponse } from "./NftWhitelist.types";
 export interface NftWhitelistReadOnlyInterface {
   contractAddress: string;
-
   hasStarted: () => Promise<HasStartedResponse>;
   hasEnded: () => Promise<HasEndedResponse>;
   isActive: () => Promise<IsActiveResponse>;
@@ -88,7 +87,6 @@ export class NftWhitelistQueryClient implements NftWhitelistReadOnlyInterface {
 }
 export interface NftWhitelistInterface extends NftWhitelistReadOnlyInterface {
   contractAddress: string;
-
   sender: string;
   updateStartTime: (fee_?: number | StdFee | "auto", memo_?: string, funds_?: Coin[]) => Promise<any>;
   updateEndTime: (fee_?: number | StdFee | "auto", memo_?: string, funds_?: Coin[]) => Promise<any>;

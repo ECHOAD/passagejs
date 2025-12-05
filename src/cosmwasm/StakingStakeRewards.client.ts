@@ -9,7 +9,6 @@ import { Coin, StdFee } from "@interchainjs/types";
 import { ExecuteMsg, ExecMsg, Uint128, Timestamp, Uint64, RewardAsset, Addr, InstantiateMsg, QueryMsg, QueryMsg1, Config, NullableUserReward, Uint256, UserReward, CumulativeRewards, ConfigResponse, RewardsResponse, UserRewardResponse, LatestUserRewardResponse } from "./StakingStakeRewards.types";
 export interface StakingStakeRewardsReadOnlyInterface {
   contractAddress: string;
-
   config: () => Promise<ConfigResponse>;
   rewards: () => Promise<RewardsResponse>;
   userReward: ({
@@ -79,7 +78,6 @@ export class StakingStakeRewardsQueryClient implements StakingStakeRewardsReadOn
 }
 export interface StakingStakeRewardsInterface extends StakingStakeRewardsReadOnlyInterface {
   contractAddress: string;
-
   sender: string;
   stakeChange: ({
     recipient,

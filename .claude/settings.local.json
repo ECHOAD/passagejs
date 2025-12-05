@@ -4,7 +4,9 @@
       "Bash(npm whoami:*)",
       "Bash(npm run build:*)",
       "Bash(npm publish:*)",
-      "Bash(npm view:*)"
+      "Bash(npm view:*)",
+      "Bash(npm run codegen:cosmwasm:*)",
+      "Bash(chmod:*)"
     ],
     "deny": [],
     "ask": []

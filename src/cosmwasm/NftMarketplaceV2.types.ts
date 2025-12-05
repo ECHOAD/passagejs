@@ -300,3 +300,9 @@ export interface QueryOptionsForCollectionBidExpiryOffset {
   start_after?: CollectionBidExpiryOffset | null;
   [k: string]: unknown;
 }
+
+export type BidsByTokenPriceResponse = BidsResponse;
+export type BidsByBidderExpiryResponse = BidsResponse;
+export type CollectionBidsByPriceResponse = CollectionBidsResponse;
+export type CollectionBidsByExpiryResponse = CollectionBidsResponse;
+

@@ -47,7 +47,7 @@ export interface NftAuctionEnglishReadOnlyInterface {
 }
 export class NftAuctionEnglishQueryClient implements NftAuctionEnglishReadOnlyInterface {
   client: ICosmWasmClient;
-  contractAddress: string;
+  declare contractAddress: string;
   constructor(client: ICosmWasmClient, contractAddress: string) {
     this.client = client;
     this.contractAddress = contractAddress;

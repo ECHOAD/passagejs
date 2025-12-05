@@ -38,7 +38,7 @@ export interface NftNftVaultReadOnlyInterface {
 }
 export class NftNftVaultQueryClient implements NftNftVaultReadOnlyInterface {
   client: ICosmWasmClient;
-  contractAddress: string;
+  declare contractAddress: string;
   constructor(client: ICosmWasmClient, contractAddress: string) {
     this.client = client;
     this.contractAddress = contractAddress;

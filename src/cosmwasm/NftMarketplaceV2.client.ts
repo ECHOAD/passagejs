@@ -6,10 +6,9 @@
 
 import { ICosmWasmClient, ISigningCosmWasmClient } from "./baseClient";
 import { StdFee } from "@interchainjs/types";
-import { AskCountResponse, Timestamp, Uint64, Addr, Uint128, AskResponse, Ask, Coin, AsksResponse, BidResponse, Bid, BidsResponse, CollectionBidExpiryOffset, CollectionBidPriceOffset, CollectionBidResponse, CollectionBid, CollectionBidsResponse, Decimal, ConfigResponse, Config, ExpiryRange, ExecuteMsg, InstantiateMsg, MarketplaceContract, QueryMsg, QueryOptionsForTokenTimestampOffset, TokenTimestampOffset, QueryOptionsForTokenPriceOffset, TokenPriceOffset, QueryOptionsForBidExpiryOffset, BidExpiryOffset, QueryOptionsForBidTokenPriceOffset, BidTokenPriceOffset, QueryOptionsForCollectionBidPriceOffset, QueryOptionsForCollectionBidExpiryOffset } from "./NftMarketplaceV2.types";
+import { AskCountResponse, Timestamp, Uint64, Addr, Uint128, AskResponse, Ask, Coin, AsksResponse, BidResponse, Bid, BidsResponse, CollectionBidExpiryOffset, CollectionBidPriceOffset, CollectionBidResponse, CollectionBid, CollectionBidsResponse, Decimal, ConfigResponse, Config, ExpiryRange, ExecuteMsg, InstantiateMsg, MarketplaceContract, QueryMsg, QueryOptionsForTokenTimestampOffset, TokenTimestampOffset, QueryOptionsForTokenPriceOffset, TokenPriceOffset, QueryOptionsForBidExpiryOffset, BidExpiryOffset, QueryOptionsForBidTokenPriceOffset, BidTokenPriceOffset, QueryOptionsForCollectionBidPriceOffset, QueryOptionsForCollectionBidExpiryOffset, BidsByTokenPriceResponse, BidsByBidderExpiryResponse, CollectionBidsByPriceResponse, CollectionBidsByExpiryResponse } from "./NftMarketplaceV2.types";
 export interface NftMarketplaceV2ReadOnlyInterface {
   contractAddress: string;
-
   config: () => Promise<ConfigResponse>;
   ask: ({
     tokenId
@@ -20,19 +19,19 @@ export interface NftMarketplaceV2ReadOnlyInterface {
     queryOptions
   }: {
     queryOptions: QueryOptionsForTokenTimestampOffset;
-  }) => Promise<AsksResponse>;
+  }) => Promise<AsksSortedByExpiryResponse>;
   asksSortedByPrice: ({
     queryOptions
   }: {
     queryOptions: QueryOptionsForTokenPriceOffset;
-  }) => Promise<AsksResponse>;
+  }) => Promise<AsksSortedByPriceResponse>;
   asksBySellerExpiry: ({
     queryOptions,
     seller
   }: {
     queryOptions: QueryOptionsForTokenTimestampOffset;
     seller: string;
-  }) => Promise<AsksResponse>;
+  }) => Promise<AsksBySellerExpiryResponse>;
   askCount: () => Promise<AskCountResponse>;
   bid: ({
     bidder,
@@ -45,21 +44,21 @@ export interface NftMarketplaceV2ReadOnlyInterface {
     queryOptions
   }: {
     queryOptions: QueryOptionsForBidExpiryOffset;
-  }) => Promise<BidsResponse>;
+  }) => Promise<BidsSortedByExpiryResponse>;
   bidsByTokenPrice: ({
     queryOptions,
     tokenId
   }: {
     queryOptions: QueryOptionsForBidTokenPriceOffset;
     tokenId: string;
-  }) => Promise<BidsResponse>;
+  }) => Promise<BidsByTokenPriceResponse>;
   bidsByBidderExpiry: ({
     bidder,
     queryOptions
   }: {
     bidder: string;
     queryOptions: QueryOptionsForBidExpiryOffset;
-  }) => Promise<BidsResponse>;
+  }) => Promise<BidsByBidderExpiryResponse>;
   collectionBid: ({
     bidder
   }: {
@@ -69,12 +68,12 @@ export interface NftMarketplaceV2ReadOnlyInterface {
     queryOptions
   }: {
     queryOptions: QueryOptionsForCollectionBidPriceOffset;
-  }) => Promise<CollectionBidsResponse>;
+  }) => Promise<CollectionBidsByPriceResponse>;
   collectionBidsByExpiry: ({
     queryOptions
   }: {
     queryOptions: QueryOptionsForCollectionBidExpiryOffset;
-  }) => Promise<CollectionBidsResponse>;
+  }) => Promise<CollectionBidsByExpiryResponse>;
 }
 export class NftMarketplaceV2QueryClient implements NftMarketplaceV2ReadOnlyInterface {
   client: ICosmWasmClient;
@@ -116,7 +115,7 @@ export class NftMarketplaceV2QueryClient implements NftMarketplaceV2ReadOnlyInte
     queryOptions
   }: {
     queryOptions: QueryOptionsForTokenTimestampOffset;
-  }): Promise<AsksResponse> => {
+  }): Promise<AsksSortedByExpiryResponse> => {
     return this.client.queryContractSmart(this.contractAddress, {
       asks_sorted_by_expiry: {
         query_options: queryOptions
@@ -127,7 +126,7 @@ export class NftMarketplaceV2QueryClient implements NftMarketplaceV2ReadOnlyInte
     queryOptions
   }: {
     queryOptions: QueryOptionsForTokenPriceOffset;
-  }): Promise<AsksResponse> => {
+  }): Promise<AsksSortedByPriceResponse> => {
     return this.client.queryContractSmart(this.contractAddress, {
       asks_sorted_by_price: {
         query_options: queryOptions
@@ -140,7 +139,7 @@ export class NftMarketplaceV2QueryClient implements NftMarketplaceV2ReadOnlyInte
   }: {
     queryOptions: QueryOptionsForTokenTimestampOffset;
     seller: string;
-  }): Promise<AsksResponse> => {
+  }): Promise<AsksBySellerExpiryResponse> => {
     return this.client.queryContractSmart(this.contractAddress, {
       asks_by_seller_expiry: {
         query_options: queryOptions,
@@ -171,7 +170,7 @@ export class NftMarketplaceV2QueryClient implements NftMarketplaceV2ReadOnlyInte
     queryOptions
   }: {
     queryOptions: QueryOptionsForBidExpiryOffset;
-  }): Promise<BidsResponse> => {
+  }): Promise<BidsSortedByExpiryResponse> => {
     return this.client.queryContractSmart(this.contractAddress, {
       bids_sorted_by_expiry: {
         query_options: queryOptions
@@ -184,7 +183,7 @@ export class NftMarketplaceV2QueryClient implements NftMarketplaceV2ReadOnlyInte
   }: {
     queryOptions: QueryOptionsForBidTokenPriceOffset;
     tokenId: string;
-  }): Promise<BidsResponse> => {
+  }): Promise<BidsByTokenPriceResponse> => {
     return this.client.queryContractSmart(this.contractAddress, {
       bids_by_token_price: {
         query_options: queryOptions,
@@ -198,11 +197,11 @@ export class NftMarketplaceV2QueryClient implements NftMarketplaceV2ReadOnlyInte
   }: {
     bidder: string;
     queryOptions: QueryOptionsForBidExpiryOffset;
-  }): Promise<BidsResponse> => {
+  }): Promise<BidsByBidderExpiryResponse> => {
     return this.client.queryContractSmart(this.contractAddress, {
       bids_by_bidder_expiry: {
-        query_options: queryOptions,
-        bidder
+        bidder,
+        query_options: queryOptions
       }
     });
   };
@@ -221,7 +220,7 @@ export class NftMarketplaceV2QueryClient implements NftMarketplaceV2ReadOnlyInte
     queryOptions
   }: {
     queryOptions: QueryOptionsForCollectionBidPriceOffset;
-  }): Promise<CollectionBidsResponse> => {
+  }): Promise<CollectionBidsByPriceResponse> => {
     return this.client.queryContractSmart(this.contractAddress, {
       collection_bids_by_price: {
         query_options: queryOptions
@@ -232,7 +231,7 @@ export class NftMarketplaceV2QueryClient implements NftMarketplaceV2ReadOnlyInte
     queryOptions
   }: {
     queryOptions: QueryOptionsForCollectionBidExpiryOffset;
-  }): Promise<CollectionBidsResponse> => {
+  }): Promise<CollectionBidsByExpiryResponse> => {
     return this.client.queryContractSmart(this.contractAddress, {
       collection_bids_by_expiry: {
         query_options: queryOptions
@@ -242,7 +241,6 @@ export class NftMarketplaceV2QueryClient implements NftMarketplaceV2ReadOnlyInte
 }
 export interface NftMarketplaceV2Interface extends NftMarketplaceV2ReadOnlyInterface {
   contractAddress: string;
-
   sender: string;
   updateConfig: ({
     askExpiry,

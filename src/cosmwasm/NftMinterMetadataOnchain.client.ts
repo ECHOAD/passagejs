@@ -6,25 +6,24 @@
 
 import { ICosmWasmClient, ISigningCosmWasmClient } from "./baseClient";
 import { StdFee } from "@interchainjs/types";
-import { Addr, Timestamp, Uint64, Uint128, Config, Coin, ConfigResponse, ExecuteMsg, TokenMetadata, Metadata, Trait, Decimal, InstantiateMsg, InstantiateMsg1, CollectionInfoForRoyaltyInfoResponse, RoyaltyInfoResponse, QueryMsg } from "./NftMinterMetadataOnchain.types";
+import { Addr, Timestamp, Uint64, Uint128, Config, Coin, ConfigResponse, ExecuteMsg, TokenMetadata, Metadata, Trait, Decimal, InstantiateMsg, InstantiateMsg1, CollectionInfoForRoyaltyInfoResponse, RoyaltyInfoResponse, QueryMsg, NumMintedResponse, NumRemainingResponse, StartTimeResponse, MintPriceResponse, MintCountResponse, TokenMintResponse, TokenMintsResponse } from "./NftMinterMetadataOnchain.types";
 export interface NftMinterMetadataOnchainReadOnlyInterface {
   contractAddress: string;
-
   config: () => Promise<ConfigResponse>;
-  numMinted: () => Promise<any>;
-  numRemaining: () => Promise<any>;
-  startTime: () => Promise<any>;
-  mintPrice: () => Promise<any>;
+  numMinted: () => Promise<NumMintedResponse>;
+  numRemaining: () => Promise<NumRemainingResponse>;
+  startTime: () => Promise<StartTimeResponse>;
+  mintPrice: () => Promise<MintPriceResponse>;
   mintCount: ({
     address
   }: {
     address: string;
-  }) => Promise<any>;
+  }) => Promise<MintCountResponse>;
   tokenMint: ({
     tokenId
   }: {
     tokenId: number;
-  }) => Promise<any>;
+  }) => Promise<TokenMintResponse>;
   tokenMints: ({
     descending,
     filterMinted,
@@ -35,7 +34,7 @@ export interface NftMinterMetadataOnchainReadOnlyInterface {
     filterMinted?: boolean;
     limit?: number;
     startAfter?: number;
-  }) => Promise<any>;
+  }) => Promise<TokenMintsResponse>;
 }
 export class NftMinterMetadataOnchainQueryClient implements NftMinterMetadataOnchainReadOnlyInterface {
   client: ICosmWasmClient;
@@ -57,22 +56,22 @@ export class NftMinterMetadataOnchainQueryClient implements NftMinterMetadataOnc
       config: {}
     });
   };
-  numMinted = async (): Promise<any> => {
+  numMinted = async (): Promise<NumMintedResponse> => {
     return this.client.queryContractSmart(this.contractAddress, {
       num_minted: {}
     });
   };
-  numRemaining = async (): Promise<any> => {
+  numRemaining = async (): Promise<NumRemainingResponse> => {
     return this.client.queryContractSmart(this.contractAddress, {
       num_remaining: {}
     });
   };
-  startTime = async (): Promise<any> => {
+  startTime = async (): Promise<StartTimeResponse> => {
     return this.client.queryContractSmart(this.contractAddress, {
       start_time: {}
     });
   };
-  mintPrice = async (): Promise<any> => {
+  mintPrice = async (): Promise<MintPriceResponse> => {
     return this.client.queryContractSmart(this.contractAddress, {
       mint_price: {}
     });
@@ -81,7 +80,7 @@ export class NftMinterMetadataOnchainQueryClient implements NftMinterMetadataOnc
     address
   }: {
     address: string;
-  }): Promise<any> => {
+  }): Promise<MintCountResponse> => {
     return this.client.queryContractSmart(this.contractAddress, {
       mint_count: {
         address
@@ -92,7 +91,7 @@ export class NftMinterMetadataOnchainQueryClient implements NftMinterMetadataOnc
     tokenId
   }: {
     tokenId: number;
-  }): Promise<any> => {
+  }): Promise<TokenMintResponse> => {
     return this.client.queryContractSmart(this.contractAddress, {
       token_mint: {
         token_id: tokenId
@@ -109,7 +108,7 @@ export class NftMinterMetadataOnchainQueryClient implements NftMinterMetadataOnc
     filterMinted?: boolean;
     limit?: number;
     startAfter?: number;
-  }): Promise<any> => {
+  }): Promise<TokenMintsResponse> => {
     return this.client.queryContractSmart(this.contractAddress, {
       token_mints: {
         descending,
@@ -122,7 +121,6 @@ export class NftMinterMetadataOnchainQueryClient implements NftMinterMetadataOnc
 }
 export interface NftMinterMetadataOnchainInterface extends NftMinterMetadataOnchainReadOnlyInterface {
   contractAddress: string;
-
   sender: string;
   upsertTokenMetadatas: ({
     tokenMetadatas

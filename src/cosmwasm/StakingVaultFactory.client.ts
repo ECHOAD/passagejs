@@ -9,7 +9,6 @@ import { Coin, StdFee } from "@interchainjs/types";
 import { ExecuteMsg, ExecMsg, InstantiateMsg, QueryMsg, QueryMsg1, QueryBoundForUint64, QueryOptionsForUint64, Addr, ArrayOfTupleOfUint64AndAddr, QueryOptions_for_uint64, VaultsResponse } from "./StakingVaultFactory.types";
 export interface StakingVaultFactoryReadOnlyInterface {
   contractAddress: string;
-
   vaults: ({
     queryOptions
   }: {
@@ -38,7 +37,6 @@ export class StakingVaultFactoryQueryClient implements StakingVaultFactoryReadOn
 }
 export interface StakingVaultFactoryInterface extends StakingVaultFactoryReadOnlyInterface {
   contractAddress: string;
-
   sender: string;
   updateConfig: ({
     rewardsCodeId,

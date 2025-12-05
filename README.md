@@ -552,6 +552,14 @@ npm run codegen:all
 
 ## Development
 
+> **📚 For detailed development instructions, see [DEVELOPMENT.md](./DEVELOPMENT.md)**
+>
+> The development guide includes:
+> - How to regenerate contracts and fix TypeScript errors
+> - Common issues and solutions after codegen
+> - Publishing workflow
+> - Automated fix scripts
+
 ### Initial Setup
 
 ```bash
@@ -561,6 +569,18 @@ npm install
 npm run codegen:all
 npm run build
 ```
+
+### After Regenerating Contracts
+
+If you run `npm run codegen:cosmwasm`, use the automated fix script:
+
+```bash
+npm run codegen:cosmwasm
+python3 scripts/fix-codegen.py
+npm run build
+```
+
+See [DEVELOPMENT.md](./DEVELOPMENT.md) for details.
 
 ### Build
 

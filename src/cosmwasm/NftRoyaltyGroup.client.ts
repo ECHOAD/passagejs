@@ -9,7 +9,6 @@ import { StdFee } from "@interchainjs/types";
 import { AdminResponse, ExecuteMsg, Uint128, Member, Coin, InstantiateMsg, MemberListResponse, MemberResponse, QueryMsg, TotalWeightResponse, ListMembersResponse, HooksResponse } from "./NftRoyaltyGroup.types";
 export interface NftRoyaltyGroupReadOnlyInterface {
   contractAddress: string;
-
   admin: () => Promise<AdminResponse>;
   totalWeight: () => Promise<TotalWeightResponse>;
   listMembers: ({
@@ -86,7 +85,6 @@ export class NftRoyaltyGroupQueryClient implements NftRoyaltyGroupReadOnlyInterf
 }
 export interface NftRoyaltyGroupInterface extends NftRoyaltyGroupReadOnlyInterface {
   contractAddress: string;
-
   sender: string;
   updateAdmin: ({
     admin
